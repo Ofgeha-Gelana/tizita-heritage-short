@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "title": "Tizita (ትዝታ)",
+  "logline": "A grandchild far from home remembers how their grandmother's morning coffee ceremony gathered everyone around her, and realises the coffee was only ever an excuse to be together.",
+  "audience": "Ethiopian diaspora grandchildren aged 18-35, watching on a phone in a vertical feed, often in a second language, who grew up with buna at home and now live far from their grandparents.",
+  "intent": "At the end the viewer should feel the warm ache of tizita (nostalgic memory) and the small, concrete urge to call a grandparent today.",
+  "languages": {
+    "primary": "am",
+    "extra": [
+      "om"
+    ],
+    "subtitles": "en"
+  },
+  "format": {
+    "master_aspect": "9:16",
+    "fps": 24,
+    "keyframe_size": [
+      768,
+      1344
+    ],
+    "video_size_draft": [
+      480,
+      832
+    ],
+    "video_size_final": [
+      704,
+      1280
+    ],
+    "exports": [
+      {
+        "name": "vertical",
+        "width": 1080,
+        "height": 1920
+      },
+      {
+        "name": "horizontal",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "style_block": "warm hand-painted gouache illustration, visible brush texture and soft paper grain, golden early-morning light, earthy palette of roasted-coffee brown, ochre, deep eucalyptus green and white cotton, gentle soft shadows, subject centred in the frame with generous headroom, calm and intimate mood, no text, no letters, no watermark",
+  "negative_prompt": "text, letters, logo, watermark, extra fingers, deformed hands, photorealistic, harsh neon colours",
+  "characters": [
+    {
+      "id": "emama",
+      "name": "Emama (grandmother)",
+      "description": "an Ethiopian grandmother in her seventies, warm dark-brown skin, kind deep-set eyes with smile lines, short grey hair mostly covered by a white cotton netela shawl with a thin green, yellow and red woven tibeb border, wearing a long white habesha kemis dress",
+      "real_person": false,
+      "reference": {
+        "prompt": "character reference sheet of the same woman: front view, three-quarter view and side profile standing side by side on a plain warm cream background, full body, even soft light",
+        "candidate_seeds": [
+          101,
+          202,
+          303,
+          404
+        ],
+        "chosen_seed": null
+      }
+    },
+    {
+      "id": "grandchild",
+      "name": "Grandchild (narrator, present day)",
+      "description": "a young Ethiopian adult seen from behind or in soft profile, short black hair, wearing a grey knit sweater",
+      "real_person": false,
+      "reference": {
+        "prompt": "character reference sheet of the same young adult: back view, three-quarter back view and side profile on a plain cool grey background, upper body, even soft light",
+        "candidate_seeds": [
+          111,
+          222
+        ],
+        "chosen_seed": null
+      }
+    }
+  ],
+  "models": {
+    "text": "gemini-3.8-flash",
+    "text_lite": "gemini-3.5-flash-lite",
+    "tts": "gemini-3.8-flash-tts",
+    "tts_fallbacks": [
+      "gemini-3.8-flash-lite-tts",
+      "gemini-3.1-flash-tts-preview",
+      "gemini-2.5-flash-preview-tts"
+    ],
+    "image": "@cf/black-forest-labs/flux-2-klein-4b",
+    "image_fallback": "@cf/black-forest-labs/flux-1-schnell",
+    "video": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+    "music": "ACE-Step/Ace-Step1.5"
+  },
+  "voice": {
+    "name": "Sulafat",
+    "style": "warm, gentle, calm natural pace (not sent to the model; see FAILURES.md F4)",
+    "per_language": {}
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "beat": "Establish the place and the ritual of every morning",
+      "reason": "An establishing wide shot tells the viewer where and when we are before we meet anyone, and the single smoking chimney points us to one house.",
+      "shot_size": "extreme_wide",
+      "duration_s": 7,
+      "characters": [],
+      "image_prompt": "dawn over a green Ethiopian highland town on a hillside, small houses with corrugated tin roofs among tall eucalyptus trees, mist in the valley, a thin line of smoke rising from one small house in the centre",
+      "motion_prompt": "mist drifts slowly through the valley, the smoke rises gently, the camera slowly pushes in toward the house",
+      "seed": 1001,
+      "video_mode": "wan",
+      "narration": {
+        "am": "በየማለዳው፣ የአያቴ ቤት በቡና ሽታ ይነቃ ነበር።"
+      },
+      "subtitle_en": "Every morning, my grandmother's house woke up to the smell of coffee."
+    },
+    {
+      "id": "s02",
+      "beat": "Emama prepares the ceremony",
+      "reason": "Introduces Emama through what she does with care, so we love her before we see her face up close.",
+      "shot_size": "medium",
+      "duration_s": 7,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "inside a simple home, the grandmother kneels and scatters fresh green grass on the floor in front of a small wooden rekebot coffee table lined with small white handleless cups and a black clay jebena coffee pot",
+      "motion_prompt": "she slowly scatters a handful of grass, the camera stays fixed",
+      "seed": 1002,
+      "video_mode": "wan",
+      "narration": {
+        "am": "እማማ መጀመሪያ ሳሩን ትጎዘጉዛለች፤ ሲኒዎቹንም በረከቦቱ ላይ ታሰልፋለች።"
+      },
+      "subtitle_en": "First, Emama spreads the fresh grass and lines up the cups on the little table."
+    },
+    {
+      "id": "s03",
+      "beat": "Roasting the beans",
+      "reason": "A close-up of hands and smoke carries the sensory memory (sound, smell, heat) that the whole film is about.",
+      "shot_size": "close_up",
+      "duration_s": 6,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "close-up of an old woman's hands stirring green coffee beans turning brown in a flat iron pan over glowing charcoal in a small clay stove, wisps of smoke",
+      "motion_prompt": "the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed",
+      "seed": 1003,
+      "video_mode": "wan",
+      "narration": {
+        "am": "አረንጓዴው ቡና በምጣዱ ላይ ሲቆላ፣ ጭሱ ጎረቤቱን ሁሉ ይጠራል።"
+      },
+      "subtitle_en": "As the green beans roast in the pan, the smoke calls the whole neighbourhood."
+    },
+    {
+      "id": "s04",
+      "beat": "The invitation",
+      "reason": "Emama looks toward the camera, toward us, so the viewer is placed in the seat of the grandchild being invited.",
+      "shot_size": "medium_close_up",
+      "duration_s": 7,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "the grandmother holds the smoking roasting pan toward the viewer and smiles warmly, sitting on a low wooden stool, soft window light",
+      "motion_prompt": "she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly",
+      "seed": 1004,
+      "video_mode": "wan",
+      "narration": {
+        "am": "ጭሱን ወደ እኛ እያራገበች፣ «ኑ፣ ቡና ጠጡ» ትለናለች።"
+      },
+      "subtitle_en": "Fanning the smoke toward us, she says: \"Come, drink coffee.\""
+    },
+    {
+      "id": "s05",
+      "beat": "Incense: a pause",
+      "reason": "A short, quiet insert slows the pace and gives the music a moment on its own before the rounds begin.",
+      "shot_size": "insert",
+      "duration_s": 5,
+      "characters": [],
+      "image_prompt": "a small clay incense burner on the grass-covered floor with frankincense smoking on glowing charcoal, soft morning light through the smoke",
+      "motion_prompt": "the incense smoke curls slowly upward, the camera stays fixed",
+      "seed": 1005,
+      "video_mode": "wan",
+      "narration": {
+        "am": "ዕጣኑ ይጨሳል፤ ቤቱ በሰላም ይሞላል።"
+      },
+      "subtitle_en": "The incense smoulders, and the house fills with peace."
+    },
+    {
+      "id": "s06",
+      "beat": "The three rounds",
+      "reason": "The pour from height is the iconic image of the ceremony, and naming abol, tona and bereka gives diaspora viewers words they may have half-forgotten.",
+      "shot_size": "close_up",
+      "duration_s": 7,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "close-up of a black clay jebena pot pouring a thin stream of dark coffee from height into a row of small white cups on a wooden tray",
+      "motion_prompt": "a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups",
+      "seed": 1006,
+      "video_mode": "wan",
+      "narration": {
+        "am": "የመጀመሪያው ዙር አቦል፣ ሁለተኛው ቶና፣ ሦስተኛው በረካ።"
+      },
+      "subtitle_en": "The first round is abol, the second tona, the third bereka."
+    },
+    {
+      "id": "s07",
+      "beat": "Everyone gathers",
+      "reason": "The wide shot of the gathering is the emotional payoff of the invitation: coffee turns into community.",
+      "shot_size": "wide",
+      "duration_s": 7,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "the grandmother seated at the centre of a small room, neighbours and children on low stools in a circle around her holding small coffee cups, laughing together, warm light",
+      "motion_prompt": "people laugh and lean toward each other, the camera slowly pulls back",
+      "seed": 1007,
+      "video_mode": "wan",
+      "narration": {
+        "am": "በእያንዳንዱ ዙር ወሬው ይረዝማል፤ ሳቁም ይበዛል።"
+      },
+      "subtitle_en": "With every round, the stories grow longer and the laughter louder."
+    },
+    {
+      "id": "s08",
+      "beat": "Her saying",
+      "reason": "The proverb is the theme of the film, so it gets the longest hold on Emama's face as she hands a cup to a child.",
+      "shot_size": "medium_close_up",
+      "duration_s": 8,
+      "characters": [
+        "emama"
+      ],
+      "image_prompt": "the grandmother smiles with kind eyes as she hands a small white coffee cup to a child's small hands at the edge of the frame",
+      "motion_prompt": "she slowly hands the cup forward and smiles, the camera stays fixed",
+      "seed": 1008,
+      "video_mode": "wan",
+      "narration": {
+        "am": "እማማ ሁሌም ትላለች፦ «ቡና ሰበብ ነው፤ ዋናው መገናኘት ነው።»"
+      },
+      "subtitle_en": "Emama always said: \"Coffee is only an excuse. What matters is being together.\""
+    },
+    {
+      "id": "s09",
+      "beat": "Today, far away",
+      "reason": "The cut to a cold, grey present day is the turn of the story; seeing the grandchild from behind lets any viewer step into that place.",
+      "shot_size": "medium",
+      "duration_s": 8,
+      "characters": [
+        "grandchild"
+      ],
+      "image_prompt": "present day, the young adult seen from behind standing at a window of a small apartment in a cold grey foreign city, holding a small white coffee cup with steam rising, cool blue light outside and warm lamp light inside",
+      "motion_prompt": "steam rises from the cup, light snow falls outside the window, the camera stays fixed",
+      "seed": 1009,
+      "video_mode": "wan",
+      "narration": {
+        "am": "ዛሬ ከቤት ርቄ፣ ቡና ባፈላሁ ቁጥር ያ ጭስ ይታወሰኛል።"
+      },
+      "subtitle_en": "Today, far from home, every time I make coffee, I remember that smoke."
+    },
+    {
+      "id": "s10",
+      "beat": "The empty seat, and the call to action",
+      "reason": "Returning to the opening room, now with one steaming cup waiting, closes the loop and turns the memory into an invitation to the viewer.",
+      "shot_size": "close_up",
+      "duration_s": 8,
+      "characters": [],
+      "image_prompt": "the small wooden rekebot table on fresh green grass with one small white coffee cup still steaming beside the black jebena, empty low stool beside it, golden morning light",
+      "motion_prompt": "steam rises slowly from the single cup, the camera pushes in very slowly",
+      "seed": 1010,
+      "video_mode": "wan",
+      "narration": {
+        "am": "ትዝታ ማለት ይኼ ነው። ሦስተኛውን ዙር ሳትጠጡ አትሂዱ — ዛሬ ደውሉላቸው።"
+      },
+      "subtitle_en": "That is tizita. Don't leave before the third round. Call them today."
+    }
+  ],
+  "music": {
+    "caption": "instrumental film score, gentle Ethiopian-inspired ambient, soft plucked krar lyre and a distant bowed masenqo over warm sustained pads, pentatonic tizita mode, nostalgic, spacious, intimate, no drums, soft dynamics, sparse melody that leaves room for a narrator",
+    "bpm": 66,
+    "key": "E minor",
+    "duration_s": 80,
+    "instrumental": true,
+    "candidate_seeds": [
+      11,
+      22,
+      33
+    ],
+    "chosen": null,
+    "choice_reason": "",
+    "music_gain_db": -6,
+    "cues": [
+      {
+        "id": "m1",
+        "at_shot": "s01",
+        "does": "enters softly with the dawn, a sparse plucked lyre motif"
+      },
+      {
+        "id": "m2",
+        "at_shot": "s06",
+        "does": "pads warm up and fill out as the rounds are poured and people gather"
+      },
+      {
+        "id": "m3",
+        "at_shot": "s09",
+        "does": "thins to a single bowed line for the distance of the present day"
+      },
+      {
+        "id": "m4",
+        "at_shot": "s10",
+        "does": "the opening lyre motif returns and resolves under the end card"
+      }
+    ]
+  },
+  "end_card": {
+    "lines": [
+      "Tizita · ትዝታ",
+      "Made with AI: the images, motion, music and voice were generated.",
+      "The characters are fictional; the ceremony is real. Call your grandparents."
+    ],
+    "duration_s": 3
+  }
+}
