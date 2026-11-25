@@ -13,6 +13,11 @@ Each entry records what broke, the evidence, what was tried, and what fixed it o
 - **Workaround in code:** The Wan kernel tries `WanImageToVideoPipeline` (fp16, CPU offload, VAE tiling) first and then falls back to `generate.py --offload_model True --convert_model_dtype --t5_cpu`, recording which backend ran for each clip. Klein is called with the field names used by Cloudflare's FLUX.2 models (`prompt`, `width`, `height`, `steps`, `seed`, `input_image_N`). The smoke test checks it, and FLUX.1 schnell is the fallback.
 - **Result:** _to fill in after the first Kaggle run (outcome, backend, peak VRAM, s/clip)._
 
+### F6: FLUX.1 schnell on Cloudflare rejects `seed` (2026-11-25)
+- **Broke:** The smoke test call to `@cf/black-forest-labs/flux-1-schnell` failed with `HTTP 400 AiError: Bad input: Additional or unevaluated properties '/seed' at '/' not allowed`. `num_steps` is rejected too. Only `prompt` and `steps` are accepted.
+- **Fixed:** The schnell request now sends `prompt` and `steps` only. FLUX.2 klein, the primary model, still takes a seed.
+- **Cost:** Fallback images cannot be reproduced from a seed. runs.jsonl marks them `fallback: true`, and the cache keeps the file, so a rerun does not redraw them.
+
 <!-- Template:
 ### Fn: title (date)
 - **Broke:** what happened, with the exact error and the runs.jsonl item / kernel log
