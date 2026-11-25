@@ -4,7 +4,9 @@ Each entry records what broke, the evidence, what was tried, and what fixed it o
 
 ### F1: No ffmpeg, and system Python 3.9 on the dev machine (2026-11-25)
 - **Broke:** The fresh macOS machine had `/usr/bin/python3` 3.9.6 and no `ffmpeg`. The pipeline uses 3.10+ syntax, and assembly is entirely FFmpeg.
-- **Tried / fixed:** `brew install ffmpeg`. Python is pinned through `uv` (`requires-python >=3.10`, `uv sync` downloads a managed interpreter), so a clean clone does not depend on the system Python. `make setup` checks for ffmpeg and stops with an install hint.
+- **Tried:** `brew install ffmpeg` failed three times on our network: Homebrew's Portable Ruby upgrade failed, and the bottle download from ghcr.io stalled. The evermeet.cx static build API returned 410, and its redirect went to an unknown mirror, so we did not use it.
+- **Fixed:** We added the `imageio-ffmpeg` dependency, whose PyPI wheel bundles a static ffmpeg 9.0 with libx264, libass, loudnorm and sidechaincompress. `common.ffmpeg_exe()` uses the system ffmpeg when one is on PATH and this bundled one otherwise. The wheel ships no `ffprobe`, so `probe_duration` falls back to parsing `ffmpeg -i`. The first radio cut then built: 73.8 s, −14.15 LUFS, −1.0 dBTP.
+- Python is pinned through `uv` (`requires-python >=3.10`, `uv sync` downloads a managed interpreter), so a clean clone does not depend on the system Python. `make setup` checks for ffmpeg and stops with an install hint.
 
 ### F2: The model docs do not show the call we need (2026-11-25)
 - **Broke (before running):** The Wan2.2-TI2V-5B-Diffusers model card shows **text-to-video only** in diffusers. Image-to-video appears only through the official `generate.py`. The card also says the offloaded CLI needs about **24 GB VRAM**, while a Kaggle T4 has 16 GB. Cloudflare's FLUX.2 klein page documents only a `multipart` wrapper with no field names.
