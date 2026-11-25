@@ -30,7 +30,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
-from .common import (OUTPUTS, ffmpeg, load_storyboard, log_call, main_guard, probe_duration, rel,
+from .common import (OUTPUTS, ffmpeg, ffmpeg_exe, load_storyboard, log_call, main_guard, probe_duration, rel,
                      say, stable_hash, timer)
 from .keyframes import KF_DIR
 from .music import chosen_track, placeholder
@@ -239,7 +239,7 @@ def write_srt(tl: list[dict], path: Path) -> Path:
 def measure_loudness(path: Path, extra_filters: str = "") -> dict:
     import subprocess
     af = (extra_filters + "," if extra_filters else "") + "loudnorm=I=-14:TP=-1:LRA=11:print_format=json"
-    res = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", af, "-f", "null", "-"],
+    res = subprocess.run([ffmpeg_exe(), "-hide_banner", "-nostats", "-i", str(path), "-af", af, "-f", "null", "-"],
                          capture_output=True, text=True)
     blob = res.stderr[res.stderr.rfind("{"):res.stderr.rfind("}") + 1]
     return json.loads(blob)
@@ -339,7 +339,7 @@ def build(sb: dict, lang: str, radio: bool) -> list[Path]:
 
 def run(lang: str | None = None, radio: bool = False) -> None:
     sb = load_storyboard()
-    if not shutil.which("ffmpeg"):
+    if not ffmpeg_exe():
         raise SystemExit("ffmpeg not found; `brew install ffmpeg`")
     langs = [lang] if lang else [sb["languages"]["primary"], *sb["languages"]["extra"]]
     for lg in langs:

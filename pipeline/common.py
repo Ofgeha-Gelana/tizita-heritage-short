@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import random
+import re
 import shutil
 import subprocess
 import sys
@@ -97,13 +98,20 @@ def shots_filter(storyboard: dict, only: str | None) -> list[dict]:
 
 
 # --------------------------------------------------------------------------- hashing
+def _hash_default(o: Any) -> str:
+    """Paths nested in lists/dicts hash by content, like top-level ones."""
+    if isinstance(o, Path):
+        return file_hash(o) if o.exists() else "<missing>"
+    raise TypeError(f"cannot hash {type(o).__name__}")
+
+
 def stable_hash(*parts: Any) -> str:
     h = hashlib.sha256()
     for p in parts:
         if isinstance(p, Path):
             h.update(file_hash(p).encode() if p.exists() else b"<missing>")
         else:
-            h.update(json.dumps(p, sort_keys=True, ensure_ascii=False).encode())
+            h.update(json.dumps(p, sort_keys=True, ensure_ascii=False, default=_hash_default).encode())
         h.update(b"\x00")
     return h.hexdigest()[:16]
 
@@ -290,10 +298,24 @@ def have_env(*names: str) -> bool:
     return all(os.environ.get(n) for n in names)
 
 
+def ffmpeg_exe() -> str | None:
+    """System ffmpeg if installed, else the static build from the imageio-ffmpeg wheel
+    (FAILURES.md F1: Homebrew could not install ffmpeg on our network)."""
+    found = shutil.which("ffmpeg")
+    if found:
+        return found
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:  # noqa: BLE001
+        return None
+
+
 def ffmpeg(*args: str, quiet: bool = True) -> subprocess.CompletedProcess:
-    if not shutil.which("ffmpeg"):
-        raise SystemExit("ffmpeg not found; run `brew install ffmpeg` (see README)")
-    cmd = ["ffmpeg", "-hide_banner", "-y", "-loglevel", "error" if quiet else "info", *args]
+    exe = ffmpeg_exe()
+    if not exe:
+        raise SystemExit("ffmpeg not found; run `uv sync` (imageio-ffmpeg) or `brew install ffmpeg`")
+    cmd = [exe, "-hide_banner", "-y", "-loglevel", "error" if quiet else "info", *args]
     res = subprocess.run(cmd, capture_output=True, text=True)
     if res.returncode != 0:
         raise RuntimeError(f"ffmpeg failed: {' '.join(cmd)}\n{res.stderr[-2000:]}")
@@ -301,11 +323,23 @@ def ffmpeg(*args: str, quiet: bool = True) -> subprocess.CompletedProcess:
 
 
 def probe_duration(path: Path) -> float:
-    res = subprocess.run(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
-        capture_output=True, text=True, check=True,
-    )
-    return float(res.stdout.strip())
+    """Container duration in seconds. Uses ffprobe when present, else parses `ffmpeg -i`
+    (the imageio-ffmpeg build ships without ffprobe)."""
+    if shutil.which("ffprobe"):
+        res = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(path)],
+            capture_output=True, text=True, check=True,
+        )
+        return float(res.stdout.strip())
+    exe = ffmpeg_exe()
+    if not exe:
+        raise SystemExit("ffmpeg not found")
+    res = subprocess.run([exe, "-hide_banner", "-i", str(path)], capture_output=True, text=True)
+    m = re.search(r"Duration:\s*(\d+):(\d+):(\d+(?:\.\d+)?)", res.stderr)
+    if not m:
+        raise RuntimeError(f"could not read duration of {path}: {res.stderr[-500:]}")
+    h, mi, sec = m.groups()
+    return int(h) * 3600 + int(mi) * 60 + float(sec)
 
 
 def rel(p: Path) -> str:

@@ -9,7 +9,7 @@ import shutil
 import subprocess
 
 from . import providers as P
-from .common import have_env, load_storyboard, log_call, main_guard, say, timer
+from .common import ffmpeg_exe, have_env, load_storyboard, log_call, main_guard, say, timer
 
 STAGE = "smoke"
 
@@ -69,7 +69,8 @@ def main() -> None:
     else:
         results.append(("kaggle", False, 0, "kaggle CLI / ~/.kaggle/kaggle.json not configured"))
 
-    results.append(("ffmpeg", bool(shutil.which("ffmpeg")), 0, shutil.which("ffmpeg") or "not installed"))
+    exe = ffmpeg_exe()
+    results.append(("ffmpeg", bool(exe), 0, exe or "not installed"))
 
     print("\nprovider                  ok    latency  detail")
     for name, ok, ms, detail in results:
