@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+outputs/tmp/
+outputs/segments/
+.DS_Store
+kaggle.json
+.vscode/
+outputs/.cache/tts_quota_exhausted.json
