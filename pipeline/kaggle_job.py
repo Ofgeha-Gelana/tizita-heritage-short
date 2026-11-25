@@ -55,7 +55,7 @@ def submit(name: str, jobs: list[dict], files: dict[str, Path], settings: dict) 
     user = kaggle_username()
     if not user:
         raise SystemExit("Kaggle username unknown; set KAGGLE_USERNAME or ~/.kaggle/kaggle.json")
-    slug = f"tizita-{name.replace('_', '-')}"
+    slug = f"tizita-{name.replace('_', '-')}-inputs"  # must differ from the kernel slug or push returns 409 (F7)
     data_dir = BUILD / name / "data"
     if data_dir.exists():
         shutil.rmtree(data_dir)
