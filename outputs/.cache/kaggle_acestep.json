@@ -1,0 +1,11 @@
+{
+  "kernel": "ofgehagelana/tizita-acestep",
+  "dataset": "ofgehagelana/tizita-acestep-inputs",
+  "submitted_at": 1795640129.184099,
+  "jobs": {
+    "seed11": "7a6a1393de19f6ae",
+    "seed22": "3144de5858b84729",
+    "seed33": "3b8ce53b50fb8cba"
+  },
+  "status": "running"
+}
