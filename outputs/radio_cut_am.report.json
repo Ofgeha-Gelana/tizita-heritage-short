@@ -1,0 +1,71 @@
+{
+  "file": "outputs/radio_cut_am.mp4",
+  "lang": "am",
+  "export": "radio",
+  "duration_s": 73.78,
+  "integrated_lufs": -14.15,
+  "true_peak_dbtp": -1.0,
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "len": 7,
+      "source": "black"
+    },
+    {
+      "id": "s02",
+      "start": 7.0,
+      "len": 7.84,
+      "source": "black"
+    },
+    {
+      "id": "s03",
+      "start": 14.84,
+      "len": 6,
+      "source": "black"
+    },
+    {
+      "id": "s04",
+      "start": 20.84,
+      "len": 7,
+      "source": "black"
+    },
+    {
+      "id": "s05",
+      "start": 27.84,
+      "len": 5,
+      "source": "black"
+    },
+    {
+      "id": "s06",
+      "start": 32.84,
+      "len": 7,
+      "source": "black"
+    },
+    {
+      "id": "s07",
+      "start": 39.84,
+      "len": 7,
+      "source": "black"
+    },
+    {
+      "id": "s08",
+      "start": 46.84,
+      "len": 8,
+      "source": "black"
+    },
+    {
+      "id": "s09",
+      "start": 54.84,
+      "len": 8,
+      "source": "black"
+    },
+    {
+      "id": "s10",
+      "start": 62.84,
+      "len": 8,
+      "source": "black"
+    }
+  ],
+  "music": "outputs/music/placeholder_drone.wav"
+}
