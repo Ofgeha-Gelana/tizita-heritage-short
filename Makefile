@@ -6,7 +6,7 @@ LANG_   ?=
 QUALITY ?= draft
 export OFFLINE
 
-.PHONY: help setup smoke validate test wordcount translate radio-cut refs keyframes explore \
+.PHONY: help setup smoke validate test wordcount translate radio-cut refs keyframes explore promote \
         shots shots-submit shots-collect music music-submit music-collect assemble film \
         final shot costs clean-cache
 
@@ -56,6 +56,9 @@ keyframes: validate
 ## explore        several seeds for one shot: make explore SHOT=s03 SEEDS=1,2,3,4
 explore: validate
 	$(PY) pipeline.keyframes explore --shots $(SHOT) --seeds $(SEEDS)
+
+promote: validate  ## keep an explored keyframe: make promote SHOT=s06 SEED=3006
+	$(PY) pipeline.keyframes promote --shots $(SHOT) --seeds $(SEED)
 
 ## shots          Wan 2.2 on Kaggle, wait for results (QUALITY=draft|final)
 shots: validate
