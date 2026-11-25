@@ -114,7 +114,7 @@ def cf_image(model: str, prompt: str, *, seed: int, width: int, height: int, ste
         r = requests.post(base + model, headers=headers, files=form, timeout=TIMEOUT)
     else:
         r = requests.post(base + model, headers=headers, timeout=TIMEOUT,
-                          json={"prompt": prompt, "seed": seed, "steps": min(steps, 8)})
+                          json={"prompt": prompt, "steps": min(steps, 8)})  # schnell rejects seed (FAILURES.md F6)
     if r.status_code == 429 or (r.status_code == 400 and "neuron" in r.text.lower()):
         # Workers AI reports the daily free allowance running out this way.
         raise QuotaExhausted(f"Cloudflare quota: {r.text[:300]}")
