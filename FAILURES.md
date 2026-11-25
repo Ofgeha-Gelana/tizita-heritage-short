@@ -18,6 +18,11 @@ Each entry records what broke, the evidence, what was tried, and what fixed it o
 - **Fixed:** The schnell request now sends `prompt` and `steps` only. FLUX.2 klein, the primary model, still takes a seed.
 - **Cost:** Fallback images cannot be reproduced from a seed. runs.jsonl marks them `fallback: true`, and the cache keeps the file, so a rerun does not redraw them.
 
+### F7: Kaggle `kernels push` returned 409 Conflict (2026-11-25)
+- **Broke:** `make shots-submit` uploaded the inputs dataset `tizita-wan22-i2v`, then `kaggle kernels push` failed with `409 Client Error: Conflict ... SaveKernel`. The error says nothing about the cause.
+- **Tried:** (1) Renaming the dataset to `…-inputs` still gave 409, because the old dataset kept the slug. (2) Bisected with throwaway kernels: CPU, GPU and T4 with internet all pushed fine, and a trivial kernel named `tizita-wan22-i2v` still gave 409. So the slug was taken: kernels and datasets appear to share one namespace per user. (3) The probes then used up the batch tier's limit of 2 concurrent GPU sessions (`Maximum batch GPU session count of 2 reached`), so we deleted them once they had finished.
+- **Fixed:** The kernel is now `tizita-wan22-shots` and its datasets are `tizita-<name>-inputs`. The Wan batch (10 draft jobs) and the ACE-Step batch then pushed. The limit of 2 sessions means Wan and ACE-Step can run together, but nothing else can run alongside them.
+
 <!-- Template:
 ### Fn: title (date)
 - **Broke:** what happened, with the exact error and the runs.jsonl item / kernel log
