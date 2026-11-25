@@ -13,6 +13,11 @@ reference regenerates only the shots that character appears in.
     python -m pipeline.keyframes refs            # reference sheet candidates
     python -m pipeline.keyframes shots [--shots s03]
     python -m pipeline.keyframes explore --shots s03 --seeds 1,2,3,4
+    python -m pipeline.keyframes promote --shots s03 --seeds 3   # keep that exact image
+
+FLUX.2 klein on Cloudflare is not deterministic per seed (EXPERIMENTS.md E15): the same
+prompt and seed gave a visibly different image. So `promote` copies the explored file
+into place and writes the cache entry; later runs reuse that file instead of redrawing.
 """
 from __future__ import annotations
 
@@ -41,7 +46,23 @@ def chosen_ref(sb: dict, char_id: str) -> Path | None:
     if seed is None:
         return None
     p = ref_path(char_id, seed)
-    return p if p.exists() else None
+    if not p.exists():
+        return None
+    return front_view(p)
+
+
+def front_view(sheet: Path) -> Path:
+    """Crop the left (front) view out of a three-view turnaround sheet.
+
+    Passing the whole sheet made FLUX.2 copy its layout: the same person appeared two
+    or three times in one keyframe (EXPERIMENTS.md E14). A single figure fixes that."""
+    out = sheet.with_name(sheet.stem + "_front.png")
+    if out.exists() and out.stat().st_mtime >= sheet.stat().st_mtime:
+        return out
+    img = Image.open(sheet).convert("RGB")
+    w, h = img.size
+    img.crop((0, 0, w // 3, h)).save(out)
+    return out
 
 
 def shot_prompt(sb: dict, shot: dict) -> str:
@@ -139,9 +160,28 @@ def run_shots(sb: dict, only: str | None = None, seeds_override: list[int] | Non
             cache.put(item, key, out, model=model, seed=seed)
 
 
+def promote(sb: dict, shot_id: str, seed: int) -> None:
+    import shutil
+    shot = next(s for s in shots_filter(sb, shot_id))
+    if shot["seed"] != seed:
+        raise SystemExit(f"set shots[{shot_id}].seed = {seed} in storyboard.json first, so the cache key matches")
+    src = KF_DIR / "explore" / f"{shot_id}_seed{seed}.png"
+    if not src.exists():
+        raise SystemExit(f"{rel(src)} not found; run explore first")
+    refs = [r for r in (chosen_ref(sb, c) for c in shot["characters"]) if r]
+    size = tuple(sb["format"]["keyframe_size"])
+    key = stable_hash(shot_prompt(sb, shot), seed, sb["models"]["image"], size, *refs)
+    out = KF_DIR / f"{shot_id}.png"
+    shutil.copyfile(src, out)
+    Cache(STAGE).put(shot_id, key, out, model=sb["models"]["image"], seed=seed, promoted_from=rel(src))
+    log_call(stage=STAGE, provider="local", model="promote", item=shot_id, seed=seed, cache_hit=True,
+             output=rel(out), params={"from": rel(src)})
+    say(STAGE, f"{shot_id}: promoted {rel(src)} -> {rel(out)}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["refs", "shots", "explore", "all"], nargs="?", default="all")
+    ap.add_argument("what", choices=["refs", "shots", "explore", "promote", "all"], nargs="?", default="all")
     ap.add_argument("--shots")
     ap.add_argument("--seeds", help="comma-separated seeds for explore mode")
     a = ap.parse_args()
@@ -154,6 +194,10 @@ def main() -> None:
         if not (a.shots and a.seeds):
             raise SystemExit("explore needs --shots and --seeds")
         run_shots(sb, a.shots, [int(s) for s in a.seeds.split(",")])
+    if a.what == "promote":
+        if not (a.shots and a.seeds):
+            raise SystemExit("promote needs --shots and --seeds (one seed)")
+        promote(sb, a.shots, int(a.seeds))
 
 
 if __name__ == "__main__":
