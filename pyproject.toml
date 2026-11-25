@@ -1,0 +1,23 @@
+[project]
+name = "tizita-heritage-short"
+version = "0.1.0"
+description = "Storyboard-driven pipeline that generates a narrated, scored heritage short film"
+requires-python = ">=3.10"
+dependencies = [
+  "jsonschema>=4.21",
+  "requests>=2.31",
+  "pillow>=10.0",
+  "python-dotenv>=1.0",
+  "kaggle>=1.6",
+  "six>=1.17.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
