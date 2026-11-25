@@ -1,0 +1,32 @@
+{
+  "ref/emama/101": {
+    "key": "f534a726ecfbbca5",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/emama_seed101.png"
+  },
+  "ref/emama/202": {
+    "key": "6ac3981b478b4884",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/emama_seed202.png"
+  },
+  "ref/emama/303": {
+    "key": "93e47c0d1acfecf8",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/emama_seed303.png"
+  },
+  "ref/emama/404": {
+    "key": "b178ff8c5ff7f3f9",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/emama_seed404.png"
+  },
+  "ref/grandchild/111": {
+    "key": "b5cfc56f68cfc03c",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/grandchild_seed111.png"
+  },
+  "ref/grandchild/222": {
+    "key": "ec5bdf784a64c059",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/references/grandchild_seed222.png"
+  }
+}
