@@ -118,7 +118,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "inside a simple home, the grandmother kneels and scatters fresh green grass on the floor in front of a small wooden rekebot coffee table lined with small white handleless cups and a black clay jebena coffee pot",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the grandmother kneels and scatters fresh green grass on the floor in front of a small wooden rekebot coffee table lined with small white handleless cups and a black clay jebena coffee pot",
       "motion_prompt": "she slowly scatters a handful of grass, the camera stays fixed",
       "seed": 1002,
       "video_mode": "wan",
@@ -136,7 +136,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "close-up of an old woman's hands stirring green coffee beans turning brown in a flat iron pan over glowing charcoal in a small clay stove, wisps of smoke",
+      "image_prompt": "extreme close-up of only an old woman's two hands and forearms stirring green coffee beans turning brown in a flat iron pan over glowing charcoal in a small clay stove, wisps of smoke, her face is outside the frame",
       "motion_prompt": "the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed",
       "seed": 1003,
       "video_mode": "wan",
@@ -154,7 +154,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "the grandmother holds the smoking roasting pan toward the viewer and smiles warmly, sitting on a low wooden stool, soft window light",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, a single grandmother sitting on a low wooden stool holds the smoking roasting pan toward the viewer and smiles warmly, soft window light",
       "motion_prompt": "she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly",
       "seed": 1004,
       "video_mode": "wan",
@@ -170,7 +170,7 @@
       "shot_size": "insert",
       "duration_s": 5,
       "characters": [],
-      "image_prompt": "a small clay incense burner on the grass-covered floor with frankincense smoking on glowing charcoal, soft morning light through the smoke",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, a small clay incense burner on a floor strewn with fresh cut grass, frankincense smoking on glowing charcoal, soft morning light through the smoke",
       "motion_prompt": "the incense smoke curls slowly upward, the camera stays fixed",
       "seed": 1005,
       "video_mode": "wan",
@@ -185,12 +185,10 @@
       "reason": "The pour from height is the iconic image of the ceremony, and naming abol, tona and bereka gives diaspora viewers words they may have half-forgotten.",
       "shot_size": "close_up",
       "duration_s": 7,
-      "characters": [
-        "emama"
-      ],
-      "image_prompt": "close-up of a black clay jebena pot pouring a thin stream of dark coffee from height into a row of small white cups on a wooden tray",
+      "characters": [],
+      "image_prompt": "close-up of a round-bellied black clay jebena coffee pot with a long narrow neck, tilted by an old woman's dark brown hand, a thin stream of dark coffee flowing out of its spout down into a row of tiny white cups without handles on a wooden tray, only the hand, the pot and the cups in frame",
       "motion_prompt": "a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups",
-      "seed": 1006,
+      "seed": 3006,
       "video_mode": "wan",
       "narration": {
         "am": "የመጀመሪያው ዙር አቦል፣ ሁለተኛው ቶና፣ ሦስተኛው በረካ።"
@@ -206,7 +204,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "the grandmother seated at the centre of a small room, neighbours and children on low stools in a circle around her holding small coffee cups, laughing together, warm light",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the grandmother seated at the centre, neighbours and children on low stools in a circle around her holding small coffee cups, laughing together, warm light",
       "motion_prompt": "people laugh and lean toward each other, the camera slowly pulls back",
       "seed": 1007,
       "video_mode": "wan",
@@ -224,7 +222,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "the grandmother smiles with kind eyes as she hands a small white coffee cup to a child's small hands at the edge of the frame",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, medium close-up of one grandmother, a single figure, smiling with kind eyes as she hands a small white coffee cup to a child's small hands at the edge of the frame",
       "motion_prompt": "she slowly hands the cup forward and smiles, the camera stays fixed",
       "seed": 1008,
       "video_mode": "wan",
@@ -242,7 +240,7 @@
       "characters": [
         "grandchild"
       ],
-      "image_prompt": "present day, the young adult seen from behind standing at a window of a small apartment in a cold grey foreign city, holding a small white coffee cup with steam rising, cool blue light outside and warm lamp light inside",
+      "image_prompt": "present day, one single young man seen from behind standing alone at a window of a small apartment in a cold grey foreign city, holding a small white coffee cup with steam rising, cool blue light outside and warm lamp light inside",
       "motion_prompt": "steam rises from the cup, light snow falls outside the window, the camera stays fixed",
       "seed": 1009,
       "video_mode": "wan",
@@ -258,7 +256,7 @@
       "shot_size": "close_up",
       "duration_s": 8,
       "characters": [],
-      "image_prompt": "the small wooden rekebot table on fresh green grass with one small white coffee cup still steaming beside the black jebena, empty low stool beside it, golden morning light",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the small wooden rekebot table on a floor strewn with fresh cut grass, one small white coffee cup still steaming beside the black jebena, an empty low stool beside it, golden morning light",
       "motion_prompt": "steam rises slowly from the single cup, the camera pushes in very slowly",
       "seed": 1010,
       "video_mode": "wan",
