@@ -1,0 +1,544 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tizita-heritage-short/schema/storyboard.schema.json",
+  "title": "Heritage short storyboard",
+  "description": "The single contract between every pipeline stage. Each stage reads only the fields it needs and hashes them for its cache key.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "title",
+    "logline",
+    "audience",
+    "intent",
+    "languages",
+    "format",
+    "style_block",
+    "characters",
+    "models",
+    "voice",
+    "shots",
+    "music",
+    "end_card"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "logline": {
+      "type": "string",
+      "minLength": 10
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 10
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 10
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "extra",
+        "subtitles"
+      ],
+      "properties": {
+        "primary": {
+          "$ref": "#/$defs/lang"
+        },
+        "extra": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lang"
+          },
+          "uniqueItems": true
+        },
+        "subtitles": {
+          "const": "en"
+        }
+      }
+    },
+    "format": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "master_aspect",
+        "fps",
+        "keyframe_size",
+        "video_size_draft",
+        "video_size_final",
+        "exports"
+      ],
+      "properties": {
+        "master_aspect": {
+          "enum": [
+            "9:16",
+            "16:9"
+          ]
+        },
+        "fps": {
+          "const": 24
+        },
+        "keyframe_size": {
+          "$ref": "#/$defs/size"
+        },
+        "video_size_draft": {
+          "$ref": "#/$defs/size"
+        },
+        "video_size_final": {
+          "$ref": "#/$defs/size"
+        },
+        "exports": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9_]+$"
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 320
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 320
+              }
+            }
+          }
+        }
+      }
+    },
+    "style_block": {
+      "type": "string",
+      "minLength": 20,
+      "description": "Appended to every image prompt to lock the look."
+    },
+    "negative_prompt": {
+      "type": "string"
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "description",
+          "real_person",
+          "reference"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "minLength": 20,
+            "description": "Exact text attached to every prompt the character appears in."
+          },
+          "real_person": {
+            "type": "boolean",
+            "description": "If true, ETHICS.md must hold a consent record before generation."
+          },
+          "consent_ref": {
+            "type": "string",
+            "description": "Anchor in ETHICS.md for the consent record."
+          },
+          "reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "prompt",
+              "candidate_seeds",
+              "chosen_seed"
+            ],
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 10
+              },
+              "candidate_seeds": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                },
+                "minItems": 1
+              },
+              "chosen_seed": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "if": {
+          "properties": {
+            "real_person": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "consent_ref"
+          ]
+        }
+      }
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "text_lite",
+        "tts",
+        "image",
+        "image_fallback",
+        "video",
+        "music"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "text_lite": {
+          "type": "string"
+        },
+        "tts": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "image_fallback": {
+          "type": "string"
+        },
+        "video": {
+          "type": "string"
+        },
+        "music": {
+          "type": "string"
+        },
+        "tts_fallbacks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tried in order when the primary TTS model fails or is out of daily quota (10 requests/day each on the free tier)."
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "style"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Gemini prebuilt voice name"
+        },
+        "style": {
+          "type": "string",
+          "description": "Delivery note for humans. NOT sent to the TTS model: Gemini TTS read style text aloud (FAILURES.md F4)."
+        },
+        "per_language": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "style": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "music": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caption",
+        "bpm",
+        "key",
+        "duration_s",
+        "instrumental",
+        "candidate_seeds",
+        "chosen",
+        "cues"
+      ],
+      "properties": {
+        "caption": {
+          "type": "string",
+          "minLength": 10
+        },
+        "bpm": {
+          "type": "integer",
+          "minimum": 40,
+          "maximum": 200
+        },
+        "key": {
+          "type": "string"
+        },
+        "duration_s": {
+          "type": "number",
+          "minimum": 30,
+          "maximum": 240
+        },
+        "instrumental": {
+          "type": "boolean"
+        },
+        "candidate_seeds": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 1
+        },
+        "chosen": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Seed of the chosen candidate; null uses the placeholder drone."
+        },
+        "choice_reason": {
+          "type": "string"
+        },
+        "music_gain_db": {
+          "type": "number",
+          "minimum": -40,
+          "maximum": 0
+        },
+        "cues": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "at_shot",
+              "does"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "at_shot": {
+                "$ref": "#/$defs/id"
+              },
+              "does": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "end_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lines",
+        "duration_s"
+      ],
+      "properties": {
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "contains": {
+            "type": "string",
+            "pattern": "(?i)\\bAI\\b"
+          }
+        },
+        "duration_s": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 5
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "lang": {
+      "enum": [
+        "am",
+        "om",
+        "ti",
+        "so",
+        "en"
+      ]
+    },
+    "size": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "minimum": 256
+        },
+        {
+          "type": "integer",
+          "minimum": 256
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "beat",
+        "reason",
+        "shot_size",
+        "duration_s",
+        "characters",
+        "image_prompt",
+        "motion_prompt",
+        "seed",
+        "video_mode",
+        "narration",
+        "subtitle_en"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "beat": {
+          "type": "string",
+          "minLength": 3
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Why this shot exists, in one sentence."
+        },
+        "shot_size": {
+          "enum": [
+            "extreme_wide",
+            "wide",
+            "medium",
+            "medium_close_up",
+            "close_up",
+            "extreme_close_up",
+            "insert"
+          ]
+        },
+        "duration_s": {
+          "type": "number",
+          "minimum": 3,
+          "maximum": 12
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "image_prompt": {
+          "type": "string",
+          "minLength": 10
+        },
+        "motion_prompt": {
+          "type": "string",
+          "minLength": 5,
+          "description": "Only motion and camera; the keyframe already holds the subject."
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "video_mode": {
+          "enum": [
+            "wan",
+            "kenburns"
+          ]
+        },
+        "kenburns": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "direction": {
+              "enum": [
+                "in",
+                "out",
+                "left",
+                "right",
+                "up",
+                "down"
+              ]
+            },
+            "amount": {
+              "type": "number",
+              "minimum": 0.02,
+              "maximum": 0.4
+            }
+          }
+        },
+        "narration": {
+          "type": "object",
+          "required": [
+            "am"
+          ],
+          "propertyNames": {
+            "$ref": "#/$defs/lang"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "subtitle_en": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
