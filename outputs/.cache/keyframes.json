@@ -1,4 +1,22 @@
 {
+  "explore/s06/1006": {
+    "key": "4d7a4c1877f767e6",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/explore/s06_seed1006.png",
+    "seed": 1006
+  },
+  "explore/s06/2006": {
+    "key": "b983e641aab89865",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/explore/s06_seed2006.png",
+    "seed": 2006
+  },
+  "explore/s06/3006": {
+    "key": "497a33d10b786179",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/explore/s06_seed3006.png",
+    "seed": 3006
+  },
   "ref/emama/101": {
     "key": "f534a726ecfbbca5",
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
@@ -28,5 +46,66 @@
     "key": "ec5bdf784a64c059",
     "model": "@cf/black-forest-labs/flux-2-klein-4b",
     "path": "outputs/references/grandchild_seed222.png"
+  },
+  "s01": {
+    "key": "a605dacea3d16bac",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s01.png",
+    "seed": 1001
+  },
+  "s02": {
+    "key": "d8de4b9415d52dae",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s02.png",
+    "seed": 1002
+  },
+  "s03": {
+    "key": "e763fc1256fec5c4",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s03.png",
+    "seed": 1003
+  },
+  "s04": {
+    "key": "65e6d2ed07116040",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s04.png",
+    "seed": 1004
+  },
+  "s05": {
+    "key": "73382d61fd48dae9",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s05.png",
+    "seed": 1005
+  },
+  "s06": {
+    "key": "497a33d10b786179",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s06.png",
+    "promoted_from": "outputs/keyframes/explore/s06_seed3006.png",
+    "seed": 3006
+  },
+  "s07": {
+    "key": "6f3fae28dd7c9670",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s07.png",
+    "seed": 1007
+  },
+  "s08": {
+    "key": "4648f3c0e6569f6a",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s08.png",
+    "seed": 1008
+  },
+  "s09": {
+    "key": "3ac4e9a3b90ab73e",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s09.png",
+    "seed": 1009
+  },
+  "s10": {
+    "key": "f85efc554245ea40",
+    "model": "@cf/black-forest-labs/flux-2-klein-4b",
+    "path": "outputs/keyframes/s10.png",
+    "seed": 1010
   }
 }
