@@ -3,7 +3,7 @@
   "lang": "am",
   "export": "radio",
   "duration_s": 73.78,
-  "integrated_lufs": -14.18,
+  "integrated_lufs": -14.16,
   "true_peak_dbtp": -1.43,
   "shots": [
     {
@@ -67,5 +67,5 @@
       "source": "black"
     }
   ],
-  "music": "outputs/music/placeholder_drone.wav"
+  "music": "outputs/music/candidate_seed22.wav"
 }
