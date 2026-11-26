@@ -157,11 +157,16 @@
       "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, a single grandmother sitting on a low wooden stool holds the smoking roasting pan toward the viewer and smiles warmly, soft window light",
       "motion_prompt": "she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly",
       "seed": 1004,
-      "video_mode": "wan",
+      "video_mode": "kenburns",
       "narration": {
         "am": "ጭሱን ወደ እኛ እያራገበች፣ «ኑ፣ ቡና ጠጡ» ትለናለች።"
       },
-      "subtitle_en": "Fanning the smoke toward us, she says: \"Come, drink coffee.\""
+      "subtitle_en": "Fanning the smoke toward us, she says: \"Come, drink coffee.\"",
+      "kenburns": {
+        "direction": "in",
+        "amount": 0.12
+      },
+      "notes": "Wan draft (seed 1004) morphed the roasting pan into a camera by frame ~70; Ken Burns on the keyframe instead (EXPERIMENTS.md E17)."
     },
     {
       "id": "s05",
