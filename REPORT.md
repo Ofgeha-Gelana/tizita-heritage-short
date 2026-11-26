@@ -2,7 +2,7 @@
 
 A 74-second heritage short in Amharic with English subtitles, regenerated from one file (`storyboard.json`) by one command (`make film`). Every claim below points to a file, a `runs.jsonl` item, an EXPERIMENTS/FAILURES entry or a commit.
 
-**Deliverables:** `outputs/final/tizita_am_vertical.mp4` (1080×1920) · `outputs/final/tizita_am_horizontal.mp4` (1920×1080) · `outputs/radio_cut_am.mp4` · repository with `runs.jsonl` (127 lines), FAILURES F1–F10, EXPERIMENTS E1–E17.
+**Deliverables:** `outputs/final/tizita_am_vertical.mp4` (1080×1920) · `outputs/final/tizita_am_horizontal.mp4` (1920×1080) · `outputs/radio_cut_am.mp4` · repository with `runs.jsonl` (156 lines), FAILURES F1–F10, EXPERIMENTS E1–E18.
 
 ## 1. What I set out to make, and for whom
 
