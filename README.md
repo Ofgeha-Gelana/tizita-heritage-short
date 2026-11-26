@@ -20,7 +20,7 @@ storyboard.json ──► narration (Gemini TTS) ──────────�
 | [`outputs/final/tizita_am.en.srt`](outputs/final/tizita_am.en.srt) | English subtitles as a sidecar (also burned in) |
 | [`outputs/radio_cut_am.mp4`](outputs/radio_cut_am.mp4) | Audio-first prototype: narration, subtitles and score on black, used for the first audience test |
 
-Loudness is −14.2 LUFS integrated, −1.4 dBTP true peak (`outputs/final/*.report.json`). The score is ducked under the voice with a sidechain compressor. 9 of 10 shots are Wan 2.2 image-to-video clips; s04 is a Ken Burns move on its keyframe because its clip morphed (EXPERIMENTS.md E17).
+Loudness is −14.2 LUFS integrated, −1.4 dBTP true peak (`outputs/final/*.report.json`). The score is ducked under the voice with a sidechain compressor. 7 of 10 shots are Wan 2.2 image-to-video clips (s08 trimmed to its first 2.6 s); s04, s07 and s09 are slow Ken Burns moves on their keyframes because their clips had artefacts (EXPERIMENTS.md E17, E18). Shots crossfade, and slowed clips are motion-interpolated rather than frozen.
 
 | Stage | Model | Where it runs |
 |---|---|---|
@@ -84,7 +84,7 @@ $0 spent: everything runs on free tiers. At list price one film costs about **$0
 
 | | |
 |---|---|
-| Done | Amharic film in both aspect ratios; radio cut; 10 keyframes with a consistent character; 10 Wan clips; chosen ACE-Step score; 10 FAILURES entries; 17 EXPERIMENTS rows, 7 with results |
+| Done | Amharic film in both aspect ratios, revised after two audience tests (Habesha faces, smooth transitions; DESIGN.md); radio cut; 10 keyframes with a consistent character; 15 Wan clips across two rounds; chosen ACE-Step score; 10 FAILURES entries; 18 EXPERIMENTS rows, 8 with results |
 | Not shipped | **Afaan Oromo version.** The translation came from the fallback text model while the main one was overloaded, and it has visible errors (a stray Arabic letter, mistranslated ceremony terms); see `outputs/translations/`. It is not voiced until a native speaker corrects it. The pipeline handles `om` end to end once the text is in `storyboard.json` |
 | Known limits | Wan clips are 81 frames (3.4 s) at 480×832, a T4 memory limit (F8). Assembly slows each by up to 1.6× and holds the last frame to fill the shot. The narration was not reviewed for pronunciation by a native speaker before shipping; that review belongs in DESIGN.md |
 
