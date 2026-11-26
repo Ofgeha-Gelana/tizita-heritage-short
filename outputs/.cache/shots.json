@@ -58,5 +58,65 @@
     "key": "0cdc18476f12a261",
     "last_error": "CalledProcessError(1, 'cd /kaggle/working/Wan2.2 && /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4')\n    f\"--ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu \"\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n       f\"--frame_num {job['num_frames']} --sample_steps {job['steps']} --base_seed {job['seed']} \"\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n       f\"--image {os.path.join(IN_DIR, job['image'])} --prompt {json.dumps(job['prompt'])} \"\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n       f\"--save_file {out_path}\")\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 33, in sh\n    subprocess.run(cmd, shell=True, check=True)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.13/subprocess.py\", line 578, in run\n    raise CalledProcessError(retcode, process.args,\n                             output=stdout, stderr=stderr)\nsubprocess.CalledProcessError: Command 'cd /kaggle/working/Wan2.2 && /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4' returned non-zero exit status 1.\n",
     "path": ""
+  },
+  "s01": {
+    "gpu_s": 791.8,
+    "key": "4c53d78ecc6d916e",
+    "path": "outputs/clips/s01.mp4",
+    "quality": "draft"
+  },
+  "s02": {
+    "gpu_s": 774.8,
+    "key": "37ec978eb225b35d",
+    "path": "outputs/clips/s02.mp4",
+    "quality": "draft"
+  },
+  "s03": {
+    "gpu_s": 789.7,
+    "key": "62f69933bb2b3412",
+    "path": "outputs/clips/s03.mp4",
+    "quality": "draft"
+  },
+  "s04": {
+    "gpu_s": 769.1,
+    "key": "7bd10ff5d55f46cf",
+    "path": "outputs/clips/s04.mp4",
+    "quality": "draft"
+  },
+  "s05": {
+    "gpu_s": 789.2,
+    "key": "c568f82aef90785f",
+    "path": "outputs/clips/s05.mp4",
+    "quality": "draft"
+  },
+  "s06": {
+    "gpu_s": 769.1,
+    "key": "89ded5e9df561603",
+    "path": "outputs/clips/s06.mp4",
+    "quality": "draft"
+  },
+  "s07": {
+    "gpu_s": 789.0,
+    "key": "17e8acf8047c4e46",
+    "path": "outputs/clips/s07.mp4",
+    "quality": "draft"
+  },
+  "s08": {
+    "gpu_s": 769.8,
+    "key": "31280d1c4f409266",
+    "path": "outputs/clips/s08.mp4",
+    "quality": "draft"
+  },
+  "s09": {
+    "gpu_s": 789.7,
+    "key": "dcac06b6f6eee870",
+    "path": "outputs/clips/s09.mp4",
+    "quality": "draft"
+  },
+  "s10": {
+    "gpu_s": 767.9,
+    "key": "0cdc18476f12a261",
+    "path": "outputs/clips/s10.mp4",
+    "quality": "draft"
   }
 }
