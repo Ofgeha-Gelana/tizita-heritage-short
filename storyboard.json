@@ -154,9 +154,9 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, a single grandmother sitting on a low wooden stool holds the smoking roasting pan toward the viewer and smiles warmly, soft window light",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, a single grandmother sitting on a low wooden stool holds a flat black iron roasting pan full of small dark-roasted coffee beans with white smoke rising, tilting it toward the viewer and smiles warmly, soft window light",
       "motion_prompt": "she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly",
-      "seed": 1004,
+      "seed": 2004,
       "video_mode": "kenburns",
       "narration": {
         "am": "ጭሱን ወደ እኛ እያራገበች፣ «ኑ፣ ቡና ጠጡ» ትለናለች።"
@@ -166,7 +166,7 @@
         "direction": "in",
         "amount": 0.12
       },
-      "notes": "Wan draft (seed 1004) morphed the roasting pan into a camera by frame ~70; Ken Burns on the keyframe instead (EXPERIMENTS.md E17)."
+      "notes": "Wan draft (seed 1004) morphed the roasting pan into a camera (E17), so Ken Burns on the keyframe. After the Habesha references the pan looked like bread rolls; the prompt now names roasted coffee beans and seed 2004 was promoted."
     },
     {
       "id": "s05",
