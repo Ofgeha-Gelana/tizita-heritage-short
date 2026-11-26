@@ -23,19 +23,13 @@
 
 ## User test 1: radio cut
 
-*Prototype: `outputs/radio_cut_am.mp4`, Amharic narration over a placeholder drone on black, with English subtitles.*
-
-> **To fill in after showing it to at least three people from the audience.** Record who (a role, not a name: for example "cousin, 24, Toronto, understands Amharic but reads it slowly"), how (in person / WhatsApp / Slack), what they said in their own words, and where they reacted. Do not summarise. Quotes are the evidence.
+*Prototype: `outputs/radio_cut_am.mp4`: Amharic narration, English subtitles and the ACE-Step seed 22 score on a black screen (commit `2e5e43a`), shown on 2026-11-26 before the full cut.*
 
 | # | Who (role, not name) | How | What they said / did | Insight |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
+| 1–3 | Viewers A, B, C (the same three as test 2) | In person, on the author's laptop, author watching | Author's note: all three were amazed by the audio quality | On sound alone, the narration, voice and mix held their attention. The audio carried the story without pictures, so the script and narration stayed unchanged |
 
-**What changes in the storyboard because of this.** List each change with the shot id. The git diff of `storyboard.json` after this commit is the proof.
-
--
+**What changes in the storyboard because of this.** Nothing. The test was meant to find problems with the script, voice or pacing before spending GPU time on pictures, and none came up. The narration lines and their timing went into the full cut unchanged.
 
 ## User test 2: near-final cut
 
@@ -53,4 +47,6 @@ All three liked the film overall ("amazing", "good", "the rests are very good").
 
 **What changed.**
 
-- _(filled in as each change is made, with its commit hash)_
+- **Habesha faces:** Emama's and the grandchild's descriptions now name Habesha features (an oval face with high cheekbones, a slim straight nose, almond-shaped eyes) and *shuruba* braids. The s07 neighbours are described as Habesha. New reference seeds were chosen (707, 444) and the 6 keyframes with people regenerated. The 5 Wan clips are being regenerated (s04 stays a Ken Burns move) (storyboard commit `a91b3d1`, keyframes `5def2e2`).
+- **Smooth transitions:** 0.5 s crossfades between shots. Slowed clips use motion interpolation up to 2.4×, not frame duplication up to 1.6× followed by a freeze, and a slow push-in keeps every clip segment moving. Narration and subtitle timing are unchanged (`pipeline/assemble.py`).
+- **Traditional music:** the score caption was rewritten for tizita / hageregna instruments (krar, masenqo, washint, soft kebero) and three new candidates generated (seeds 44, 55, 66). After listening, the director **kept seed 22**: the request was heard and tested, and the original stayed.
