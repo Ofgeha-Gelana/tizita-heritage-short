@@ -46,6 +46,11 @@ NAR_LEAD = 0.4     # seconds of picture before the narrator speaks
 NAR_TAIL = 0.6     # seconds after the line ends before the cut
 X264 = ["-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(FPS)]
 KB_CYCLE = ["in", "right", "out", "left", "up"]
+# Test 2 ("better with a smooth video transformation"): crossfade between shots, slow clips
+# with motion interpolation instead of freezing, and keep a slow push-in over clip segments.
+XFADE = 0.5        # seconds; the next shot fades in starting at its timeline start
+MAX_SLOW = 2.4     # max slow-down with minterpolate (was 1.6 with frame duplication)
+CLIP_PUSH = 0.06   # zoom gained across a clip segment, so a held last frame still moves
 ETHIOPIC = re.compile(r"[ሀ-᎟ⶀ-⷟꬀-꬯]")
 FONT_CANDIDATES = [
     "/System/Library/Fonts/Supplemental/KefaIII.ttf",
@@ -102,13 +107,16 @@ def kenburns_filter(shot: dict, idx: int, n_frames: int, src: tuple[int, int]) -
     return f"{pre},zoompan=z='{z}':x='{x}':y='{y}':d={n_frames}:s={w}x{h}:fps={FPS}"
 
 
-def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str, radio: bool) -> Path:
-    shot, length = entry["shot"], entry["len"]
+def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str, radio: bool,
+                   tail: float = 0.0) -> Path:
+    """Render one shot. `tail` extra seconds are rendered so the next shot can crossfade
+    over them without shifting any timing."""
+    shot, length = entry["shot"], round(entry["len"] + tail, 3)
     clip, kf = CLIP_DIR / f"{shot['id']}.mp4", KF_DIR / f"{shot['id']}.png"
     mode = "black" if radio else ("clip" if (clip.exists() and shot["video_mode"] == "wan") else
                                   ("kenburns" if kf.exists() else "black"))
     src = clip if mode == "clip" else kf if mode == "kenburns" else None
-    key = stable_hash("seg-v2", mode, src if src else "", length, W, H, shot.get("kenburns", {}), idx % len(KB_CYCLE))
+    key = stable_hash("seg-v3", XFADE, MAX_SLOW, CLIP_PUSH, mode, src if src else "", length, W, H, shot.get("kenburns", {}), idx % len(KB_CYCLE))
     out = SEG_DIR / export / f"{shot['id']}_{key}.mp4"
     if out.exists():
         return out
@@ -116,12 +124,18 @@ def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str,
     n = round(length * FPS)
     if mode == "clip":
         cd = max(probe_duration(clip) - 0.25, 0.5)
-        factor = min(length / cd, 1.6)  # slow gently; beyond 1.6x hold the last frame
+        factor = min(length / cd, MAX_SLOW)
         hold = max(length - cd * factor, 0) + 0.1
         with Image.open(kf) if kf.exists() else Image.new("RGB", (9, 16)) as im:
             sw, sh = im.size
-        vf = (f"trim=start=0.25,setpts=(PTS-STARTPTS)*{factor:.4f},fps={FPS},"
-              f"tpad=stop_mode=clone:stop_duration={hold:.2f},{fit_filter(sw, sh, W, H)},trim=end_frame={n}")
+        interp = (f"minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1"
+                  if factor > 1.05 else f"fps={FPS}")
+        p = f"(on/{max(n - 1, 1)})"
+        push = (f"scale={sw * 2}:{sh * 2}:flags=lanczos,zoompan=z='1+{CLIP_PUSH}*{p}':d=1:"
+                f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={sw}x{sh}:fps={FPS}")
+        vf = (f"trim=start=0.25,setpts=(PTS-STARTPTS)*{factor:.4f},{interp},"
+              f"tpad=stop_mode=clone:stop_duration={hold:.2f},scale={sw}:{sh},{push},"
+              f"{fit_filter(sw, sh, W, H)},trim=end_frame={n}")
         ffmpeg("-i", str(clip), "-filter_complex", vf, "-an", *X264, "-frames:v", str(n), str(out))
     elif mode == "kenburns":
         with Image.open(kf) as im:
@@ -283,6 +297,25 @@ def mix_audio(sb: dict, tl: list[dict], total: float, lang: str, music: Path, ra
 
 
 # --------------------------------------------------------------------------- build
+def crossfade(segs: list[Path], starts: list[float], out: Path) -> None:
+    """Chain xfade so segment k+1 fades in over XFADE seconds beginning at starts[k+1].
+    Every segment but the last carries XFADE extra seconds, so total length and all
+    narration/subtitle timings are unchanged."""
+    if len(segs) == 1:
+        ffmpeg("-i", str(segs[0]), "-c", "copy", str(out))
+        return
+    args = []
+    for sp in segs:
+        args += ["-i", str(sp)]
+    chain, prev = [], "[0:v]"
+    for k in range(1, len(segs)):
+        lab = f"[x{k}]"
+        trans = "fadeblack" if k == len(segs) - 1 else "fade"
+        chain.append(f"{prev}[{k}:v]xfade=transition={trans}:duration={XFADE}:offset={starts[k]:.3f}{lab}")
+        prev = lab
+    ffmpeg(*args, "-filter_complex", ";".join(chain), "-map", prev, "-an", *X264, str(out))
+
+
 def build(sb: dict, lang: str, radio: bool) -> list[Path]:
     if not any(s["narration"].get(lang, "").strip() for s in sb["shots"]):
         say(STAGE, f"{lang}: no narration text; skipped")
@@ -306,13 +339,15 @@ def build(sb: dict, lang: str, radio: bool) -> list[Path]:
     for ex in exports:
         W, H, name = ex["width"], ex["height"], ex["name"]
         with timer() as t:
-            segs = [render_segment(sb, e, i, W, H, name, radio) for i, e in enumerate(tl)]
+            last = len(tl) - 1
+            segs = [render_segment(sb, e, i, W, H, name, radio,
+                                   tail=XFADE if (i < last or not radio) else 0.0) for i, e in enumerate(tl)]
+            starts = [e["start"] for e in tl]
             if not radio:
                 segs.append(end_card(sb, W, H, name))
-            lst = TMP / f"concat_{lang}_{name}.txt"
-            lst.write_text("".join(f"file '{p.resolve()}'\n" for p in segs))
+                starts.append(body)
             picture = TMP / f"picture_{lang}_{name}.mp4"
-            ffmpeg("-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(picture))
+            crossfade(segs, starts, picture)
             subs = write_subs(tl, W, H, TMP / f"subs_{lang}_{name}.ass")
             final = (OUTPUTS / f"radio_cut_{lang}.mp4") if radio else FINAL / f"tizita_{lang}_{name}.mp4"
             final.parent.mkdir(parents=True, exist_ok=True)
