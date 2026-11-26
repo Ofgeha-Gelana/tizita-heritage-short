@@ -27,13 +27,19 @@ Each entry records what broke, the evidence, what was tried, and what fixed it o
 - **Broke:** Kernel v1: `diffusers-i2v-float16` loaded, then s01 failed after 15 s with `CUDA out of memory ... GPU 0 has a total capacity of 14.56 GiB of which 98.81 MiB is free`. The kernel then dropped diffusers for *every* remaining shot and used the official repo, whose `requirements.txt` failed to build `flash_attn`, and `generate.py` died on `ModuleNotFoundError: No module named 'decord'`. Result: 0/10 clips, about 9 minutes of GPU time. Log: `outputs/logs/kaggle_wan22_i2v_1795640071.log`.
 - **Diagnosis:** 121 frames at 480×832 is about 48k video tokens. A T4 (sm75) has no flash attention, so PyTorch SDPA may fall back to the "math" kernel, which builds the full attention matrix. The fp16 5B transformer alone is about 10 GB of the 15 GB.
 - **Fixed (kernel v2):** `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. The math and flash SDPA backends are disabled, so only memory-efficient attention runs. On OOM the kernel walks a ladder (121 → 81 → 49 frames, then sequential CPU offload) and keeps the rung that worked for later shots. Each result records `requested_frames`, `num_frames` and `ladder_rung`. A shorter clip is acceptable because assembly slows clips by up to 1.6× and then holds the last frame. The official fallback now installs only `decord easydict einops dashscope opencv-python-headless`.
-- **Result:** _to fill in after kernel v2._
+- **Run 2 (v2) also failed:** The ladder stepped down instantly. Every rung hit OOM with the same 14.39 GiB still allocated, because the live exception traceback kept the failed run's activations alive. The kernel then crashed with no log line while reloading for sequential offload, probably out of host RAM.
+- **Fixed (v3):** The UMT5 text encoder runs once, in fp32, split across both T4s (`device_map="auto"`), saves the embeddings, and exits. Then one worker process per T4 loads the pipeline *without* the text encoder, fully on the GPU, and takes half the shots. Memory is released outside the `except` block before each retry. Frames are capped at 81, with a 4.5 h budget.
+- **Result:** **10/10 clips on the first rung** (81 frames, 480×832, 25 steps, fp16, no offload). Each took 768–792 s, two in parallel, so about 66 min of wall time. Peak VRAM was 14.9–15.3 GB on a 15 GB card. Total GPU time across runs 1–3 was about 2.3 h.
 
 ### F9: ACE-Step 1.5 does not install on Kaggle's Python 3.13 (2026-11-26)
 - **Broke:** Kernel v1 failed in 25 s: `ERROR: Package 'ace-step' requires a different Python: 3.13.16 not in '<3.13,>=3.11'`. The `requirements.txt` fallback then failed to build `flash-attn`.
 - **Diagnosis:** The Kaggle image moved to Python 3.13. ACE-Step's `nano-vllm` dependency ships a prebuilt flash-attn wheel only for CPython 3.11 on Linux x86_64.
 - **Fixed (kernel v2):** We follow the README instead of pip: `pip install uv`, then `uv sync --python 3.11` (uv downloads its own 3.11), then `os.execve` the same script inside `.venv` with `ACE_INNER=1`. On a T4 (sm75, which flash-attn does not support) the LM planner uses the `pt` backend directly instead of trying `vllm` first.
-- **Result:** _to fill in after kernel v2._
+- **Result:** v2 installed and generated 3 × 80 s candidates in 6–9 s each, after about 60 s of model loading. The LM planner ran on the `pt` backend. A follow-up: `kaggle kernels output` then tried to list the repo, venv and weights in `/kaggle/working`, hit `429 Too Many Requests`, and hung for over 10 minutes (F10).
+
+### F10: Collecting kernel output was rate-limited (2026-11-26)
+- **Broke:** `make music-collect` downloaded the whole `/kaggle/working`, including the cloned ACE-Step repo, its `.venv` and the model checkpoints. One attempt ran for over 10 minutes, the next was refused with `429 Too Many Requests ... You have been rate limited`, and another hit a connect timeout.
+- **Fixed:** (1) The ACE-Step kernel keeps its repo and temp files in `/tmp`, so only results, logs and audio become output. (2) `kaggle_job.collect` passes `--file-pattern` so it downloads only `results.json`, `*.log`, `clips/*.mp4` and `music/*.wav`. (3) Gemini/Cloudflare network timeouts are now raised as `TransientError` and retried.
 
 <!-- Template:
 ### Fn: title (date)
