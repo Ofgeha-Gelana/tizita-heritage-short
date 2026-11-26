@@ -1,18 +1,13 @@
 {
   "kernel": "ofgehagelana/tizita-wan22-shots",
   "dataset": "ofgehagelana/tizita-wan22-i2v-inputs",
-  "submitted_at": 1795679546.8487282,
+  "submitted_at": 1795688048.297944,
   "jobs": {
-    "s01": "4c53d78ecc6d916e",
-    "s02": "37ec978eb225b35d",
-    "s03": "62f69933bb2b3412",
-    "s04": "7bd10ff5d55f46cf",
-    "s05": "c568f82aef90785f",
-    "s06": "89ded5e9df561603",
-    "s07": "17e8acf8047c4e46",
-    "s08": "31280d1c4f409266",
-    "s09": "dcac06b6f6eee870",
-    "s10": "0cdc18476f12a261"
+    "s02": "02ab32840575b06a",
+    "s03": "e2f2362ecf28522c",
+    "s07": "69b0389b83970279",
+    "s08": "91bca84741481b25",
+    "s09": "1d35707bbb910cd5"
   },
-  "status": "collected"
+  "status": "running"
 }

@@ -1,6 +1,6 @@
 {
   "placeholder": {
-    "key": "cad21c742f69aa0f",
+    "key": "3f6911da40f28dac",
     "path": "outputs/music/placeholder_drone.wav"
   },
   "seed11": {
@@ -14,5 +14,17 @@
   "seed33": {
     "key": "3b8ce53b50fb8cba",
     "path": "outputs/music/candidate_seed33.wav"
+  },
+  "seed44": {
+    "key": "d00a3039aec5c775",
+    "path": "outputs/music/candidate_seed44.wav"
+  },
+  "seed55": {
+    "key": "f893f8cd278438cb",
+    "path": "outputs/music/candidate_seed55.wav"
+  },
+  "seed66": {
+    "key": "2a19fdce9da22dc3",
+    "path": "outputs/music/candidate_seed66.wav"
   }
 }
