@@ -36,7 +36,9 @@ JOBS = spec["jobs"]
 results_path = f"{WORK}/results.json"
 results = []
 
-REPO = "/kaggle/working/ACE-Step-1.5"
+# Outside /kaggle/working: everything there becomes kernel output, and listing the repo,
+# venv and weights got the collect step rate-limited (FAILURES.md F10).
+REPO = "/tmp/ACE-Step-1.5"
 if not os.environ.get("ACE_INNER"):
     # Run 1 (FAILURES.md F9): Kaggle's image is Python 3.13, ACE-Step 1.5 needs <3.13, and
     # its nano-vllm dependency only has a prebuilt flash-attn wheel for 3.11. So follow the
@@ -97,7 +99,7 @@ for job in JOBS:
                                   keyscale=job["key_scale"], seed=job["seed"], instrumental=True,
                                   inference_steps=8, shift=3.0, task_type="text2music", thinking=bool(llm))
         config = GenerationConfig(batch_size=1, use_random_seed=False, seeds=[job["seed"]], audio_format="wav")
-        tmp = f"{WORK}/tmp_{job['id']}"
+        tmp = f"/tmp/acestep_{job['id']}"
         res = generate_music(dit, llm, params, config, save_dir=tmp)
         if not res.success:
             raise RuntimeError(f"generate_music failed: {res.error or res.status_message}")

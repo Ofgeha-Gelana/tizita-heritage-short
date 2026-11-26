@@ -124,7 +124,10 @@ def collect(name: str) -> tuple[Path, list[dict]]:
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
-    _kaggle("kernels", "output", st["kernel"], "-p", str(out))
+    # Only results, logs and media: /kaggle/working also holds the cloned repo, venv and
+    # model weights (ACE-Step: several GB), which made a full download run for 10+ minutes.
+    _kaggle("kernels", "output", st["kernel"], "-p", str(out), "--file-pattern",
+            r"(^|/)(results\.json|[^/]*\.log|clips/[^/]+\.mp4|music/[^/]+\.wav)$")
     res_file = next(out.rglob("results.json"), None)
     results = json.loads(res_file.read_text())["results"] if res_file else []
     # Keep the kernel log for FAILURES.md evidence.
