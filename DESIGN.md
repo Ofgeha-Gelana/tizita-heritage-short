@@ -43,9 +43,11 @@
 
 | # | Who (role, not name) | How | What they said / did | Insight |
 |---|---|---|---|---|
-| 1 | _(role to fill)_, woman | _(to fill)_ | "It is amazing, it is better if the music behind is tizita or 'hageregna'. The rests are very good." | The score reads as generic ambient, not as Ethiopian music. She wants the traditional *tizita* mode or *hageregna* (folk/home-country) sound the film is named after |
-| 2 | _(role to fill)_, man | _(to fill)_ | "It is good, but good if it is with good photo, specially with habesha face." | The characters do not read clearly as Habesha (Ethiopian/Eritrean highland) faces. For this audience, recognising "our people" is part of the pull |
-| 3 | _(role to fill)_ | _(to fill)_ | "It is amazing, but better if with a best video transformation… to be smooth." | The hard cuts between shots, and the hold at the end of each slowed clip, feel abrupt. Smoother transitions are wanted |
+| 1 | Viewer A, woman, peer in the cohort's age range (Ethiopian) | In person, on the author's laptop, author watching | "It is amazing, it is better if the music behind is tizita or 'hageregna'. The rests are very good." | The score reads as generic ambient, not as Ethiopian music. She wants the traditional *tizita* mode or *hageregna* (folk/home-country) sound the film is named after |
+| 2 | Viewer B, man, peer (Ethiopian) | In person, on the author's laptop, author watching | "It is good, but good if it is with good photo, specially with habesha face." | The characters do not read clearly as Habesha (Ethiopian/Eritrean highland) faces. For this audience, recognising "our people" is part of the pull |
+| 3 | Viewer C, man, peer (Ethiopian) | In person, on the author's laptop, author watching | "It is amazing, but better if with a best video transformation… to be smooth." | The hard cuts between shots, and the hold at the end of each slowed clip, feel abrupt. Smoother transitions are wanted |
+
+Viewers are listed by role; their names are kept off the public repo. The author watched their reactions while they watched, not only what they said afterwards.
 
 All three liked the film overall ("amazing", "good", "the rests are very good"). Nobody commented on the narration, story or subtitles, so those stay. The three asks are about **sound identity**, **face identity** and **smoothness**.
 
