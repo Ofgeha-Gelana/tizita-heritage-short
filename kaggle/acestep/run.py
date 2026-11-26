@@ -37,10 +37,20 @@ results_path = f"{WORK}/results.json"
 results = []
 
 REPO = "/kaggle/working/ACE-Step-1.5"
-if not os.path.exists(REPO):
-    sh(f"git clone --depth 1 https://github.com/ACE-Step/ACE-Step-1.5 {REPO}")
-# The README installs with uv; on Kaggle we install the package into the kernel's Python.
-sh(f"cd {REPO} && {sys.executable} -m pip install -q -e . || {sys.executable} -m pip install -q -r requirements.txt")
+if not os.environ.get("ACE_INNER"):
+    # Run 1 (FAILURES.md F9): Kaggle's image is Python 3.13, ACE-Step 1.5 needs <3.13, and
+    # its nano-vllm dependency only has a prebuilt flash-attn wheel for 3.11. So follow the
+    # README (`uv sync`) with a uv-managed 3.11, then re-run this script inside that venv.
+    if not os.path.exists(REPO):
+        sh(f"git clone --depth 1 https://github.com/ACE-Step/ACE-Step-1.5 {REPO}")
+    sh(f"{sys.executable} -m pip install -q uv")
+    sh(f"cd {REPO} && {sys.executable} -m uv sync --python 3.11")
+    venv_py = f"{REPO}/.venv/bin/python"
+    log(f"re-running inside {venv_py}")
+    env = {**os.environ, "ACE_INNER": "1"}
+    sys.stdout.flush()
+    LOG.close()
+    os.execve(venv_py, [venv_py, os.path.abspath(sys.argv[0])], env)
 sys.path.insert(0, REPO)
 
 import torch  # noqa: E402
@@ -59,8 +69,9 @@ if use_lm:
     try:
         from acestep.llm_inference import LLMHandler
         llm = LLMHandler()
-        # vllm may not build on a T4; fall back to the transformers backend, then to no planner.
-        for backend in ("vllm", "pt"):
+        # flash-attn (used by the vllm backend) needs sm80+; a T4 is sm75, so use the
+        # transformers backend there. Elsewhere try vllm first, then pt, then no planner.
+        for backend in (("pt",) if "T4" in GPU else ("vllm", "pt")):
             try:
                 llm.initialize(checkpoint_dir=os.path.join(REPO, "checkpoints"), lm_model_path="acestep-5Hz-lm-0.6B",
                                backend=backend, device="cuda")
