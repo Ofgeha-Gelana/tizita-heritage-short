@@ -116,7 +116,7 @@ def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str,
     mode = "black" if radio else ("clip" if (clip.exists() and shot["video_mode"] == "wan") else
                                   ("kenburns" if kf.exists() else "black"))
     src = clip if mode == "clip" else kf if mode == "kenburns" else None
-    key = stable_hash("seg-v3", XFADE, MAX_SLOW, CLIP_PUSH, mode, src if src else "", length, W, H, shot.get("kenburns", {}), idx % len(KB_CYCLE))
+    key = stable_hash("seg-v3", XFADE, MAX_SLOW, CLIP_PUSH, shot.get("clip_out_s"), mode, src if src else "", length, W, H, shot.get("kenburns", {}), idx % len(KB_CYCLE))
     out = SEG_DIR / export / f"{shot['id']}_{key}.mp4"
     if out.exists():
         return out
@@ -124,6 +124,8 @@ def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str,
     n = round(length * FPS)
     if mode == "clip":
         cd = max(probe_duration(clip) - 0.25, 0.5)
+        if shot.get("clip_out_s"):
+            cd = min(cd, max(shot["clip_out_s"] - 0.25, 0.5))
         factor = min(length / cd, MAX_SLOW)
         hold = max(length - cd * factor, 0) + 0.1
         with Image.open(kf) if kf.exists() else Image.new("RGB", (9, 16)) as im:
@@ -133,7 +135,7 @@ def render_segment(sb: dict, entry: dict, idx: int, W: int, H: int, export: str,
         p = f"(on/{max(n - 1, 1)})"
         push = (f"scale={sw * 2}:{sh * 2}:flags=lanczos,zoompan=z='1+{CLIP_PUSH}*{p}':d=1:"
                 f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={sw}x{sh}:fps={FPS}")
-        vf = (f"trim=start=0.25,setpts=(PTS-STARTPTS)*{factor:.4f},{interp},"
+        vf = (f"trim=start=0.25:end={0.25 + cd:.3f},setpts=(PTS-STARTPTS)*{factor:.4f},{interp},"
               f"tpad=stop_mode=clone:stop_duration={hold:.2f},scale={sw}:{sh},{push},"
               f"{fit_filter(sw, sh, W, H)},trim=end_frame={n}")
         ffmpeg("-i", str(clip), "-filter_complex", vf, "-an", *X264, "-frames:v", str(n), str(out))

@@ -537,6 +537,11 @@
         },
         "notes": {
           "type": "string"
+        },
+        "clip_out_s": {
+          "type": "number",
+          "minimum": 0.5,
+          "description": "Use only the first N seconds of the Wan clip (cut before a late artefact); assembly slows/holds to fill the shot."
         }
       }
     }
