@@ -24,6 +24,9 @@ STAGE = "shots"
 NAME = "wan22_i2v"
 CLIP_DIR = OUTPUTS / "clips"
 MAX_FAILS = 3
+# T4 memory/time limits (FAILURES.md F8): cap frames, stop starting jobs after the budget.
+MAX_FRAMES = 81
+BUDGET_S = 4.5 * 3600
 
 
 def job_spec(sb: dict, shot: dict, quality: str) -> dict:
@@ -112,7 +115,8 @@ def run(only: str | None = None, quality: str = "draft", submit_only: bool = Fal
         say(STAGE, f"{len(jobs)} shot(s) need Wan but Kaggle is unavailable/OFFLINE; Ken Burns will be used")
         return
     files = {j["image"]: KF_DIR / j["image"] for j in jobs}
-    K.submit(NAME, jobs, files, {"model": sb["models"]["video"], "fps": sb["format"]["fps"]})
+    K.submit(NAME, jobs, files, {"model": sb["models"]["video"], "fps": sb["format"]["fps"],
+                                    "max_frames": MAX_FRAMES, "budget_s": BUDGET_S})
     say(STAGE, f"submitted {len(jobs)} job(s): {[j['id'] for j in jobs]}")
     if submit_only:
         say(STAGE, "run `make shots-collect` when the Kaggle kernel finishes")
