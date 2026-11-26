@@ -1,0 +1,363 @@
+[{"stream_name":"stdout","time":1.552930415,"data":"[20:55:28] 10 jobs from /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/jobs.json\n"}
+,{"stream_name":"stdout","time":1.5529789109999999,"data":"[20:55:28] $ /usr/bin/python3 -m pip install -q -U git+https://github.com/huggingface/diffusers transformers accelerate ftfy imageio imageio-ffmpeg sentencepiece\n"}
+,{"stream_name":"stderr","time":39.211200787,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":39.211228117,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stdout","time":46.823549131,"data":"[20:56:13] GPU: Tesla T4, count=2\n"}
+,{"stream_name":"stderr","time":56.073288231,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":68.604999316,"data":"/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_validators.py:206: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.\n"}
+,{"stream_name":"stderr","time":68.605031195,"data":"  warnings.warn(\n"}
+,{"stream_name":"stderr","time":68.651402811,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":87.106880955,"data":"The config attributes {'clip_output': False} were passed to AutoencoderKLWan, but are not expected and will be ignored. Please verify your config.json configuration file.\n"}
+,{"stream_name":"stderr","time":87.399024142,"data":"/usr/local/lib/python3.13/dist-packages/diffusers/utils/deprecation_utils.py:23: FutureWarning: `torch_dtype` is deprecated and will be removed in version 1.0.0. Please use `dtype` instead.\n"}
+,{"stream_name":"stderr","time":87.399062696,"data":"  deprecate(\"torch_dtype\", \"1.0.0\", _TORCH_DTYPE_DEPRECATION_MESSAGE)\n"}
+,{"stream_name":"stderr","time":228.057897809,"data":"\rFetching 18 files:   0%|          | 0/18 [00:00\u003c?, ?it/s]\rFetching 18 files:  17%|█▋        | 3/18 [00:00\u003c00:00, 22.45it/s]\rFetching 18 files:  44%|████▍     | 8/18 [00:00\u003c00:00, 20.10it/s]\rFetching 18 files:  50%|█████     | 9/18 [00:11\u003c00:00, 20.10it/s]\rFetching 18 files:  56%|█████▌    | 10/18 [00:39\u003c00:45,  5.67s/it]\rFetching 18 files:  61%|██████    | 11/18 [00:39\u003c00:33,  4.73s/it]\rFetching 18 files:  61%|██████    | 11/18 [00:51\u003c00:33,  4.73s/it]\rFetching 18 files:  67%|██████▋   | 12/18 [02:07\u003c02:06, 21.03s/it]\rFetching 18 files:  72%|███████▏  | 13/18 [02:20\u003c01:35, 19.16s/it]\rFetching 18 files: 100%|██████████| 18/18 [02:20\u003c00:00,  7.80s/it]\n"}
+,{"stream_name":"stderr","time":232.07934722,"data":"\rLoading pipeline components...:   0%|          | 0/5 [00:00\u003c?, ?it/s]\rLoading pipeline components...:  20%|██        | 1/5 [00:01\u003c00:07,  1.80s/it]\rLoading pipeline components...:  60%|██████    | 3/5 [00:03\u003c00:02,  1.24s/it]\n"}
+,{"stream_name":"stderr","time":243.164324378,"data":"\rLoading checkpoint shards:   0%|          | 0/5 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":257.845619212,"data":"\rLoading checkpoint shards:  20%|██        | 1/5 [00:11\u003c00:44, 11.08s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":277.406275726,"data":"\rLoading checkpoint shards:  40%|████      | 2/5 [00:25\u003c00:39, 13.20s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":296.699515299,"data":"\rLoading checkpoint shards:  60%|██████    | 3/5 [00:45\u003c00:32, 16.10s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":298.117111537,"data":"\rLoading checkpoint shards:  80%|████████  | 4/5 [01:04\u003c00:17, 17.36s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":298.117335405,"data":"\rLoading checkpoint shards: 100%|██████████| 5/5 [01:06\u003c00:00, 11.61s/it]\u001b[A\rLoading checkpoint shards: 100%|██████████| 5/5 [01:06\u003c00:00, 13.21s/it]\n"}
+,{"stream_name":"stderr","time":298.350083516,"data":"\rLoading pipeline components...:  80%|████████  | 4/5 [01:10\u003c00:23, 23.70s/it]\n"}
+,{"stream_name":"stderr","time":298.73557482,"data":"\rLoading weights:   0%|          | 0/242 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":300.051109006,"data":"\rLoading weights:   0%|          | 1/242 [00:00\u003c01:32,  2.59it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":300.432880316,"data":"\rLoading weights:   3%|▎         | 7/242 [00:01\u003c00:55,  4.23it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":300.549744593,"data":"\rLoading weights:   5%|▌         | 13/242 [00:02\u003c00:31,  7.17it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":301.457224377,"data":"\rLoading weights:   6%|▌         | 15/242 [00:02\u003c00:27,  8.17it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":301.77177323,"data":"\rLoading weights:   7%|▋         | 17/242 [00:03\u003c00:44,  5.02it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":301.964780008,"data":"\rLoading weights:   8%|▊         | 19/242 [00:03\u003c00:42,  5.30it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":302.959652481,"data":"\rLoading weights:  10%|▉         | 23/242 [00:03\u003c00:28,  7.67it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":303.09311299,"data":"\rLoading weights:  11%|█         | 27/242 [00:04\u003c00:37,  5.73it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":303.301139882,"data":"\rLoading weights:  12%|█▏        | 28/242 [00:04\u003c00:36,  5.89it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":303.524462408,"data":"\rLoading weights:  12%|█▏        | 29/242 [00:04\u003c00:37,  5.71it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":304.393326726,"data":"\rLoading weights:  14%|█▎        | 33/242 [00:05\u003c00:25,  8.24it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":304.635568894,"data":"\rLoading weights:  15%|█▌        | 37/242 [00:06\u003c00:32,  6.29it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":304.863203091,"data":"\rLoading weights:  16%|█▌        | 38/242 [00:06\u003c00:34,  5.91it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":305.197961234,"data":"\rLoading weights:  16%|█▌        | 39/242 [00:06\u003c00:36,  5.62it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":306.004498759,"data":"\rLoading weights:  19%|█▊        | 45/242 [00:06\u003c00:21,  9.14it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":306.243724736,"data":"\rLoading weights:  19%|█▉        | 47/242 [00:07\u003c00:33,  5.84it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":306.519826762,"data":"\rLoading weights:  20%|█▉        | 48/242 [00:07\u003c00:34,  5.55it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":306.74997288,"data":"\rLoading weights:  22%|██▏       | 53/242 [00:08\u003c00:22,  8.35it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":307.611887562,"data":"\rLoading weights:  23%|██▎       | 55/242 [00:08\u003c00:22,  8.42it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":307.801440179,"data":"\rLoading weights:  24%|██▎       | 57/242 [00:09\u003c00:35,  5.19it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":308.174239335,"data":"\rLoading weights:  24%|██▍       | 59/242 [00:09\u003c00:30,  5.96it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":309.124458265,"data":"\rLoading weights:  26%|██▌       | 63/242 [00:09\u003c00:24,  7.32it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":309.531055143,"data":"\rLoading weights:  28%|██▊       | 67/242 [00:10\u003c00:30,  5.73it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":309.671009519,"data":"\rLoading weights:  29%|██▊       | 69/242 [00:11\u003c00:31,  5.54it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":310.549458378,"data":"\rLoading weights:  30%|███       | 73/242 [00:11\u003c00:21,  7.95it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":311.051412419,"data":"\rLoading weights:  32%|███▏      | 77/242 [00:12\u003c00:26,  6.31it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":311.29070272,"data":"\rLoading weights:  33%|███▎      | 79/242 [00:12\u003c00:28,  5.65it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":312.229511249,"data":"\rLoading weights:  35%|███▌      | 85/242 [00:12\u003c00:17,  8.79it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":312.382894633,"data":"\rLoading weights:  36%|███▌      | 87/242 [00:13\u003c00:27,  5.62it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":312.7470557,"data":"\rLoading weights:  37%|███▋      | 89/242 [00:14\u003c00:24,  6.36it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":312.894993501,"data":"\rLoading weights:  38%|███▊      | 93/242 [00:14\u003c00:19,  7.53it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":313.716629343,"data":"\rLoading weights:  39%|███▉      | 95/242 [00:14\u003c00:17,  8.30it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":314.085254589,"data":"\rLoading weights:  40%|████      | 97/242 [00:15\u003c00:27,  5.34it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":314.250422288,"data":"\rLoading weights:  41%|████      | 99/242 [00:15\u003c00:26,  5.36it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":315.263149494,"data":"\rLoading weights:  43%|████▎     | 103/242 [00:15\u003c00:17,  7.91it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":315.584632165,"data":"\rLoading weights:  44%|████▍     | 107/242 [00:16\u003c00:23,  5.76it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":315.786025141,"data":"\rLoading weights:  45%|████▌     | 109/242 [00:17\u003c00:22,  5.85it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":315.923759409,"data":"\rLoading weights:  47%|████▋     | 113/242 [00:17\u003c00:16,  7.96it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":316.763712432,"data":"\rLoading weights:  48%|████▊     | 115/242 [00:17\u003c00:14,  8.80it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":316.90156392,"data":"\rLoading weights:  48%|████▊     | 117/242 [00:18\u003c00:23,  5.42it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":317.068765584,"data":"\rLoading weights:  49%|████▉     | 118/242 [00:18\u003c00:22,  5.62it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":317.336321999,"data":"\rLoading weights:  49%|████▉     | 119/242 [00:18\u003c00:21,  5.67it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":317.460093487,"data":"\rLoading weights:  51%|█████     | 123/242 [00:18\u003c00:14,  8.16it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":318.357875204,"data":"\rLoading weights:  52%|█████▏    | 125/242 [00:19\u003c00:12,  9.36it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":318.640727116,"data":"\rLoading weights:  52%|█████▏    | 127/242 [00:20\u003c00:22,  5.02it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":318.880320383,"data":"\rLoading weights:  53%|█████▎    | 129/242 [00:20\u003c00:20,  5.46it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":319.897382226,"data":"\rLoading weights:  55%|█████▍    | 133/242 [00:20\u003c00:14,  7.78it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":320.20623424,"data":"\rLoading weights:  57%|█████▋    | 137/242 [00:21\u003c00:18,  5.64it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":320.378049069,"data":"\rLoading weights:  57%|█████▋    | 139/242 [00:21\u003c00:17,  5.80it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":320.531415671,"data":"\rLoading weights:  59%|█████▉    | 143/242 [00:22\u003c00:12,  8.14it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":321.379808039,"data":"\rLoading weights:  60%|█████▉    | 145/242 [00:22\u003c00:10,  8.85it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":321.548191626,"data":"\rLoading weights:  61%|██████    | 147/242 [00:23\u003c00:17,  5.38it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":321.710706026,"data":"\rLoading weights:  61%|██████    | 148/242 [00:23\u003c00:17,  5.45it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":321.88103622,"data":"\rLoading weights:  62%|██████▏   | 149/242 [00:23\u003c00:16,  5.56it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":322.080765949,"data":"\rLoading weights:  63%|██████▎   | 153/242 [00:23\u003c00:09,  8.91it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":322.961518283,"data":"\rLoading weights:  64%|██████▍   | 155/242 [00:23\u003c00:09,  9.18it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":323.072801361,"data":"\rLoading weights:  65%|██████▍   | 157/242 [00:24\u003c00:16,  5.03it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":323.27048067,"data":"\rLoading weights:  65%|██████▌   | 158/242 [00:24\u003c00:15,  5.42it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":323.515275882,"data":"\rLoading weights:  66%|██████▌   | 159/242 [00:24\u003c00:15,  5.35it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":323.628281746,"data":"\rLoading weights:  67%|██████▋   | 163/242 [00:25\u003c00:09,  8.21it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":324.434527998,"data":"\rLoading weights:  68%|██████▊   | 165/242 [00:25\u003c00:08,  9.60it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":324.591391357,"data":"\rLoading weights:  69%|██████▉   | 167/242 [00:26\u003c00:14,  5.34it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":324.863929948,"data":"\rLoading weights:  69%|██████▉   | 168/242 [00:26\u003c00:13,  5.48it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":324.967139967,"data":"\rLoading weights:  70%|██████▉   | 169/242 [00:26\u003c00:14,  5.01it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":325.107603153,"data":"\rLoading weights:  71%|███████▏  | 173/242 [00:26\u003c00:07,  9.19it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":326.058800419,"data":"\rLoading weights:  72%|███████▏  | 175/242 [00:26\u003c00:06, 10.17it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":326.316167334,"data":"\rLoading weights:  73%|███████▎  | 177/242 [00:27\u003c00:13,  4.91it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":326.580061116,"data":"\rLoading weights:  74%|███████▍  | 179/242 [00:27\u003c00:11,  5.48it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":326.713735195,"data":"\rLoading weights:  76%|███████▌  | 183/242 [00:28\u003c00:07,  7.69it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":327.528140336,"data":"\rLoading weights:  76%|███████▋  | 185/242 [00:28\u003c00:06,  8.72it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":327.652817034,"data":"\rLoading weights:  77%|███████▋  | 187/242 [00:29\u003c00:10,  5.26it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":327.929767928,"data":"\rLoading weights:  78%|███████▊  | 188/242 [00:29\u003c00:09,  5.56it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":328.084912611,"data":"\rLoading weights:  78%|███████▊  | 189/242 [00:29\u003c00:10,  5.06it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":328.203107333,"data":"\rLoading weights:  80%|███████▉  | 193/242 [00:29\u003c00:05,  8.57it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":329.158529966,"data":"\rLoading weights:  81%|████████  | 195/242 [00:29\u003c00:04,  9.87it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":329.390056703,"data":"\rLoading weights:  81%|████████▏ | 197/242 [00:30\u003c00:09,  4.87it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":329.694419951,"data":"\rLoading weights:  82%|████████▏ | 199/242 [00:31\u003c00:07,  5.56it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":330.62705346,"data":"\rLoading weights:  84%|████████▍ | 203/242 [00:31\u003c00:05,  7.49it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":330.769528741,"data":"\rLoading weights:  86%|████████▌ | 207/242 [00:32\u003c00:06,  5.80it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":331.034159238,"data":"\rLoading weights:  86%|████████▌ | 208/242 [00:32\u003c00:05,  5.93it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":331.17067602,"data":"\rLoading weights:  86%|████████▋ | 209/242 [00:32\u003c00:06,  5.47it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":332.182793489,"data":"\rLoading weights:  88%|████████▊ | 213/242 [00:32\u003c00:03,  8.72it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":332.496481454,"data":"\rLoading weights:  90%|████████▉ | 217/242 [00:33\u003c00:04,  5.90it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":332.679380651,"data":"\rLoading weights:  90%|█████████ | 219/242 [00:34\u003c00:03,  6.00it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":332.914555879,"data":"\rLoading weights:  92%|█████████▏| 223/242 [00:34\u003c00:02,  8.34it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":333.685937771,"data":"\rLoading weights:  93%|█████████▎| 225/242 [00:34\u003c00:02,  8.37it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":333.83842562,"data":"\rLoading weights:  94%|█████████▍| 227/242 [00:35\u003c00:02,  5.49it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":334.00497825,"data":"\rLoading weights:  94%|█████████▍| 228/242 [00:35\u003c00:02,  5.62it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":334.222427502,"data":"\rLoading weights:  95%|█████████▍| 229/242 [00:35\u003c00:02,  5.68it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":334.357084489,"data":"\rLoading weights:  96%|█████████▋| 233/242 [00:35\u003c00:01,  8.63it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":335.403156101,"data":"\rLoading weights:  97%|█████████▋| 235/242 [00:36\u003c00:00,  9.69it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":335.539361954,"data":"\rLoading weights:  98%|█████████▊| 237/242 [00:37\u003c00:01,  4.60it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":343.542749642,"data":"\rLoading weights:  99%|█████████▉| 239/242 [00:37\u003c00:00,  5.70it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":343.543507148,"data":"\rLoading weights: 100%|██████████| 242/242 [00:45\u003c00:00,  1.11s/it]\u001b[A\rLoading weights: 100%|██████████| 242/242 [00:45\u003c00:00,  5.35it/s]\n"}
+,{"stream_name":"stderr","time":343.579230147,"data":"\rLoading pipeline components...: 100%|██████████| 5/5 [01:55\u003c00:00, 30.90s/it]\rLoading pipeline components...: 100%|██████████| 5/5 [01:55\u003c00:00, 23.10s/it]\n"}
+,{"stream_name":"stdout","time":343.624572913,"data":"[21:01:10] loaded diffusers-i2v-float16\n"}
+,{"stream_name":"stdout","time":358.705236822,"data":"[21:01:25] s01: diffusers path failed: OutOfMemoryError('CUDA out of memory. Tried to allocate 108.00 MiB. GPU 0 has a total capacity of 14.56 GiB of which 98.81 MiB is free. Including non-PyTorch memory, this process has 14.46 GiB memory in use. Of the allocated memory 14.28 GiB is allocated by PyTorch, and 52.66 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)'); trying official repo\n"}
+,{"stream_name":"stdout","time":358.705314985,"data":"[21:01:25] $ git clone --depth 1 https://github.com/Wan-Video/Wan2.2 /kaggle/working/Wan2.2\n"}
+,{"stream_name":"stderr","time":358.746268988,"data":"Cloning into '/kaggle/working/Wan2.2'...\n"}
+,{"stream_name":"stdout","time":359.677250737,"data":"[21:01:26] $ /usr/bin/python3 -m pip install -q -r /kaggle/working/Wan2.2/requirements.txt || true\n"}
+,{"stream_name":"stderr","time":366.826896208,"data":"  error: subprocess-exited-with-error\n"}
+,{"stream_name":"stderr","time":366.826942749,"data":"  \n"}
+,{"stream_name":"stderr","time":366.826948491,"data":"  × Getting requirements to build wheel did not run successfully.\n"}
+,{"stream_name":"stderr","time":366.82695373,"data":"  │ exit code: 1\n"}
+,{"stream_name":"stderr","time":366.826958032,"data":"  ╰─\u003e No available output.\n"}
+,{"stream_name":"stderr","time":366.826961986,"data":"  \n"}
+,{"stream_name":"stderr","time":366.826965319,"data":"  note: This error originates from a subprocess, and is likely not a problem with pip.\n"}
+,{"stream_name":"stderr","time":366.827904244,"data":"ERROR: Failed to build 'flash_attn' when getting requirements to build wheel\n"}
+,{"stream_name":"stdout","time":367.104807562,"data":"[21:01:33] $ huggingface-cli download Wan-AI/Wan2.2-TI2V-5B --local-dir /kaggle/working/Wan2.2-TI2V-5B\n"}
+,{"stream_name":"stderr","time":367.519815759,"data":"\u001b[33mWarning: `huggingface-cli` is deprecated and no longer works. Use `hf` instead.\n"}
+,{"stream_name":"stderr","time":367.519841623,"data":"\u001b[0m\n"}
+,{"stream_name":"stderr","time":367.704002355,"data":"\u001b[90mHint: A new version of huggingface_hub (2.4.0) is available! You are using version 1.33.0.\n"}
+,{"stream_name":"stderr","time":367.70402905,"data":"To update, run: hf update\u001b[0m\n"}
+,{"stream_name":"stderr","time":367.70403428,"data":"\u001b[90mHint: `hf` is already installed! Use it directly.\n"}
+,{"stream_name":"stderr","time":367.704038453,"data":"\u001b[0m\n"}
+,{"stream_name":"stderr","time":367.704041683,"data":"\u001b[90mHint: Examples:\n"}
+,{"stream_name":"stderr","time":367.704044962,"data":"  hf auth login\n"}
+,{"stream_name":"stderr","time":367.704048258,"data":"  hf download unsloth/gemma-4-31B-it-GGUF\n"}
+,{"stream_name":"stderr","time":367.704051542,"data":"  hf upload my-cool-model . .\n"}
+,{"stream_name":"stderr","time":367.704060234,"data":"  hf models ls --search \"gemma\"\n"}
+,{"stream_name":"stderr","time":367.70406327,"data":"  hf repos ls --format json\n"}
+,{"stream_name":"stderr","time":367.704065487,"data":"  hf jobs run python:3.12 python -c 'print(\"Hello!\")'\n"}
+,{"stream_name":"stderr","time":367.704067994,"data":"  hf --help\n"}
+,{"stream_name":"stderr","time":367.704078041,"data":"\u001b[0m\n"}
+,{"stream_name":"stdout","time":367.773298863,"data":"[21:01:34] s01: FAILED CalledProcessError(1, 'huggingface-cli download Wan-AI/Wan2.2-TI2V-5B --local-dir /kaggle/working/Wan2.2-TI2V-5B')\n"}
+,{"stream_name":"stdout","time":367.993683586,"data":"[21:01:34] s01: error in 321s\n"}
+,{"stream_name":"stdout","time":367.995101015,"data":"[21:01:34] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1002 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s02.png --prompt \"she slowly scatters a handful of grass, the camera stays fixed\" --save_file /kaggle/working/clips/s02_37ec978eb225b35d.mp4\n"}
+,{"stream_name":"stderr","time":376.871735275,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":382.208864235,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":382.209243358,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":382.210484217,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":382.210502186,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":382.210508468,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":382.2105136,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":382.210519013,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":382.210523948,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":385.052279505,"data":"[21:01:51] s02: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1002 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s02.png --prompt \"she slowly scatters a handful of grass, the camera stays fixed\" --save_file /kaggle/working/clips/s02_37ec978eb225b35d.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":385.052418809,"data":"[21:01:51] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1002 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s02.png --prompt \"she slowly scatters a handful of grass, the camera stays fixed\" --save_file /kaggle/working/clips/s02_37ec978eb225b35d.mp4\n"}
+,{"stream_name":"stderr","time":388.817086711,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":392.049523941,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":392.049824077,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":392.049846392,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":392.049851563,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":392.049856507,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":392.049870195,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":392.04987389,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":392.049877019,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":392.908331663,"data":"[21:01:59] s02: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1002 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s02.png --prompt \"she slowly scatters a handful of grass, the camera stays fixed\" --save_file /kaggle/working/clips/s02_37ec978eb225b35d.mp4')\n"}
+,{"stream_name":"stdout","time":392.90872881,"data":"[21:01:59] s02: error in 25s\n"}
+,{"stream_name":"stdout","time":392.909209547,"data":"[21:01:59] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1003 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s03.png --prompt \"the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed\" --save_file /kaggle/working/clips/s03_62f69933bb2b3412.mp4\n"}
+,{"stream_name":"stderr","time":396.638540913,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":399.80843212,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":399.808826118,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":399.80883858,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":399.8088429,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":399.808846697,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":399.808850674,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":399.808854961,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":399.8088588,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":400.647788398,"data":"[21:02:07] s03: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1003 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s03.png --prompt \"the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed\" --save_file /kaggle/working/clips/s03_62f69933bb2b3412.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":400.647828318,"data":"[21:02:07] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1003 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s03.png --prompt \"the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed\" --save_file /kaggle/working/clips/s03_62f69933bb2b3412.mp4\n"}
+,{"stream_name":"stderr","time":404.432728193,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":407.602965684,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":407.603274461,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":407.603284385,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":407.603287997,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":407.603291682,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":407.603295041,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":407.603298713,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":407.603301864,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":408.447205973,"data":"[21:02:14] s03: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1003 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s03.png --prompt \"the hands stir the beans slowly with a metal stick, smoke curls upward, the camera stays fixed\" --save_file /kaggle/working/clips/s03_62f69933bb2b3412.mp4')\n"}
+,{"stream_name":"stdout","time":408.447560991,"data":"[21:02:14] s03: error in 16s\n"}
+,{"stream_name":"stdout","time":408.448184041,"data":"[21:02:14] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1004 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s04.png --prompt \"she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly\" --save_file /kaggle/working/clips/s04_7bd10ff5d55f46cf.mp4\n"}
+,{"stream_name":"stderr","time":412.301520141,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":415.497860918,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":415.498188227,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":415.498209332,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":415.498214675,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":415.498220377,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":415.498225092,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":415.498230029,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":415.498234564,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":416.333644841,"data":"[21:02:22] s04: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1004 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s04.png --prompt \"she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly\" --save_file /kaggle/working/clips/s04_7bd10ff5d55f46cf.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":416.333749473,"data":"[21:02:22] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1004 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s04.png --prompt \"she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly\" --save_file /kaggle/working/clips/s04_7bd10ff5d55f46cf.mp4\n"}
+,{"stream_name":"stderr","time":420.110731015,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":423.316502861,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":423.316781254,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":423.316790236,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":423.316793761,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":423.31679736,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":423.316800661,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":423.316804236,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":423.316807498,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":424.163457321,"data":"[21:02:30] s04: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1004 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s04.png --prompt \"she gently wafts the smoke toward the camera and smiles, the camera pushes in slightly\" --save_file /kaggle/working/clips/s04_7bd10ff5d55f46cf.mp4')\n"}
+,{"stream_name":"stdout","time":424.163815077,"data":"[21:02:30] s04: error in 16s\n"}
+,{"stream_name":"stdout","time":424.164390508,"data":"[21:02:30] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1005 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s05.png --prompt \"the incense smoke curls slowly upward, the camera stays fixed\" --save_file /kaggle/working/clips/s05_c568f82aef90785f.mp4\n"}
+,{"stream_name":"stderr","time":427.84451536,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":431.02387798,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":431.024273521,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":431.024290036,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":431.024295062,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":431.024313848,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":431.024318343,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":431.024322808,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":431.024338731,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":431.880595916,"data":"[21:02:38] s05: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1005 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s05.png --prompt \"the incense smoke curls slowly upward, the camera stays fixed\" --save_file /kaggle/working/clips/s05_c568f82aef90785f.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":431.880634039,"data":"[21:02:38] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1005 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s05.png --prompt \"the incense smoke curls slowly upward, the camera stays fixed\" --save_file /kaggle/working/clips/s05_c568f82aef90785f.mp4\n"}
+,{"stream_name":"stderr","time":435.603263254,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":438.772845616,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":438.773036434,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":438.773050344,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":438.773054667,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":438.773058616,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":438.77306228,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":438.773066062,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":438.773069559,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":439.612900912,"data":"[21:02:46] s05: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1005 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s05.png --prompt \"the incense smoke curls slowly upward, the camera stays fixed\" --save_file /kaggle/working/clips/s05_c568f82aef90785f.mp4')\n"}
+,{"stream_name":"stdout","time":439.613185415,"data":"[21:02:46] s05: error in 15s\n"}
+,{"stream_name":"stdout","time":439.614164012,"data":"[21:02:46] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 3006 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s06.png --prompt \"a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups\" --save_file /kaggle/working/clips/s06_89ded5e9df561603.mp4\n"}
+,{"stream_name":"stderr","time":443.407073484,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":446.602150764,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":446.602475307,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":446.602489977,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":446.602493632,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":446.602497088,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":446.602500294,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":446.602503779,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":446.602506972,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":447.461175829,"data":"[21:02:53] s06: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 3006 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s06.png --prompt \"a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups\" --save_file /kaggle/working/clips/s06_89ded5e9df561603.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":447.461252151,"data":"[21:02:53] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 3006 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s06.png --prompt \"a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups\" --save_file /kaggle/working/clips/s06_89ded5e9df561603.mp4\n"}
+,{"stream_name":"stderr","time":451.306712131,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":454.464203008,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":454.464409024,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":454.464422062,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":454.46442566,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":454.464429849,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":454.4644337,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":454.464437209,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":454.464440928,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":455.300802164,"data":"[21:03:01] s06: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 3006 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s06.png --prompt \"a steady thin stream of coffee pours into the cup, steam rises, the camera slowly tracks along the row of cups\" --save_file /kaggle/working/clips/s06_89ded5e9df561603.mp4')\n"}
+,{"stream_name":"stdout","time":455.301096931,"data":"[21:03:01] s06: error in 16s\n"}
+,{"stream_name":"stdout","time":455.301769725,"data":"[21:03:01] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1007 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s07.png --prompt \"people laugh and lean toward each other, the camera slowly pulls back\" --save_file /kaggle/working/clips/s07_17e8acf8047c4e46.mp4\n"}
+,{"stream_name":"stderr","time":459.065843518,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":462.30691771,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":462.307235074,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":462.307246246,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":462.307250081,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":462.307253857,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":462.307257185,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":462.307261002,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":462.307265771,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":463.137846997,"data":"[21:03:09] s07: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1007 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s07.png --prompt \"people laugh and lean toward each other, the camera slowly pulls back\" --save_file /kaggle/working/clips/s07_17e8acf8047c4e46.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":463.137921582,"data":"[21:03:09] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1007 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s07.png --prompt \"people laugh and lean toward each other, the camera slowly pulls back\" --save_file /kaggle/working/clips/s07_17e8acf8047c4e46.mp4\n"}
+,{"stream_name":"stderr","time":466.836858631,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":470.008555036,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":470.00882147,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":470.008831774,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":470.00883542,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":470.008839203,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":470.008842869,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":470.008846473,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":470.008849734,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":470.862847622,"data":"[21:03:17] s07: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1007 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s07.png --prompt \"people laugh and lean toward each other, the camera slowly pulls back\" --save_file /kaggle/working/clips/s07_17e8acf8047c4e46.mp4')\n"}
+,{"stream_name":"stdout","time":470.863160686,"data":"[21:03:17] s07: error in 16s\n"}
+,{"stream_name":"stdout","time":470.863864425,"data":"[21:03:17] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1008 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s08.png --prompt \"she slowly hands the cup forward and smiles, the camera stays fixed\" --save_file /kaggle/working/clips/s08_31280d1c4f409266.mp4\n"}
+,{"stream_name":"stderr","time":474.620160428,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":477.897308474,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":477.897672378,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":477.897689331,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":477.89769364,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":477.897697794,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":477.897701419,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":477.897705331,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":477.89770883,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":478.722270531,"data":"[21:03:25] s08: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1008 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s08.png --prompt \"she slowly hands the cup forward and smiles, the camera stays fixed\" --save_file /kaggle/working/clips/s08_31280d1c4f409266.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":478.722349873,"data":"[21:03:25] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1008 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s08.png --prompt \"she slowly hands the cup forward and smiles, the camera stays fixed\" --save_file /kaggle/working/clips/s08_31280d1c4f409266.mp4\n"}
+,{"stream_name":"stderr","time":482.565078841,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":485.758520586,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":485.758871362,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":485.758912547,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":485.758917474,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":485.758949036,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":485.758952551,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":485.758956121,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":485.758959423,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":486.595882806,"data":"[21:03:33] s08: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1008 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s08.png --prompt \"she slowly hands the cup forward and smiles, the camera stays fixed\" --save_file /kaggle/working/clips/s08_31280d1c4f409266.mp4')\n"}
+,{"stream_name":"stdout","time":486.596242192,"data":"[21:03:33] s08: error in 16s\n"}
+,{"stream_name":"stdout","time":486.596960807,"data":"[21:03:33] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1009 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s09.png --prompt \"steam rises from the cup, light snow falls outside the window, the camera stays fixed\" --save_file /kaggle/working/clips/s09_dcac06b6f6eee870.mp4\n"}
+,{"stream_name":"stderr","time":490.289312871,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":493.535331412,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":493.53570334,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":493.535721627,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":493.535724679,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":493.535727204,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":493.535729554,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":493.535732091,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":493.535734943,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":494.373159072,"data":"[21:03:40] s09: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1009 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s09.png --prompt \"steam rises from the cup, light snow falls outside the window, the camera stays fixed\" --save_file /kaggle/working/clips/s09_dcac06b6f6eee870.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":494.373201577,"data":"[21:03:40] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1009 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s09.png --prompt \"steam rises from the cup, light snow falls outside the window, the camera stays fixed\" --save_file /kaggle/working/clips/s09_dcac06b6f6eee870.mp4\n"}
+,{"stream_name":"stderr","time":498.145846124,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":501.389557285,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":501.389921895,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":501.389950546,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":501.38995804,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":501.389962857,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":501.389967034,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":501.389971722,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":501.389975961,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":502.238411078,"data":"[21:03:48] s09: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1009 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s09.png --prompt \"steam rises from the cup, light snow falls outside the window, the camera stays fixed\" --save_file /kaggle/working/clips/s09_dcac06b6f6eee870.mp4')\n"}
+,{"stream_name":"stdout","time":502.238719567,"data":"[21:03:48] s09: error in 16s\n"}
+,{"stream_name":"stdout","time":502.239470714,"data":"[21:03:48] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4\n"}
+,{"stream_name":"stderr","time":505.976039149,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":509.172854993,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":509.173125496,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":509.173138012,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":509.173143248,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":509.173147893,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":509.173152453,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":509.173156928,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":509.173161176,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":510.029846375,"data":"[21:03:56] s10: diffusers path failed: CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4'); trying official repo\n"}
+,{"stream_name":"stdout","time":510.030120412,"data":"[21:03:56] $ cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4\n"}
+,{"stream_name":"stderr","time":513.847401423,"data":"Disabling torchao because diffusers requires `torchao\u003e=0.15.0` but found version 0.10.0. Upgrade it with `pip install -U 'torchao\u003e=0.15.0'`.\n"}
+,{"stream_name":"stderr","time":517.050897603,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":517.051273436,"data":"  File \"/kaggle/working/Wan2.2/generate.py\", line 17, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":517.051284335,"data":"    import wan\n"}
+,{"stream_name":"stderr","time":517.051287852,"data":"  File \"/kaggle/working/Wan2.2/wan/__init__.py\", line 4, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":517.051291492,"data":"    from .speech2video import WanS2V\n"}
+,{"stream_name":"stderr","time":517.051294884,"data":"  File \"/kaggle/working/Wan2.2/wan/speech2video.py\", line 18, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":517.051298705,"data":"    from decord import VideoReader\n"}
+,{"stream_name":"stderr","time":517.051303577,"data":"ModuleNotFoundError: No module named 'decord'\n"}
+,{"stream_name":"stdout","time":517.887408907,"data":"[21:04:04] s10: FAILED CalledProcessError(1, 'cd /kaggle/working/Wan2.2 \u0026\u0026 /usr/bin/python3 generate.py --task ti2v-5B --size 480*832 --ckpt_dir /kaggle/working/Wan2.2-TI2V-5B --offload_model True --convert_model_dtype --t5_cpu --frame_num 121 --sample_steps 25 --base_seed 1010 --image /kaggle/input/datasets/ofgehagelana/tizita-wan22-i2v-inputs/s10.png --prompt \"steam rises slowly from the single cup, the camera pushes in very slowly\" --save_file /kaggle/working/clips/s10_0cdc18476f12a261.mp4')\n"}
+,{"stream_name":"stdout","time":517.887702246,"data":"[21:04:04] s10: error in 16s\n"}
+,{"stream_name":"stdout","time":517.888353677,"data":"[21:04:04] all jobs processed\n"}
+,{"stream_name":"stderr","time":522.231338539,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":522.231402665,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":522.45531772,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":522.455363334,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":523.223284945,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":524.184757287,"data":"[NbConvertApp] Writing 303772 bytes to __results__.html\n"}
+]
