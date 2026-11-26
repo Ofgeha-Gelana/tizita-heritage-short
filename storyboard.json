@@ -212,11 +212,16 @@
       "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the grandmother seated at the centre, Habesha neighbours and children with Ethiopian faces on low stools in a circle around her holding small coffee cups, laughing together, warm light",
       "motion_prompt": "people laugh and lean toward each other, the camera slowly pulls back",
       "seed": 1007,
-      "video_mode": "wan",
+      "video_mode": "kenburns",
       "narration": {
         "am": "በእያንዳንዱ ዙር ወሬው ይረዝማል፤ ሳቁም ይበዛል።"
       },
-      "subtitle_en": "With every round, the stories grow longer and the laughter louder."
+      "subtitle_en": "With every round, the stories grow longer and the laughter louder.",
+      "kenburns": {
+        "direction": "in",
+        "amount": 0.1
+      },
+      "notes": "Wan v2 (Habesha refs) had Emama raise a blue feather-duster-like object from ~1 s (v1 had a similar white object). Ken Burns on the keyframe (E18)."
     },
     {
       "id": "s08",
@@ -234,7 +239,9 @@
       "narration": {
         "am": "እማማ ሁሌም ትላለች፦ «ቡና ሰበብ ነው፤ ዋናው መገናኘት ነው።»"
       },
-      "subtitle_en": "Emama always said: \"Coffee is only an excuse. What matters is being together.\""
+      "subtitle_en": "Emama always said: \"Coffee is only an excuse. What matters is being together.\"",
+      "clip_out_s": 2.6,
+      "notes": "Wan v2 pushes in to her smile; a brown stain appears on the dress after ~2.8 s, so only the first 2.6 s are used (E18)."
     },
     {
       "id": "s09",
@@ -248,11 +255,16 @@
       "image_prompt": "present day, one single young man seen from behind standing alone at a window of a small apartment in a cold grey foreign city, holding a small white coffee cup with steam rising, cool blue light outside and warm lamp light inside",
       "motion_prompt": "steam rises from the cup, light snow falls outside the window, the camera stays fixed",
       "seed": 1009,
-      "video_mode": "wan",
+      "video_mode": "kenburns",
       "narration": {
         "am": "ዛሬ ከቤት ርቄ፣ ቡና ባፈላሁ ቁጥር ያ ጭስ ይታወሰኛል።"
       },
-      "subtitle_en": "Today, far from home, every time I make coffee, I remember that smoke."
+      "subtitle_en": "Today, far from home, every time I make coffee, I remember that smoke.",
+      "kenburns": {
+        "direction": "in",
+        "amount": 0.08
+      },
+      "notes": "Wan v2 turned his hair grey, flooded the window with steam and removed his trousers. Ken Burns on the keyframe (E18)."
     },
     {
       "id": "s10",
