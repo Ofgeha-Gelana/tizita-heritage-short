@@ -2,7 +2,7 @@
   "file": "outputs/final/tizita_am_vertical.mp4",
   "lang": "am",
   "export": "vertical",
-  "duration_s": 73.83,
+  "duration_s": 73.88,
   "integrated_lufs": -14.16,
   "true_peak_dbtp": -1.43,
   "shots": [
@@ -46,7 +46,7 @@
       "id": "s07",
       "start": 39.84,
       "len": 7,
-      "source": "clip"
+      "source": "kenburns"
     },
     {
       "id": "s08",
@@ -58,7 +58,7 @@
       "id": "s09",
       "start": 54.84,
       "len": 8,
-      "source": "clip"
+      "source": "kenburns"
     },
     {
       "id": "s10",
