@@ -16,15 +16,19 @@ A 74-second heritage short in Amharic with English subtitles, regenerated from o
 
 ## 2. What I learned from my audience
 
-> **[To write from DESIGN.md once the tests are done.]** For each test: who watched (roles, not names), the reactions that surprised me in their own words, and the storyboard change each one caused, with the commit hash that proves it. If a test changed nothing, say so and why.
+I tested twice with the same three viewers, all Ethiopian peers in the audience's age range. They watched in person on my laptop while I watched their reactions (DESIGN.md).
 
-**Test 1: radio cut** (`outputs/radio_cut_am.mp4`: narration, subtitles and score on black). The question: does the story land on sound and words alone?
+**Test 1: radio cut** (`outputs/radio_cut_am.mp4`: narration, subtitles and score on black). The question was whether the story lands on sound and words alone, before any GPU time is spent on pictures. All three were amazed by the audio quality. No problem with the script, voice or pacing came up, so the narration went into the full cut unchanged. That is a result, not a non-event: the most expensive stage (video) was built on a script that had already held an audience.
 
--
+**Test 2: full cut** (`outputs/final/tizita_am_vertical.mp4`). All three liked it ("amazing", "good", "the rests are very good"). Each one asked for one thing, and each ask was about *identity* or *craft*, not story:
 
-**Test 2: full cut** (`outputs/final/tizita_am_vertical.mp4`). The question: do the images help or distract, and does the ending make people want to call home?
+| Viewer said | What I heard | What I changed |
+|---|---|---|
+| "It is better if the music behind is tizita or 'hageregna'." | The score sounds generic ambient, not Ethiopian | Rewrote the score caption for traditional instruments (krar, masenqo, washint, soft kebero) and generated three new candidates. After comparing, **I kept the original (seed 22)**. The request was tested, not just accepted (`a91b3d1`) |
+| "Good if it is with good photo, specially with habesha face." | The characters did not read as *our* people | Named Habesha features and *shuruba* braids in the character descriptions, chose new reference seeds, and regenerated every shot with a person (`a91b3d1`, `5def2e2`) |
+| "Better if with a best video transformation… to be smooth." | Hard cuts, and clips freezing on their last frame | Crossfades between shots, motion interpolation instead of a freeze, and a slow push-in over every clip, with no change to narration timing (`pipeline/assemble.py`) |
 
--
+**The lesson:** for a heritage film, "is this us?" matters as much as "is this good?". The face and the sound are what make the audience recognise themselves, and an AI model's default "Ethiopian" was not specific enough until the prompt named the features.
 
 ## 3. The hardest problem and how I solved it
 
