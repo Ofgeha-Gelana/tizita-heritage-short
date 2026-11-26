@@ -1,0 +1,71 @@
+{
+  "file": "outputs/final/tizita_am_horizontal.mp4",
+  "lang": "am",
+  "export": "horizontal",
+  "duration_s": 73.83,
+  "integrated_lufs": -14.16,
+  "true_peak_dbtp": -1.43,
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "len": 7,
+      "source": "clip"
+    },
+    {
+      "id": "s02",
+      "start": 7.0,
+      "len": 7.84,
+      "source": "clip"
+    },
+    {
+      "id": "s03",
+      "start": 14.84,
+      "len": 6,
+      "source": "clip"
+    },
+    {
+      "id": "s04",
+      "start": 20.84,
+      "len": 7,
+      "source": "kenburns"
+    },
+    {
+      "id": "s05",
+      "start": 27.84,
+      "len": 5,
+      "source": "clip"
+    },
+    {
+      "id": "s06",
+      "start": 32.84,
+      "len": 7,
+      "source": "clip"
+    },
+    {
+      "id": "s07",
+      "start": 39.84,
+      "len": 7,
+      "source": "clip"
+    },
+    {
+      "id": "s08",
+      "start": 46.84,
+      "len": 8,
+      "source": "clip"
+    },
+    {
+      "id": "s09",
+      "start": 54.84,
+      "len": 8,
+      "source": "clip"
+    },
+    {
+      "id": "s10",
+      "start": 62.84,
+      "len": 8,
+      "source": "clip"
+    }
+  ],
+  "music": "outputs/music/candidate_seed22.wav"
+}
