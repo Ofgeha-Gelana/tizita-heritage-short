@@ -296,8 +296,9 @@ def build(sb: dict, lang: str, radio: bool) -> list[Path]:
     body = sum(e["len"] for e in tl)
     ec_dur = sb["end_card"]["duration_s"]
     total = body + ec_dur
-    music = placeholder(total + 2) if radio else (chosen_track(sb) or placeholder(total + 2))
-    if not radio and music.name.startswith("placeholder"):
+    # The radio cut uses the chosen score once there is one, so audience tests hear the real mix.
+    music = chosen_track(sb) or placeholder(total + 2)
+    if music.name.startswith("placeholder"):
         say(STAGE, "no chosen score yet; using the placeholder drone")
     audio = mix_audio(sb, tl, total, lang, music, radio)
     exports = [{"name": "radio", "width": 1280, "height": 720}] if radio else sb["format"]["exports"]
