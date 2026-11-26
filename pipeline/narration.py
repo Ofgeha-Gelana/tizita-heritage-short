@@ -170,6 +170,9 @@ def voice_for(sb: dict, lang: str) -> str:
     return sb["voice"].get("per_language", {}).get(lang, {}).get("name", sb["voice"]["name"])
 
 
+PIN_MODEL: str | None = None  # --model: regenerate with one model (voice match), same cache key
+
+
 def model_chain(sb: dict) -> list[str]:
     m = sb["models"]
     return [m["tts"], *m.get("tts_fallbacks", [])]
@@ -182,7 +185,7 @@ def narration_path(lang: str, shot_id: str):
 def tts_call(sb: dict, text: str, voice: str, item: str, lang: str) -> tuple[bytes, str, float]:
     """Try each model in the chain; returns (wav_bytes, model, latency_ms)."""
     skip = exhausted_today()
-    for model in model_chain(sb):
+    for model in ([PIN_MODEL] if PIN_MODEL else model_chain(sb)):
         if model in skip:
             continue
 
@@ -283,7 +286,10 @@ def main() -> None:
     ap.add_argument("--lang")
     ap.add_argument("--shots")
     ap.add_argument("--per-line", action="store_true", help="never batch")
+    ap.add_argument("--model", help="use only this TTS model, e.g. to match the voice of the other lines")
     a = ap.parse_args()
+    global PIN_MODEL
+    PIN_MODEL = a.model
     run(a.lang, a.shots, a.per_line)
 
 
