@@ -11,13 +11,21 @@ import wave
 
 import requests
 
-from .common import QuotaExhausted, classify_http, require_env
+from .common import QuotaExhausted, TransientError, classify_http, require_env
 
 GEMINI_BASE = "https://generativelanguage.googleapis.com/v1beta"
 TIMEOUT = 180
 
 
 # --------------------------------------------------------------------------- Gemini
+
+def _http(method, url, **kw):
+    """requests call whose timeouts and dropped connections are retryable (TransientError)."""
+    try:
+        return requests.request(method, url, **kw)
+    except (requests.Timeout, requests.ConnectionError) as e:
+        raise TransientError(f"network: {e!r}"[:400]) from e
+
 def _gemini_headers() -> dict:
     key = require_env("GEMINI_API_KEY")["GEMINI_API_KEY"]
     return {"x-goog-api-key": key, "Content-Type": "application/json"}
@@ -27,7 +35,7 @@ def gemini_list_models() -> list[str]:
     names, token = [], None
     while True:
         params = {"pageSize": 200, **({"pageToken": token} if token else {})}
-        r = requests.get(f"{GEMINI_BASE}/models", headers=_gemini_headers(), params=params, timeout=60)
+        r = _http("GET", f"{GEMINI_BASE}/models", headers=_gemini_headers(), params=params, timeout=60)
         classify_http(r)
         body = r.json()
         names += [m["name"].removeprefix("models/") for m in body.get("models", [])]
@@ -44,7 +52,7 @@ def gemini_text(model: str, prompt: str, *, temperature: float = 0.7, seed: int 
     if json_mode:
         cfg["responseMimeType"] = "application/json"
     payload = {"contents": [{"role": "user", "parts": [{"text": prompt}]}], "generationConfig": cfg}
-    r = requests.post(f"{GEMINI_BASE}/models/{model}:generateContent", headers=_gemini_headers(),
+    r = _http("POST", f"{GEMINI_BASE}/models/{model}:generateContent", headers=_gemini_headers(),
                       json=payload, timeout=TIMEOUT)
     classify_http(r)
     body = r.json()
@@ -67,7 +75,7 @@ def gemini_tts(model: str, text: str, *, voice: str, style: str) -> tuple[bytes,
             "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": voice}}},
         },
     }
-    r = requests.post(f"{GEMINI_BASE}/models/{model}:generateContent", headers=_gemini_headers(),
+    r = _http("POST", f"{GEMINI_BASE}/models/{model}:generateContent", headers=_gemini_headers(),
                       json=payload, timeout=TIMEOUT)
     classify_http(r)
     body = r.json()
@@ -111,9 +119,9 @@ def cf_image(model: str, prompt: str, *, seed: int, width: int, height: int, ste
         }
         for i, img in enumerate((reference_images or [])[:4]):
             form[f"input_image_{i}"] = (f"ref{i}.png", img, "image/png")
-        r = requests.post(base + model, headers=headers, files=form, timeout=TIMEOUT)
+        r = _http("POST", base + model, headers=headers, files=form, timeout=TIMEOUT)
     else:
-        r = requests.post(base + model, headers=headers, timeout=TIMEOUT,
+        r = _http("POST", base + model, headers=headers, timeout=TIMEOUT,
                           json={"prompt": prompt, "steps": min(steps, 8)})  # schnell rejects seed (FAILURES.md F6)
     if r.status_code == 429 or (r.status_code == 400 and "neuron" in r.text.lower()):
         # Workers AI reports the daily free allowance running out this way.
@@ -131,7 +139,7 @@ def cf_image(model: str, prompt: str, *, seed: int, width: int, height: int, ste
 
 def cf_list_flux_models() -> list[str]:
     env = require_env("CF_ACCOUNT_ID", "CF_API_TOKEN")
-    r = requests.get(
+    r = _http("GET", 
         f"https://api.cloudflare.com/client/v4/accounts/{env['CF_ACCOUNT_ID']}/ai/models/search",
         headers={"Authorization": f"Bearer {env['CF_API_TOKEN']}"},
         params={"search": "flux", "per_page": 50}, timeout=60,
