@@ -1,0 +1,8 @@
+[08:15:27] [w1] Tesla T4: 5 jobs: ['s02', 's04', 's06', 's08', 's10']
+[08:17:07] [w1] loaded pipeline (gpu); allocated 12.8 GB
+[08:30:01] [w1] s02: ok in 775s (peak 15.33 GB)
+[08:42:50] [w1] s04: ok in 769s (peak 14.9 GB)
+[08:55:40] [w1] s06: ok in 769s (peak 14.9 GB)
+[09:08:29] [w1] s08: ok in 770s (peak 14.9 GB)
+[09:21:17] [w1] s10: ok in 768s (peak 14.9 GB)
+[09:21:17] [w1] worker done
