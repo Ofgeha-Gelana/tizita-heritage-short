@@ -23,6 +23,18 @@ Each entry records what broke, the evidence, what was tried, and what fixed it o
 - **Tried:** (1) Renaming the dataset to `…-inputs` still gave 409, because the old dataset kept the slug. (2) Bisected with throwaway kernels: CPU, GPU and T4 with internet all pushed fine, and a trivial kernel named `tizita-wan22-i2v` still gave 409. So the slug was taken: kernels and datasets appear to share one namespace per user. (3) The probes then used up the batch tier's limit of 2 concurrent GPU sessions (`Maximum batch GPU session count of 2 reached`), so we deleted them once they had finished.
 - **Fixed:** The kernel is now `tizita-wan22-shots` and its datasets are `tizita-<name>-inputs`. The Wan batch (10 draft jobs) and the ACE-Step batch then pushed. The limit of 2 sessions means Wan and ACE-Step can run together, but nothing else can run alongside them.
 
+### F8: Wan 2.2 ran out of memory on a Kaggle T4, and the fallback could not install (2026-11-26)
+- **Broke:** Kernel v1: `diffusers-i2v-float16` loaded, then s01 failed after 15 s with `CUDA out of memory ... GPU 0 has a total capacity of 14.56 GiB of which 98.81 MiB is free`. The kernel then dropped diffusers for *every* remaining shot and used the official repo, whose `requirements.txt` failed to build `flash_attn`, and `generate.py` died on `ModuleNotFoundError: No module named 'decord'`. Result: 0/10 clips, about 9 minutes of GPU time. Log: `outputs/logs/kaggle_wan22_i2v_1795640071.log`.
+- **Diagnosis:** 121 frames at 480×832 is about 48k video tokens. A T4 (sm75) has no flash attention, so PyTorch SDPA may fall back to the "math" kernel, which builds the full attention matrix. The fp16 5B transformer alone is about 10 GB of the 15 GB.
+- **Fixed (kernel v2):** `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. The math and flash SDPA backends are disabled, so only memory-efficient attention runs. On OOM the kernel walks a ladder (121 → 81 → 49 frames, then sequential CPU offload) and keeps the rung that worked for later shots. Each result records `requested_frames`, `num_frames` and `ladder_rung`. A shorter clip is acceptable because assembly slows clips by up to 1.6× and then holds the last frame. The official fallback now installs only `decord easydict einops dashscope opencv-python-headless`.
+- **Result:** _to fill in after kernel v2._
+
+### F9: ACE-Step 1.5 does not install on Kaggle's Python 3.13 (2026-11-26)
+- **Broke:** Kernel v1 failed in 25 s: `ERROR: Package 'ace-step' requires a different Python: 3.13.16 not in '<3.13,>=3.11'`. The `requirements.txt` fallback then failed to build `flash-attn`.
+- **Diagnosis:** The Kaggle image moved to Python 3.13. ACE-Step's `nano-vllm` dependency ships a prebuilt flash-attn wheel only for CPython 3.11 on Linux x86_64.
+- **Fixed (kernel v2):** We follow the README instead of pip: `pip install uv`, then `uv sync --python 3.11` (uv downloads its own 3.11), then `os.execve` the same script inside `.venv` with `ACE_INNER=1`. On a T4 (sm75, which flash-attn does not support) the LM planner uses the `pt` backend directly instead of trying `vllm` first.
+- **Result:** _to fill in after kernel v2._
+
 <!-- Template:
 ### Fn: title (date)
 - **Broke:** what happened, with the exact error and the runs.jsonl item / kernel log
