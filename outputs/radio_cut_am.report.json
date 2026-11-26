@@ -3,8 +3,8 @@
   "lang": "am",
   "export": "radio",
   "duration_s": 73.78,
-  "integrated_lufs": -14.14,
-  "true_peak_dbtp": -0.91,
+  "integrated_lufs": -14.18,
+  "true_peak_dbtp": -1.43,
   "shots": [
     {
       "id": "s01",
