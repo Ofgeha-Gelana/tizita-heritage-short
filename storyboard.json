@@ -45,31 +45,31 @@
     {
       "id": "emama",
       "name": "Emama (grandmother)",
-      "description": "an Ethiopian grandmother in her seventies, warm dark-brown skin, kind deep-set eyes with smile lines, short grey hair mostly covered by a white cotton netela shawl with a thin green, yellow and red woven tibeb border, wearing a long white habesha kemis dress",
+      "description": "a Habesha grandmother from the Ethiopian highlands in her seventies, with the distinctive Habesha face: an oval face with high cheekbones, a slim straight nose, large almond-shaped dark eyes with smile lines, a gentle narrow chin, warm medium-brown skin, grey hair braided in fine traditional shuruba cornrows mostly covered by a white cotton netela shawl with a thin green, yellow and red woven tibeb border, wearing a long white habesha kemis dress",
       "real_person": false,
       "reference": {
-        "prompt": "character reference sheet of the same woman: front view, three-quarter view and side profile standing side by side on a plain warm cream background, full body, even soft light",
+        "prompt": "character reference sheet of the same Habesha woman: front view, three-quarter view and side profile standing side by side on a plain warm cream background, full body, face clearly visible, even soft light",
         "candidate_seeds": [
-          101,
-          202,
-          303,
-          404
+          505,
+          606,
+          707,
+          808
         ],
-        "chosen_seed": 202
+        "chosen_seed": 707
       }
     },
     {
       "id": "grandchild",
       "name": "Grandchild (narrator, present day)",
-      "description": "a young Ethiopian adult seen from behind or in soft profile, short black hair, wearing a grey knit sweater",
+      "description": "a young Habesha man in his twenties from Ethiopia, seen from behind or in soft profile, with the Habesha features of high cheekbones and a slim straight nose, warm medium-brown skin, short curly black hair, wearing a grey knit sweater",
       "real_person": false,
       "reference": {
         "prompt": "character reference sheet of the same young adult: back view, three-quarter back view and side profile on a plain cool grey background, upper body, even soft light",
         "candidate_seeds": [
-          111,
-          222
+          333,
+          444
         ],
-        "chosen_seed": 111
+        "chosen_seed": 444
       }
     }
   ],
@@ -209,7 +209,7 @@
       "characters": [
         "emama"
       ],
-      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the grandmother seated at the centre, neighbours and children on low stools in a circle around her holding small coffee cups, laughing together, warm light",
+      "image_prompt": "inside a traditional Ethiopian highland home with ochre mud-plastered walls and a packed-earth floor, the grandmother seated at the centre, Habesha neighbours and children with Ethiopian faces on low stools in a circle around her holding small coffee cups, laughing together, warm light",
       "motion_prompt": "people laugh and lean toward each other, the camera slowly pulls back",
       "seed": 1007,
       "video_mode": "wan",
@@ -272,18 +272,18 @@
     }
   ],
   "music": {
-    "caption": "instrumental film score, gentle Ethiopian-inspired ambient, soft plucked krar lyre and a distant bowed masenqo over warm sustained pads, pentatonic tizita mode, nostalgic, spacious, intimate, no drums, soft dynamics, sparse melody that leaves room for a narrator",
+    "caption": "traditional Ethiopian tizita instrumental, hageregna highland folk music, slow and tender melody on krar lyre with masenqo bowed fiddle and washint bamboo flute, tizita pentatonic mode, Ethiopian traditional song feel, nostalgic and longing, very soft kebero hand drum, sparse arrangement that leaves room for a narrator, warm, intimate, no vocals",
     "bpm": 66,
     "key": "E minor",
     "duration_s": 80,
     "instrumental": true,
     "candidate_seeds": [
-      11,
-      22,
-      33
+      44,
+      55,
+      66
     ],
     "chosen": 22,
-    "choice_reason": "Chosen by the director after listening to all three ACE-Step candidates (seeds 11, 22, 33) on 2026-11-26.",
+    "choice_reason": "Seed 22 chosen by the director after listening to the first three candidates (seeds 11, 22, 33). Test 2 asked for a more traditional tizita/hageregna sound, so the caption was rewritten and seeds 44, 55, 66 generated.",
     "music_gain_db": -6,
     "cues": [
       {
