@@ -1,0 +1,457 @@
+[{"stream_name":"stdout","time":1.097273835,"data":"[08:24:10] $ git clone --depth 1 https://github.com/ACE-Step/ACE-Step-1.5 /tmp/ACE-Step-1.5\n"}
+,{"stream_name":"stderr","time":1.13335576,"data":"Cloning into '/tmp/ACE-Step-1.5'...\n"}
+,{"stream_name":"stdout","time":2.123158223,"data":"[08:24:11] $ /usr/bin/python3 -m pip install -q uv\n"}
+,{"stream_name":"stdout","time":7.62372405,"data":"[08:24:17] $ cd /tmp/ACE-Step-1.5 \u0026\u0026 /usr/bin/python3 -m uv sync --python 3.11\n"}
+,{"stream_name":"stderr","time":8.12922504,"data":"Downloading cpython-3.11.18-linux-x86_64-gnu (download) (29.4MiB)\n"}
+,{"stream_name":"stderr","time":9.065732258,"data":" Downloaded cpython-3.11.18-linux-x86_64-gnu (download)\n"}
+,{"stream_name":"stderr","time":9.233072545,"data":"Using CPython 3.11.18\n"}
+,{"stream_name":"stderr","time":9.23310972,"data":"Creating virtual environment at: .venv\n"}
+,{"stream_name":"stderr","time":14.943761141,"data":"Resolved 176 packages in 5.70s\n"}
+,{"stream_name":"stderr","time":14.998716411,"data":"   Building ace-step @ file:///tmp/ACE-Step-1.5\n"}
+,{"stream_name":"stderr","time":15.001357223,"data":"   Building nano-vllm @ file:///tmp/ACE-Step-1.5/acestep/third_parts/nano-vllm\n"}
+,{"stream_name":"stderr","time":15.03888982,"data":"Downloading nvidia-cublas-cu12 (566.8MiB)\n"}
+,{"stream_name":"stderr","time":15.039488893,"data":"Downloading grpcio (6.4MiB)\n"}
+,{"stream_name":"stderr","time":15.040121973,"data":"Downloading pandas (12.2MiB)\n"}
+,{"stream_name":"stderr","time":15.040642074,"data":"Downloading nvidia-cuda-cupti-cu12 (9.8MiB)\n"}
+,{"stream_name":"stderr","time":15.041075838,"data":"Downloading nvidia-cusolver-cu12 (255.1MiB)\n"}
+,{"stream_name":"stderr","time":15.047466432,"data":"Downloading torchcodec (2.0MiB)\n"}
+,{"stream_name":"stderr","time":15.047921201,"data":"Downloading scipy (33.5MiB)\n"}
+,{"stream_name":"stderr","time":15.048315872,"data":"Downloading numpy (16.1MiB)\n"}
+,{"stream_name":"stderr","time":15.048916351,"data":"Downloading fonttools (4.8MiB)\n"}
+,{"stream_name":"stderr","time":15.050234935,"data":"Downloading nvidia-cudnn-cu12 (674.0MiB)\n"}
+,{"stream_name":"stderr","time":15.050507367,"data":"Downloading nvidia-cusparselt-cu12 (273.9MiB)\n"}
+,{"stream_name":"stderr","time":15.050777474,"data":"Downloading nvidia-nvshmem-cu12 (132.7MiB)\n"}
+,{"stream_name":"stderr","time":15.05109878,"data":"Downloading nvidia-curand-cu12 (60.7MiB)\n"}
+,{"stream_name":"stderr","time":15.051391979,"data":"Downloading nvidia-cuda-nvrtc-cu12 (84.0MiB)\n"}
+,{"stream_name":"stderr","time":15.051681905,"data":"Downloading transformers (11.4MiB)\n"}
+,{"stream_name":"stderr","time":15.051946696,"data":"Downloading sympy (6.0MiB)\n"}
+,{"stream_name":"stderr","time":15.052343688,"data":"Downloading uvloop (3.6MiB)\n"}
+,{"stream_name":"stderr","time":15.052456845,"data":"Downloading hf-xet (3.2MiB)\n"}
+,{"stream_name":"stderr","time":15.052744219,"data":"Downloading tokenizers (3.1MiB)\n"}
+,{"stream_name":"stderr","time":15.05297636,"data":"Downloading networkx (2.0MiB)\n"}
+,{"stream_name":"stderr","time":15.053232551,"data":"Downloading pydantic-core (2.0MiB)\n"}
+,{"stream_name":"stderr","time":15.053495996,"data":"Downloading brotli (1.4MiB)\n"}
+,{"stream_name":"stderr","time":15.053704442,"data":"Downloading pygments (1.2MiB)\n"}
+,{"stream_name":"stderr","time":15.053959018,"data":"Downloading nvidia-cufile-cu12 (1.1MiB)\n"}
+,{"stream_name":"stderr","time":15.057030457,"data":"Downloading diffusers (4.8MiB)\n"}
+,{"stream_name":"stderr","time":15.057045142,"data":"Downloading kiwisolver (1.4MiB)\n"}
+,{"stream_name":"stderr","time":15.057577302,"data":"Downloading soundfile (1.3MiB)\n"}
+,{"stream_name":"stderr","time":15.057860948,"data":"Downloading nvidia-nccl-cu12 (307.4MiB)\n"}
+,{"stream_name":"stderr","time":15.058091789,"data":"Downloading tensorboard (5.3MiB)\n"}
+,{"stream_name":"stderr","time":15.058409391,"data":"Downloading nvidia-cufft-cu12 (184.2MiB)\n"}
+,{"stream_name":"stderr","time":15.058706679,"data":"Downloading nvidia-cusparse-cu12 (274.9MiB)\n"}
+,{"stream_name":"stderr","time":15.058953663,"data":"Downloading pywavelets (4.3MiB)\n"}
+,{"stream_name":"stderr","time":15.05921664,"data":"Downloading modelscope (5.8MiB)\n"}
+,{"stream_name":"stderr","time":15.059472329,"data":"Downloading cuda-bindings (11.6MiB)\n"}
+,{"stream_name":"stderr","time":15.059795422,"data":"Downloading gradio (21.9MiB)\n"}
+,{"stream_name":"stderr","time":15.060078083,"data":"Downloading nvidia-nvjitlink-cu12 (37.4MiB)\n"}
+,{"stream_name":"stderr","time":15.060365498,"data":"Downloading tensorboard-data-server (6.3MiB)\n"}
+,{"stream_name":"stderr","time":15.060646948,"data":"Downloading numba (3.6MiB)\n"}
+,{"stream_name":"stderr","time":15.06090842,"data":"Downloading aiohttp (1.7MiB)\n"}
+,{"stream_name":"stderr","time":15.061160786,"data":"Downloading setuptools (2.2MiB)\n"}
+,{"stream_name":"stderr","time":15.061449069,"data":"Downloading torchao (3.0MiB)\n"}
+,{"stream_name":"stderr","time":15.061717946,"data":"Downloading matplotlib (8.3MiB)\n"}
+,{"stream_name":"stderr","time":15.061974575,"data":"Downloading triton (179.5MiB)\n"}
+,{"stream_name":"stderr","time":15.062282973,"data":"Downloading llvmlite (53.7MiB)\n"}
+,{"stream_name":"stderr","time":15.062793214,"data":"Downloading pillow (6.7MiB)\n"}
+,{"stream_name":"stderr","time":15.063031755,"data":"Downloading torch (874.3MiB)\n"}
+,{"stream_name":"stderr","time":15.063485574,"data":"Downloading torchaudio (1.8MiB)\n"}
+,{"stream_name":"stderr","time":15.069481137,"data":"Downloading torchvision (7.7MiB)\n"}
+,{"stream_name":"stderr","time":15.15824815,"data":"Downloading flash-attn (241.9MiB)\n"}
+,{"stream_name":"stderr","time":15.181611826,"data":" Downloaded torchaudio\n"}
+,{"stream_name":"stderr","time":15.276209223,"data":" Downloaded torchvision\n"}
+,{"stream_name":"stderr","time":16.393606296,"data":" Downloaded pygments\n"}
+,{"stream_name":"stderr","time":16.398761979,"data":" Downloaded nvidia-cufile-cu12\n"}
+,{"stream_name":"stderr","time":16.542501272,"data":" Downloaded soundfile\n"}
+,{"stream_name":"stderr","time":16.584902899,"data":" Downloaded kiwisolver\n"}
+,{"stream_name":"stderr","time":16.598325414,"data":" Downloaded brotli\n"}
+,{"stream_name":"stderr","time":16.784158952,"data":" Downloaded aiohttp\n"}
+,{"stream_name":"stderr","time":17.030337898,"data":" Downloaded networkx\n"}
+,{"stream_name":"stderr","time":17.030571599,"data":" Downloaded torchcodec\n"}
+,{"stream_name":"stderr","time":17.231837637,"data":" Downloaded pydantic-core\n"}
+,{"stream_name":"stderr","time":17.301699438,"data":" Downloaded setuptools\n"}
+,{"stream_name":"stderr","time":18.227682946,"data":" Downloaded torchao\n"}
+,{"stream_name":"stderr","time":18.318960379,"data":" Downloaded hf-xet\n"}
+,{"stream_name":"stderr","time":18.340567422,"data":" Downloaded tokenizers\n"}
+,{"stream_name":"stderr","time":18.59904584,"data":" Downloaded uvloop\n"}
+,{"stream_name":"stderr","time":18.688864068,"data":" Downloaded numba\n"}
+,{"stream_name":"stderr","time":19.04011314,"data":" Downloaded pywavelets\n"}
+,{"stream_name":"stderr","time":19.121877035,"data":" Downloaded diffusers\n"}
+,{"stream_name":"stderr","time":19.229382201,"data":" Downloaded fonttools\n"}
+,{"stream_name":"stderr","time":19.413397703,"data":" Downloaded tensorboard\n"}
+,{"stream_name":"stderr","time":19.633705287,"data":" Downloaded modelscope\n"}
+,{"stream_name":"stderr","time":19.896711681,"data":" Downloaded tensorboard-data-server\n"}
+,{"stream_name":"stderr","time":20.025407971,"data":" Downloaded grpcio\n"}
+,{"stream_name":"stderr","time":20.169328153,"data":" Downloaded sympy\n"}
+,{"stream_name":"stderr","time":20.283820132,"data":" Downloaded pillow\n"}
+,{"stream_name":"stderr","time":20.661698099,"data":" Downloaded matplotlib\n"}
+,{"stream_name":"stderr","time":21.235676351,"data":" Downloaded nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stderr","time":22.070354934,"data":" Downloaded transformers\n"}
+,{"stream_name":"stderr","time":22.136363563,"data":" Downloaded cuda-bindings\n"}
+,{"stream_name":"stderr","time":24.682899714,"data":" Downloaded pandas\n"}
+,{"stream_name":"stderr","time":25.073223534,"data":"      Built ace-step @ file:///tmp/ACE-Step-1.5\n"}
+,{"stream_name":"stderr","time":25.410567631,"data":" Downloaded numpy\n"}
+,{"stream_name":"stderr","time":25.632649973,"data":"      Built nano-vllm @ file:///tmp/ACE-Step-1.5/acestep/third_parts/nano-vllm\n"}
+,{"stream_name":"stderr","time":26.585889392,"data":" Downloaded gradio\n"}
+,{"stream_name":"stderr","time":29.00464715,"data":" Downloaded scipy\n"}
+,{"stream_name":"stderr","time":29.824610761,"data":" Downloaded nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stderr","time":32.387081107,"data":" Downloaded flash-attn\n"}
+,{"stream_name":"stderr","time":32.794505379,"data":" Downloaded llvmlite\n"}
+,{"stream_name":"stderr","time":33.83455298,"data":" Downloaded nvidia-curand-cu12\n"}
+,{"stream_name":"stderr","time":42.512720958,"data":" Downloaded nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stderr","time":49.552830786,"data":" Downloaded nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stderr","time":55.032424121,"data":" Downloaded nvidia-cufft-cu12\n"}
+,{"stream_name":"stderr","time":55.132733755,"data":" Downloaded triton\n"}
+,{"stream_name":"stderr","time":59.621645472,"data":" Downloaded torch\n"}
+,{"stream_name":"stderr","time":60.048593077,"data":" Downloaded nvidia-cusolver-cu12\n"}
+,{"stream_name":"stderr","time":60.946244145,"data":" Downloaded nvidia-cusparselt-cu12\n"}
+,{"stream_name":"stderr","time":61.044062547,"data":" Downloaded nvidia-cusparse-cu12\n"}
+,{"stream_name":"stderr","time":61.967689933,"data":" Downloaded nvidia-nccl-cu12\n"}
+,{"stream_name":"stderr","time":69.39180086,"data":" Downloaded nvidia-cublas-cu12\n"}
+,{"stream_name":"stderr","time":70.279687461,"data":" Downloaded nvidia-cudnn-cu12\n"}
+,{"stream_name":"stderr","time":72.414201828,"data":"Prepared 142 packages in 57.46s\n"}
+,{"stream_name":"stderr","time":72.896443608,"data":"Installed 142 packages in 482ms\n"}
+,{"stream_name":"stderr","time":72.898315198,"data":" + absl-py==2.4.0\n"}
+,{"stream_name":"stderr","time":72.898336488,"data":" + accelerate==1.12.0\n"}
+,{"stream_name":"stderr","time":72.898342589,"data":" + ace-step==1.5.0 (from file:///tmp/ACE-Step-1.5)\n"}
+,{"stream_name":"stderr","time":72.898347871,"data":" + aiofiles==24.1.0\n"}
+,{"stream_name":"stderr","time":72.898353439,"data":" + aiohappyeyeballs==2.6.1\n"}
+,{"stream_name":"stderr","time":72.898358239,"data":" + aiohttp==3.13.3\n"}
+,{"stream_name":"stderr","time":72.898362989,"data":" + aiosignal==1.4.0\n"}
+,{"stream_name":"stderr","time":72.898367964,"data":" + annotated-doc==0.0.4\n"}
+,{"stream_name":"stderr","time":72.898381435,"data":" + annotated-types==0.7.0\n"}
+,{"stream_name":"stderr","time":72.898395589,"data":" + anyio==4.12.1\n"}
+,{"stream_name":"stderr","time":72.898399775,"data":" + attrs==25.4.0\n"}
+,{"stream_name":"stderr","time":72.898403491,"data":" + brotli==1.2.0\n"}
+,{"stream_name":"stderr","time":72.898407239,"data":" + certifi==2026.1.4\n"}
+,{"stream_name":"stderr","time":72.898411212,"data":" + cffi==2.0.0\n"}
+,{"stream_name":"stderr","time":72.898415038,"data":" + charset-normalizer==3.4.4\n"}
+,{"stream_name":"stderr","time":72.898418655,"data":" + click==8.3.1\n"}
+,{"stream_name":"stderr","time":72.898422235,"data":" + contourpy==1.3.3\n"}
+,{"stream_name":"stderr","time":72.898425956,"data":" + cuda-bindings==12.9.4\n"}
+,{"stream_name":"stderr","time":72.898429728,"data":" + cuda-pathfinder==1.3.3\n"}
+,{"stream_name":"stderr","time":72.898433533,"data":" + cycler==0.12.1\n"}
+,{"stream_name":"stderr","time":72.898437351,"data":" + diffusers==0.37.1\n"}
+,{"stream_name":"stderr","time":72.898441101,"data":" + diskcache==5.6.3\n"}
+,{"stream_name":"stderr","time":72.898444821,"data":" + einops==0.8.2\n"}
+,{"stream_name":"stderr","time":72.898448543,"data":" + einx==0.3.0\n"}
+,{"stream_name":"stderr","time":72.898451964,"data":" + fastapi==0.128.0\n"}
+,{"stream_name":"stderr","time":72.898455573,"data":" + ffmpy==1.0.0\n"}
+,{"stream_name":"stderr","time":72.898459256,"data":" + filelock==3.20.3\n"}
+,{"stream_name":"stderr","time":72.898463274,"data":" + flash-attn==2.8.3+cu128torch2.10 (from https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.7.12/flash_attn-2.8.3+cu128torch2.10-cp311-cp311-linux_x86_64.whl)\n"}
+,{"stream_name":"stderr","time":72.898470106,"data":" + fonttools==4.61.1\n"}
+,{"stream_name":"stderr","time":72.898474754,"data":" + frozendict==2.4.7\n"}
+,{"stream_name":"stderr","time":72.898478685,"data":" + frozenlist==1.8.0\n"}
+,{"stream_name":"stderr","time":72.898482313,"data":" + fsspec==2026.1.0\n"}
+,{"stream_name":"stderr","time":72.898486243,"data":" + gradio==6.2.0\n"}
+,{"stream_name":"stderr","time":72.89848999,"data":" + gradio-client==2.0.2\n"}
+,{"stream_name":"stderr","time":72.898493795,"data":" + groovy==0.1.2\n"}
+,{"stream_name":"stderr","time":72.898497583,"data":" + grpcio==1.78.0\n"}
+,{"stream_name":"stderr","time":72.898501971,"data":" + h11==0.16.0\n"}
+,{"stream_name":"stderr","time":72.898505901,"data":" + hf-xet==1.2.0\n"}
+,{"stream_name":"stderr","time":72.898509682,"data":" + httpcore==1.0.9\n"}
+,{"stream_name":"stderr","time":72.898513435,"data":" + httptools==0.7.1\n"}
+,{"stream_name":"stderr","time":72.898517145,"data":" + httpx==0.28.1\n"}
+,{"stream_name":"stderr","time":72.898520771,"data":" + huggingface-hub==0.36.0\n"}
+,{"stream_name":"stderr","time":72.898524978,"data":" + idna==3.11\n"}
+,{"stream_name":"stderr","time":72.898528737,"data":" + importlib-metadata==8.7.1\n"}
+,{"stream_name":"stderr","time":72.898532673,"data":" + jinja2==3.1.6\n"}
+,{"stream_name":"stderr","time":72.898536913,"data":" + kiwisolver==1.4.9\n"}
+,{"stream_name":"stderr","time":72.898688637,"data":" + lightning==2.6.1\n"}
+,{"stream_name":"stderr","time":72.89921038,"data":" + lightning-utilities==0.15.2\n"}
+,{"stream_name":"stderr","time":72.899224702,"data":" + llvmlite==0.46.0\n"}
+,{"stream_name":"stderr","time":72.899229404,"data":" + loguru==0.7.3\n"}
+,{"stream_name":"stderr","time":72.899233383,"data":" + lycoris-lora==3.4.0\n"}
+,{"stream_name":"stderr","time":72.899237486,"data":" + markdown==3.10.1\n"}
+,{"stream_name":"stderr","time":72.899250748,"data":" + markdown-it-py==4.0.0\n"}
+,{"stream_name":"stderr","time":72.899254407,"data":" + markupsafe==3.0.3\n"}
+,{"stream_name":"stderr","time":72.899258132,"data":" + matplotlib==3.10.8\n"}
+,{"stream_name":"stderr","time":72.899262094,"data":" + mdurl==0.1.2\n"}
+,{"stream_name":"stderr","time":72.899285758,"data":" + modelscope==1.34.0\n"}
+,{"stream_name":"stderr","time":72.89936311,"data":" + mpmath==1.3.0\n"}
+,{"stream_name":"stderr","time":72.899406456,"data":" + multidict==6.7.1\n"}
+,{"stream_name":"stderr","time":72.89950203,"data":" + nano-vllm==0.2.0 (from file:///tmp/ACE-Step-1.5/acestep/third_parts/nano-vllm)\n"}
+,{"stream_name":"stderr","time":72.89954425,"data":" + networkx==3.6.1\n"}
+,{"stream_name":"stderr","time":72.899604761,"data":" + numba==0.63.1\n"}
+,{"stream_name":"stderr","time":72.899708808,"data":" + numpy==2.3.5\n"}
+,{"stream_name":"stderr","time":72.899747689,"data":" + nvidia-cublas-cu12==12.8.4.1\n"}
+,{"stream_name":"stderr","time":72.899797126,"data":" + nvidia-cuda-cupti-cu12==12.8.90\n"}
+,{"stream_name":"stderr","time":72.899877694,"data":" + nvidia-cuda-nvrtc-cu12==12.8.93\n"}
+,{"stream_name":"stderr","time":72.899937985,"data":" + nvidia-cuda-runtime-cu12==12.8.90\n"}
+,{"stream_name":"stderr","time":72.900027031,"data":" + nvidia-cudnn-cu12==9.10.2.21\n"}
+,{"stream_name":"stderr","time":72.900092259,"data":" + nvidia-cufft-cu12==11.3.3.83\n"}
+,{"stream_name":"stderr","time":72.900188293,"data":" + nvidia-cufile-cu12==1.13.1.3\n"}
+,{"stream_name":"stderr","time":72.900260033,"data":" + nvidia-curand-cu12==10.3.9.90\n"}
+,{"stream_name":"stderr","time":72.900410967,"data":" + nvidia-cusolver-cu12==11.7.3.90\n"}
+,{"stream_name":"stderr","time":72.900446757,"data":" + nvidia-cusparse-cu12==12.5.8.93\n"}
+,{"stream_name":"stderr","time":72.900517345,"data":" + nvidia-cusparselt-cu12==0.7.1\n"}
+,{"stream_name":"stderr","time":72.900555373,"data":" + nvidia-nccl-cu12==2.27.5\n"}
+,{"stream_name":"stderr","time":72.900640962,"data":" + nvidia-nvjitlink-cu12==12.8.93\n"}
+,{"stream_name":"stderr","time":72.90070205,"data":" + nvidia-nvshmem-cu12==3.4.5\n"}
+,{"stream_name":"stderr","time":72.900759261,"data":" + nvidia-nvtx-cu12==12.8.90\n"}
+,{"stream_name":"stderr","time":72.900860293,"data":" + orjson==3.11.5\n"}
+,{"stream_name":"stderr","time":72.90087826,"data":" + packaging==26.0\n"}
+,{"stream_name":"stderr","time":72.900964232,"data":" + pandas==2.3.3\n"}
+,{"stream_name":"stderr","time":72.900980196,"data":" + peft==0.18.1\n"}
+,{"stream_name":"stderr","time":72.901065915,"data":" + pillow==12.1.0\n"}
+,{"stream_name":"stderr","time":72.901127342,"data":" + propcache==0.4.1\n"}
+,{"stream_name":"stderr","time":72.901208645,"data":" + protobuf==6.33.5\n"}
+,{"stream_name":"stderr","time":72.901302277,"data":" + psutil==7.2.1\n"}
+,{"stream_name":"stderr","time":72.901388633,"data":" + pycparser==3.0\n"}
+,{"stream_name":"stderr","time":72.901440458,"data":" + pydantic==2.12.5\n"}
+,{"stream_name":"stderr","time":72.901495397,"data":" + pydantic-core==2.41.5\n"}
+,{"stream_name":"stderr","time":72.901619295,"data":" + pydub==0.25.1\n"}
+,{"stream_name":"stderr","time":72.901663828,"data":" + pygments==2.19.2\n"}
+,{"stream_name":"stderr","time":72.901709156,"data":" + pyparsing==3.3.2\n"}
+,{"stream_name":"stderr","time":72.901747546,"data":" + python-dateutil==2.9.0.post0\n"}
+,{"stream_name":"stderr","time":72.901824839,"data":" + python-dotenv==1.2.1\n"}
+,{"stream_name":"stderr","time":72.901883594,"data":" + python-multipart==0.0.22\n"}
+,{"stream_name":"stderr","time":72.901952006,"data":" + pytorch-lightning==2.6.1\n"}
+,{"stream_name":"stderr","time":72.901998402,"data":" + pytorch-wavelets==1.3.0\n"}
+,{"stream_name":"stderr","time":72.902094447,"data":" + pytz==2025.2\n"}
+,{"stream_name":"stderr","time":72.902190205,"data":" + pywavelets==1.9.0\n"}
+,{"stream_name":"stderr","time":72.90220788,"data":" + pyyaml==6.0.3\n"}
+,{"stream_name":"stderr","time":72.902260495,"data":" + regex==2026.1.15\n"}
+,{"stream_name":"stderr","time":72.902328614,"data":" + requests==2.32.5\n"}
+,{"stream_name":"stderr","time":72.90240031,"data":" + rich==14.3.1\n"}
+,{"stream_name":"stderr","time":72.902467194,"data":" + safehttpx==0.1.7\n"}
+,{"stream_name":"stderr","time":72.902535761,"data":" + safetensors==0.7.0\n"}
+,{"stream_name":"stderr","time":72.9025899,"data":" + scipy==1.17.0\n"}
+,{"stream_name":"stderr","time":72.902656653,"data":" + semantic-version==2.10.0\n"}
+,{"stream_name":"stderr","time":72.902735054,"data":" + setuptools==71.1.0\n"}
+,{"stream_name":"stderr","time":72.902787563,"data":" + shellingham==1.5.4\n"}
+,{"stream_name":"stderr","time":72.902881695,"data":" + six==1.17.0\n"}
+,{"stream_name":"stderr","time":72.902957981,"data":" + soundfile==0.13.1\n"}
+,{"stream_name":"stderr","time":72.903065407,"data":" + starlette==0.50.0\n"}
+,{"stream_name":"stderr","time":72.903070931,"data":" + sympy==1.14.0\n"}
+,{"stream_name":"stderr","time":72.903141472,"data":" + tensorboard==2.20.0\n"}
+,{"stream_name":"stderr","time":72.903217917,"data":" + tensorboard-data-server==0.7.2\n"}
+,{"stream_name":"stderr","time":72.903275871,"data":" + tokenizers==0.22.2\n"}
+,{"stream_name":"stderr","time":72.9033355,"data":" + toml==0.10.2\n"}
+,{"stream_name":"stderr","time":72.903392985,"data":" + tomlkit==0.13.3\n"}
+,{"stream_name":"stderr","time":72.903488971,"data":" + torch==2.10.0+cu128\n"}
+,{"stream_name":"stderr","time":72.903543905,"data":" + torchao==0.16.0\n"}
+,{"stream_name":"stderr","time":72.903621258,"data":" + torchaudio==2.10.0+cu128\n"}
+,{"stream_name":"stderr","time":72.903734319,"data":" + torchcodec==0.10.0\n"}
+,{"stream_name":"stderr","time":72.90374824,"data":" + torchmetrics==1.8.2\n"}
+,{"stream_name":"stderr","time":72.903832685,"data":" + torchvision==0.25.0+cu128\n"}
+,{"stream_name":"stderr","time":72.90393419,"data":" + tqdm==4.67.1\n"}
+,{"stream_name":"stderr","time":72.903985858,"data":" + transformers==4.57.6\n"}
+,{"stream_name":"stderr","time":72.9040039,"data":" + triton==3.6.0\n"}
+,{"stream_name":"stderr","time":72.904100578,"data":" + typer==0.21.1\n"}
+,{"stream_name":"stderr","time":72.904142965,"data":" + typer-slim==0.21.2\n"}
+,{"stream_name":"stderr","time":72.904219691,"data":" + typing-extensions==4.15.0\n"}
+,{"stream_name":"stderr","time":72.904287137,"data":" + typing-inspection==0.4.2\n"}
+,{"stream_name":"stderr","time":72.904356908,"data":" + tzdata==2025.3\n"}
+,{"stream_name":"stderr","time":72.904446767,"data":" + urllib3==2.6.3\n"}
+,{"stream_name":"stderr","time":72.904494699,"data":" + uvicorn==0.40.0\n"}
+,{"stream_name":"stderr","time":72.90458325,"data":" + uvloop==0.22.1\n"}
+,{"stream_name":"stderr","time":72.904639695,"data":" + vector-quantize-pytorch==1.27.20\n"}
+,{"stream_name":"stderr","time":72.90470358,"data":" + watchfiles==1.1.1\n"}
+,{"stream_name":"stderr","time":72.904766289,"data":" + websockets==16.0\n"}
+,{"stream_name":"stderr","time":72.904848082,"data":" + werkzeug==3.1.5\n"}
+,{"stream_name":"stderr","time":72.904902084,"data":" + xxhash==3.6.0\n"}
+,{"stream_name":"stderr","time":72.904989423,"data":" + yarl==1.22.0\n"}
+,{"stream_name":"stderr","time":72.905040558,"data":" + zipp==3.23.0\n"}
+,{"stream_name":"stdout","time":72.926799785,"data":"[08:25:22] re-running inside /tmp/ACE-Step-1.5/.venv/bin/python\n"}
+,{"stream_name":"stderr","time":76.556341549,"data":"2026-11-26 08:25:26.271 | DEBUG    | acestep.core.generation.handler.init_service_memory_basic:_apply_malloc_mmap_threshold:50 - [memory] Set M_MMAP_THRESHOLD=131072 for immediate OS reclaim of large frees\n"}
+,{"stream_name":"stderr","time":89.252849692,"data":"2026-11-26 08:25:38.968 | WARNING  | acestep.training.trainer:\u003cmodule\u003e:40 - bitsandbytes not installed. Using standard AdamW.\n"}
+,{"stream_name":"stdout","time":89.339290408,"data":"[08:25:39] GPU: Tesla T4\n"}
+,{"stream_name":"stderr","time":89.339617455,"data":"2026-11-26 08:25:39.055 | INFO     | acestep.gpu_config:get_gpu_memory_gb:578 - CUDA GPU detected: Tesla T4 (14.6 GB)\n"}
+,{"stream_name":"stderr","time":89.339862879,"data":"2026-11-26 08:25:39.055 | INFO     | acestep.core.generation.handler.init_service_orchestrator:initialize_service:96 - [initialize_service] Pre-Ampere CUDA detected: using float16 instead of bfloat16.\n"}
+,{"stream_name":"stderr","time":89.340109036,"data":"2026-11-26 08:25:39.055 | INFO     | acestep.core.generation.handler.init_service_downloads:_ensure_models_present:32 - [initialize_service] Main model not found, starting auto-download...\n"}
+,{"stream_name":"stderr","time":89.344423072,"data":"2026-11-26 08:25:39.060 | INFO     | acestep.model_downloader:_smart_download:249 - [Model Download] Auto-detected: HuggingFace Hub\n"}
+,{"stream_name":"stderr","time":89.344442452,"data":"2026-11-26 08:25:39.060 | INFO     | acestep.model_downloader:_smart_download:252 - [Model Download] Using HuggingFace Hub...\n"}
+,{"stream_name":"stderr","time":89.344685096,"data":"2026-11-26 08:25:39.060 | INFO     | acestep.model_downloader:_download_from_huggingface_internal:180 - [Model Download] Downloading from HuggingFace: ACE-Step/Ace-Step1.5 -\u003e /tmp/ACE-Step-1.5/checkpoints\n"}
+,{"stream_name":"stdout","time":89.405574172,"data":"\n"}
+,{"stream_name":"stdout","time":89.405590261,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":89.405594569,"data":"Main model not found. Starting automatic download...\n"}
+,{"stream_name":"stdout","time":89.405598195,"data":"============================================================\n"}
+,{"stream_name":"stdout","time":89.40560842,"data":"\n"}
+,{"stream_name":"stdout","time":89.405641774,"data":"Downloading main model from ACE-Step/Ace-Step1.5...\n"}
+,{"stream_name":"stdout","time":89.405646091,"data":"Destination: /tmp/ACE-Step-1.5/checkpoints\n"}
+,{"stream_name":"stdout","time":89.405650187,"data":"This may take a while depending on your internet connection...\n"}
+,{"stream_name":"stderr","time":133.46455056,"data":"\rFetching 28 files:   0%|          | 0/28 [00:00\u003c?, ?it/s]\rFetching 28 files:   7%|▋         | 2/28 [00:00\u003c00:01, 15.99it/s]\rFetching 28 files:  14%|█▍        | 4/28 [00:00\u003c00:01, 14.21it/s]\rFetching 28 files:  14%|█▍        | 4/28 [00:19\u003c00:01, 14.21it/s]\rFetching 28 files:  21%|██▏       | 6/28 [00:43\u003c03:40, 10.01s/it]\rFetching 28 files:  57%|█████▋    | 16/28 [00:44\u003c00:28,  2.36s/it]\rFetching 28 files: 100%|██████████| 28/28 [00:44\u003c00:00,  1.57s/it]\n"}
+,{"stream_name":"stderr","time":133.471677727,"data":"2026-11-26 08:26:23.187 | DEBUG    | acestep.model_downloader:_sync_model_code_files:131 - [Model Sync] Synced modeling_acestep_v15_turbo.py -\u003e /tmp/ACE-Step-1.5/checkpoints/acestep-v15-turbo/modeling_acestep_v15_turbo.py\n"}
+,{"stream_name":"stderr","time":133.472243061,"data":"2026-11-26 08:26:23.187 | DEBUG    | acestep.model_downloader:_sync_model_code_files:131 - [Model Sync] Synced configuration_acestep_v15.py -\u003e /tmp/ACE-Step-1.5/checkpoints/acestep-v15-turbo/configuration_acestep_v15.py\n"}
+,{"stream_name":"stderr","time":133.472460292,"data":"2026-11-26 08:26:23.188 | INFO     | acestep.model_downloader:download_main_model:489 - [Model Download] Synced code files for acestep-v15-turbo: ['modeling_acestep_v15_turbo.py', 'configuration_acestep_v15.py']\n"}
+,{"stream_name":"stderr","time":133.472486235,"data":"2026-11-26 08:26:23.188 | INFO     | acestep.core.generation.handler.init_service_downloads:_ensure_models_present:36 - [initialize_service] Successfully downloaded from HuggingFace: ACE-Step/Ace-Step1.5\n"}
+,{"stream_name":"stderr","time":133.774611107,"data":"2026-11-26 08:26:23.490 | INFO     | acestep.core.generation.handler.init_service_loader:_load_main_model_from_checkpoint:151 - [initialize_service] Pre-Ampere CUDA detected: using eager attention for float16 numerical stability.\n"}
+,{"stream_name":"stderr","time":133.774641493,"data":"2026-11-26 08:26:23.490 | INFO     | acestep.core.generation.handler.init_service_loader:_load_main_model_from_checkpoint:174 - [initialize_service] Attempting to load model with attention implementation: eager\n"}
+,{"stream_name":"stdout","time":153.995546714,"data":"[08:26:43] LM planner loaded with backend=pt\n"}
+,{"stream_name":"stdout","time":153.996522484,"data":"[08:26:43] models loaded in 65s (planner=on)\n"}
+,{"stream_name":"stderr","time":153.996829426,"data":"2026-11-26 08:26:43.712 | INFO     | acestep.inference:generate_music:662 - [generate_music] LLM usage decision: thinking=True, use_cot_caption=True, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=False, use_lm=False\n"}
+,{"stream_name":"stderr","time":153.997673405,"data":"2026-11-26 08:26:43.713 | INFO     | acestep.core.generation.handler.generate_music:generate_music:313 - [generate_music] Turbo model detected: overriding guidance_scale 7.0 -\u003e 1.0 (turbo does not use CFG).\n"}
+,{"stream_name":"stderr","time":153.997717005,"data":"2026-11-26 08:26:43.713 | INFO     | acestep.core.generation.handler.generate_music:generate_music:329 - [generate_music] Starting generation...\n"}
+,{"stream_name":"stderr","time":153.997848363,"data":"2026-11-26 08:26:43.713 | INFO     | acestep.core.generation.handler.generate_music:generate_music:332 - [generate_music] Preparing inputs...\n"}
+,{"stream_name":"stderr","time":154.283127234,"data":"2026-11-26 08:26:43.998 | INFO     | acestep.core.generation.handler.generate_music:_vram_preflight_check:157 - [generate_music] VRAM pre-flight: 8.55 GB free, ~0.90 GB needed (batch=1, duration=80s, mode=turbo).\n"}
+,{"stream_name":"stderr","time":154.283202673,"data":"2026-11-26 08:26:43.998 | INFO     | acestep.core.generation.handler.progress:_start_diffusion_progress_estimator:179 - [progress] No timing history — using fallback estimate (2.5s/step for batch_size=1).  This will self-calibrate after the first generation.\n"}
+,{"stream_name":"stderr","time":154.496178531,"data":"2026-11-26 08:26:44.211 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - \n"}
+,{"stream_name":"stderr","time":154.496209463,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":154.496214201,"data":"2026-11-26 08:26:44.211 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)\n"}
+,{"stream_name":"stderr","time":154.496342457,"data":"2026-11-26 08:26:44.212 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================\n"}
+,{"stream_name":"stderr","time":154.496417029,"data":"2026-11-26 08:26:44.212 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:\n"}
+,{"stream_name":"stderr","time":154.49642395,"data":"# Instruction\n"}
+,{"stream_name":"stderr","time":154.496427783,"data":"Fill the audio semantic mask based on the given conditions:\n"}
+,{"stream_name":"stderr","time":154.496431853,"data":"\n"}
+,{"stream_name":"stderr","time":154.496435411,"data":"# Caption\n"}
+,{"stream_name":"stderr","time":154.496439794,"data":"instrumental film score, gentle Ethiopian-inspired ambient, soft plucked krar lyre and a distant bowed masenqo over warm sustained pads, pentatonic tizita mode, nostalgic, spacious, intimate, no drums, soft dynamics, sparse melody that leaves room for a narrator\n"}
+,{"stream_name":"stderr","time":154.496444171,"data":"\n"}
+,{"stream_name":"stderr","time":154.496447406,"data":"# Metas\n"}
+,{"stream_name":"stderr","time":154.496450657,"data":"- bpm: 66\n"}
+,{"stream_name":"stderr","time":154.496453793,"data":"- timesignature: N/A\n"}
+,{"stream_name":"stderr","time":154.496456982,"data":"- keyscale: E minor\n"}
+,{"stream_name":"stderr","time":154.496460352,"data":"- duration: 80 seconds\n"}
+,{"stream_name":"stderr","time":154.496464158,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":154.496467951,"data":"\n"}
+,{"stream_name":"stderr","time":154.496501145,"data":"2026-11-26 08:26:44.212 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================\n"}
+,{"stream_name":"stderr","time":154.496556508,"data":"2026-11-26 08:26:44.212 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:\n"}
+,{"stream_name":"stderr","time":154.496563692,"data":"# Languages\n"}
+,{"stream_name":"stderr","time":154.496567977,"data":"unknown\n"}
+,{"stream_name":"stderr","time":154.496571723,"data":"\n"}
+,{"stream_name":"stderr","time":154.496575185,"data":"# Lyric\n"}
+,{"stream_name":"stderr","time":154.496579308,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":154.496625911,"data":"2026-11-26 08:26:44.212 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================\n"}
+,{"stream_name":"stderr","time":154.496631185,"data":"\n"}
+,{"stream_name":"stderr","time":154.549059089,"data":"2026-11-26 08:26:44.264 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...\n"}
+,{"stream_name":"stderr","time":155.245770809,"data":"2026-11-26 08:26:44.961 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...\n"}
+,{"stream_name":"stderr","time":155.318523703,"data":"2026-11-26 08:26:45.033 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:173 - [service_generate] Generating audio... (DiT backend: PyTorch (cuda))\n"}
+,{"stream_name":"stderr","time":155.663208243,"data":"2026-11-26 08:26:45.378 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:276 - [service_generate] DiT diffusion via PyTorch (cuda)...\n"}
+,{"stream_name":"stderr","time":155.803488562,"data":"2026-11-26 08:26:45.519 | INFO     | acestep.models.common.dcw_correction:__init__:98 - [DCW] Active — mode=double, scaler=0.0500, high_scaler=0.0200, wavelet='haar'\n"}
+,{"stream_name":"stderr","time":156.789008881,"data":"2026-11-26 08:26:46.504 | INFO     | acestep.models.common.dcw_loader:get:84 - [DCW] Built DWT1D for wavelet='haar' (low-pass filter taps=2, device=cuda:0, dtype=torch.float16).\n"}
+,{"stream_name":"stderr","time":158.458408775,"data":"2026-11-26 08:26:48.174 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...\n"}
+,{"stream_name":"stderr","time":158.459392834,"data":"2026-11-26 08:26:48.175 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 2000, 64]), dtype=torch.float16\n"}
+,{"stream_name":"stderr","time":158.459464857,"data":"2026-11-26 08:26:48.175 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'encoder_time_cost': 0.07752537727355957, 'diffusion_time_cost': 2.716937303543091, 'diffusion_per_step_time_cost': 0.33961716294288635, 'total_time_cost': 2.7944626808166504, 'offload_time_cost': 0.0}\n"}
+,{"stream_name":"stderr","time":158.556188127,"data":"2026-11-26 08:26:48.271 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...\n"}
+,{"stream_name":"stderr","time":158.558730169,"data":"2026-11-26 08:26:48.274 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=5.91GB, max=6.09GB\n"}
+,{"stream_name":"stderr","time":158.559094431,"data":"2026-11-26 08:26:48.274 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:154 - [generate_music] Effective free VRAM before VAE decode: 8.52 GB\n"}
+,{"stream_name":"stderr","time":158.559105933,"data":"2026-11-26 08:26:48.274 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...\n"}
+,{"stream_name":"stderr","time":158.559668886,"data":"2026-11-26 08:26:48.275 | DEBUG    | acestep.core.generation.handler.memory_utils:_get_auto_decode_chunk_size:108 - [_get_auto_decode_chunk_size] Effective free VRAM: 8.52 GB\n"}
+,{"stream_name":"stderr","time":158.560090402,"data":"2026-11-26 08:26:48.275 | DEBUG    | acestep.core.generation.handler.memory_utils:_should_offload_wav_to_cpu:131 - [_should_offload_wav_to_cpu] Effective free VRAM: 8.52 GB\n"}
+,{"stream_name":"stderr","time":158.560110052,"data":"2026-11-26 08:26:48.275 | INFO     | acestep.core.generation.handler.vae_decode:tiled_decode:56 - [tiled_decode] chunk_size=128, offload_wav_to_cpu=True, latents_shape=torch.Size([1, 64, 2000])\n"}
+,{"stream_name":"stderr","time":158.560242761,"data":"2026-11-26 08:26:48.276 | WARNING  | acestep.core.generation.handler.vae_decode_chunks:_tiled_decode_inner:39 - [tiled_decode] Reduced overlap from 64 to 32 for chunk_size=128\n"}
+,{"stream_name":"stderr","time":161.813542511,"data":"2026-11-26 08:26:51.529 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=6.07GB, max=6.39GB\n"}
+,{"stream_name":"stderr","time":162.090142164,"data":"2026-11-26 08:26:51.805 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...\n"}
+,{"stream_name":"stderr","time":162.090191942,"data":"2026-11-26 08:26:51.805 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.\n"}
+,{"stream_name":"stderr","time":162.330772426,"data":"2026-11-26 08:26:52.046 | INFO     | acestep.inference:generate_music:1002 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB\n"}
+,{"stream_name":"stderr","time":162.385583901,"data":"2026-11-26 08:26:52.101 | INFO     | acestep.inference:generate_music:1007 - [Normalization] Audio 0 AFTER: Peak=0.8913\n"}
+,{"stream_name":"stderr","time":163.089393037,"data":"2026-11-26 08:26:52.805 | DEBUG    | acestep.audio_utils:save_audio:319 - [AudioSaver] Saved audio to /tmp/acestep_seed11/d3fab7f3-3c8e-3be5-ab0d-d4c186f643a5.wav (wav, 48000Hz)\n"}
+,{"stream_name":"stdout","time":163.097354886,"data":"[08:26:52] seed11: ok in 9s\n"}
+,{"stream_name":"stderr","time":163.097722696,"data":"2026-11-26 08:26:52.813 | INFO     | acestep.inference:generate_music:662 - [generate_music] LLM usage decision: thinking=True, use_cot_caption=True, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=False, use_lm=False\n"}
+,{"stream_name":"stderr","time":163.098272069,"data":"2026-11-26 08:26:52.813 | INFO     | acestep.core.generation.handler.generate_music:generate_music:313 - [generate_music] Turbo model detected: overriding guidance_scale 7.0 -\u003e 1.0 (turbo does not use CFG).\n"}
+,{"stream_name":"stderr","time":163.098286177,"data":"2026-11-26 08:26:52.814 | INFO     | acestep.core.generation.handler.generate_music:generate_music:329 - [generate_music] Starting generation...\n"}
+,{"stream_name":"stderr","time":163.098375101,"data":"2026-11-26 08:26:52.814 | INFO     | acestep.core.generation.handler.generate_music:generate_music:332 - [generate_music] Preparing inputs...\n"}
+,{"stream_name":"stderr","time":163.364600419,"data":"2026-11-26 08:26:53.080 | INFO     | acestep.core.generation.handler.generate_music:_vram_preflight_check:157 - [generate_music] VRAM pre-flight: 8.37 GB free, ~0.90 GB needed (batch=1, duration=80s, mode=turbo).\n"}
+,{"stream_name":"stderr","time":163.420593902,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - \n"}
+,{"stream_name":"stderr","time":163.420826821,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":163.420836396,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)\n"}
+,{"stream_name":"stderr","time":163.420841682,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================\n"}
+,{"stream_name":"stderr","time":163.420850486,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:\n"}
+,{"stream_name":"stderr","time":163.420855225,"data":"# Instruction\n"}
+,{"stream_name":"stderr","time":163.420859282,"data":"Fill the audio semantic mask based on the given conditions:\n"}
+,{"stream_name":"stderr","time":163.420863128,"data":"\n"}
+,{"stream_name":"stderr","time":163.420866425,"data":"# Caption\n"}
+,{"stream_name":"stderr","time":163.420869864,"data":"instrumental film score, gentle Ethiopian-inspired ambient, soft plucked krar lyre and a distant bowed masenqo over warm sustained pads, pentatonic tizita mode, nostalgic, spacious, intimate, no drums, soft dynamics, sparse melody that leaves room for a narrator\n"}
+,{"stream_name":"stderr","time":163.420874114,"data":"\n"}
+,{"stream_name":"stderr","time":163.420877329,"data":"# Metas\n"}
+,{"stream_name":"stderr","time":163.420880564,"data":"- bpm: 66\n"}
+,{"stream_name":"stderr","time":163.4208984,"data":"- timesignature: N/A\n"}
+,{"stream_name":"stderr","time":163.420902211,"data":"- keyscale: E minor\n"}
+,{"stream_name":"stderr","time":163.42090589,"data":"- duration: 80 seconds\n"}
+,{"stream_name":"stderr","time":163.420909148,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":163.42092188,"data":"\n"}
+,{"stream_name":"stderr","time":163.420925385,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================\n"}
+,{"stream_name":"stderr","time":163.420929398,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:\n"}
+,{"stream_name":"stderr","time":163.420933446,"data":"# Languages\n"}
+,{"stream_name":"stderr","time":163.420937379,"data":"unknown\n"}
+,{"stream_name":"stderr","time":163.42094089,"data":"\n"}
+,{"stream_name":"stderr","time":163.420944183,"data":"# Lyric\n"}
+,{"stream_name":"stderr","time":163.420947448,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":163.420974338,"data":"2026-11-26 08:26:53.136 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================\n"}
+,{"stream_name":"stderr","time":163.420978821,"data":"\n"}
+,{"stream_name":"stderr","time":163.433234115,"data":"2026-11-26 08:26:53.148 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...\n"}
+,{"stream_name":"stderr","time":163.483678741,"data":"2026-11-26 08:26:53.199 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...\n"}
+,{"stream_name":"stderr","time":163.483958721,"data":"2026-11-26 08:26:53.199 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:173 - [service_generate] Generating audio... (DiT backend: PyTorch (cuda))\n"}
+,{"stream_name":"stderr","time":163.525684951,"data":"2026-11-26 08:26:53.241 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:276 - [service_generate] DiT diffusion via PyTorch (cuda)...\n"}
+,{"stream_name":"stderr","time":163.649642909,"data":"2026-11-26 08:26:53.365 | INFO     | acestep.models.common.dcw_correction:__init__:98 - [DCW] Active — mode=double, scaler=0.0500, high_scaler=0.0200, wavelet='haar'\n"}
+,{"stream_name":"stderr","time":165.553531697,"data":"2026-11-26 08:26:55.269 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...\n"}
+,{"stream_name":"stderr","time":165.554029476,"data":"2026-11-26 08:26:55.269 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 2000, 64]), dtype=torch.float16\n"}
+,{"stream_name":"stderr","time":165.554082258,"data":"2026-11-26 08:26:55.269 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'encoder_time_cost': 0.08067536354064941, 'diffusion_time_cost': 1.9465651512145996, 'diffusion_per_step_time_cost': 0.24332064390182495, 'total_time_cost': 2.027240514755249, 'offload_time_cost': 0.0}\n"}
+,{"stream_name":"stderr","time":165.650903819,"data":"2026-11-26 08:26:55.366 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...\n"}
+,{"stream_name":"stderr","time":165.653393231,"data":"2026-11-26 08:26:55.369 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=6.07GB, max=6.24GB\n"}
+,{"stream_name":"stderr","time":165.653909281,"data":"2026-11-26 08:26:55.369 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:154 - [generate_music] Effective free VRAM before VAE decode: 8.36 GB\n"}
+,{"stream_name":"stderr","time":165.653957501,"data":"2026-11-26 08:26:55.369 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...\n"}
+,{"stream_name":"stderr","time":165.654541938,"data":"2026-11-26 08:26:55.370 | DEBUG    | acestep.core.generation.handler.memory_utils:_get_auto_decode_chunk_size:108 - [_get_auto_decode_chunk_size] Effective free VRAM: 8.36 GB\n"}
+,{"stream_name":"stderr","time":165.655122042,"data":"2026-11-26 08:26:55.370 | DEBUG    | acestep.core.generation.handler.memory_utils:_should_offload_wav_to_cpu:131 - [_should_offload_wav_to_cpu] Effective free VRAM: 8.36 GB\n"}
+,{"stream_name":"stderr","time":165.655227225,"data":"2026-11-26 08:26:55.371 | INFO     | acestep.core.generation.handler.vae_decode:tiled_decode:56 - [tiled_decode] chunk_size=128, offload_wav_to_cpu=True, latents_shape=torch.Size([1, 64, 2000])\n"}
+,{"stream_name":"stderr","time":165.655298347,"data":"2026-11-26 08:26:55.371 | WARNING  | acestep.core.generation.handler.vae_decode_chunks:_tiled_decode_inner:39 - [tiled_decode] Reduced overlap from 64 to 32 for chunk_size=128\n"}
+,{"stream_name":"stderr","time":168.823539367,"data":"2026-11-26 08:26:58.539 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=6.07GB, max=6.39GB\n"}
+,{"stream_name":"stderr","time":169.099238559,"data":"2026-11-26 08:26:58.814 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...\n"}
+,{"stream_name":"stderr","time":169.099275683,"data":"2026-11-26 08:26:58.814 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.\n"}
+,{"stream_name":"stderr","time":169.339524854,"data":"2026-11-26 08:26:59.055 | INFO     | acestep.inference:generate_music:1002 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB\n"}
+,{"stream_name":"stderr","time":169.392658257,"data":"2026-11-26 08:26:59.108 | INFO     | acestep.inference:generate_music:1007 - [Normalization] Audio 0 AFTER: Peak=0.8913\n"}
+,{"stream_name":"stderr","time":169.424703676,"data":"2026-11-26 08:26:59.140 | DEBUG    | acestep.audio_utils:save_audio:319 - [AudioSaver] Saved audio to /tmp/acestep_seed22/c3798fd2-67aa-8e02-91a1-bd154099dcfc.wav (wav, 48000Hz)\n"}
+,{"stream_name":"stdout","time":169.43458881,"data":"[08:26:59] seed22: ok in 6s\n"}
+,{"stream_name":"stderr","time":169.435093902,"data":"2026-11-26 08:26:59.150 | INFO     | acestep.inference:generate_music:662 - [generate_music] LLM usage decision: thinking=True, use_cot_caption=True, use_cot_language=True, use_cot_metas=True, need_lm_for_cot=True, llm_initialized=False, use_lm=False\n"}
+,{"stream_name":"stderr","time":169.435545056,"data":"2026-11-26 08:26:59.151 | INFO     | acestep.core.generation.handler.generate_music:generate_music:313 - [generate_music] Turbo model detected: overriding guidance_scale 7.0 -\u003e 1.0 (turbo does not use CFG).\n"}
+,{"stream_name":"stderr","time":169.435621315,"data":"2026-11-26 08:26:59.151 | INFO     | acestep.core.generation.handler.generate_music:generate_music:329 - [generate_music] Starting generation...\n"}
+,{"stream_name":"stderr","time":169.435744865,"data":"2026-11-26 08:26:59.151 | INFO     | acestep.core.generation.handler.generate_music:generate_music:332 - [generate_music] Preparing inputs...\n"}
+,{"stream_name":"stderr","time":169.703437736,"data":"2026-11-26 08:26:59.419 | INFO     | acestep.core.generation.handler.generate_music:_vram_preflight_check:157 - [generate_music] VRAM pre-flight: 8.37 GB free, ~0.90 GB needed (batch=1, duration=80s, mode=turbo).\n"}
+,{"stream_name":"stderr","time":169.761399988,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:119 - \n"}
+,{"stream_name":"stderr","time":169.761433086,"data":"======================================================================\n"}
+,{"stream_name":"stderr","time":169.761519138,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:120 - 🔍 [DEBUG] DiT TEXT ENCODER INPUT (Inference)\n"}
+,{"stream_name":"stderr","time":169.76157668,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:121 - ======================================================================\n"}
+,{"stream_name":"stderr","time":169.761668118,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:122 - text_prompt:\n"}
+,{"stream_name":"stderr","time":169.761675368,"data":"# Instruction\n"}
+,{"stream_name":"stderr","time":169.761679123,"data":"Fill the audio semantic mask based on the given conditions:\n"}
+,{"stream_name":"stderr","time":169.761682818,"data":"\n"}
+,{"stream_name":"stderr","time":169.761686228,"data":"# Caption\n"}
+,{"stream_name":"stderr","time":169.761689582,"data":"instrumental film score, gentle Ethiopian-inspired ambient, soft plucked krar lyre and a distant bowed masenqo over warm sustained pads, pentatonic tizita mode, nostalgic, spacious, intimate, no drums, soft dynamics, sparse melody that leaves room for a narrator\n"}
+,{"stream_name":"stderr","time":169.761693694,"data":"\n"}
+,{"stream_name":"stderr","time":169.761697046,"data":"# Metas\n"}
+,{"stream_name":"stderr","time":169.761700327,"data":"- bpm: 66\n"}
+,{"stream_name":"stderr","time":169.761703629,"data":"- timesignature: N/A\n"}
+,{"stream_name":"stderr","time":169.761707043,"data":"- keyscale: E minor\n"}
+,{"stream_name":"stderr","time":169.761710385,"data":"- duration: 80 seconds\n"}
+,{"stream_name":"stderr","time":169.761713796,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":169.761717502,"data":"\n"}
+,{"stream_name":"stderr","time":169.761720825,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:123 - ======================================================================\n"}
+,{"stream_name":"stderr","time":169.761730886,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:124 - lyrics_text:\n"}
+,{"stream_name":"stderr","time":169.761734683,"data":"# Languages\n"}
+,{"stream_name":"stderr","time":169.761737934,"data":"unknown\n"}
+,{"stream_name":"stderr","time":169.761741749,"data":"\n"}
+,{"stream_name":"stderr","time":169.761745046,"data":"# Lyric\n"}
+,{"stream_name":"stderr","time":169.761748431,"data":"\u003c|endoftext|\u003e\n"}
+,{"stream_name":"stderr","time":169.761838601,"data":"2026-11-26 08:26:59.477 | INFO     | acestep.core.generation.handler.conditioning_text:_prepare_text_conditioning_inputs:125 - ======================================================================\n"}
+,{"stream_name":"stderr","time":169.761860026,"data":"\n"}
+,{"stream_name":"stderr","time":169.775146525,"data":"2026-11-26 08:26:59.490 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:110 - [preprocess_batch] Inferring prompt embeddings...\n"}
+,{"stream_name":"stderr","time":169.82601427,"data":"2026-11-26 08:26:59.541 | INFO     | acestep.core.generation.handler.conditioning_embed:preprocess_batch:113 - [preprocess_batch] Inferring lyric embeddings...\n"}
+,{"stream_name":"stderr","time":169.826214853,"data":"2026-11-26 08:26:59.541 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:173 - [service_generate] Generating audio... (DiT backend: PyTorch (cuda))\n"}
+,{"stream_name":"stderr","time":169.868989538,"data":"2026-11-26 08:26:59.584 | INFO     | acestep.core.generation.handler.service_generate_execute:_execute_service_generate_diffusion:276 - [service_generate] DiT diffusion via PyTorch (cuda)...\n"}
+,{"stream_name":"stderr","time":169.994790654,"data":"2026-11-26 08:26:59.710 | INFO     | acestep.models.common.dcw_correction:__init__:98 - [DCW] Active — mode=double, scaler=0.0500, high_scaler=0.0200, wavelet='haar'\n"}
+,{"stream_name":"stderr","time":171.917437899,"data":"2026-11-26 08:27:01.633 | INFO     | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:42 - [generate_music] Model generation completed. Decoding latents...\n"}
+,{"stream_name":"stderr","time":171.91789666,"data":"2026-11-26 08:27:01.633 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:64 - [generate_music] pred_latents: torch.Size([1, 2000, 64]), dtype=torch.float16\n"}
+,{"stream_name":"stderr","time":171.917975235,"data":"2026-11-26 08:27:01.633 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_prepare_generate_music_decode_state:65 - [generate_music] time_costs: {'encoder_time_cost': 0.08043766021728516, 'diffusion_time_cost': 1.967210292816162, 'diffusion_per_step_time_cost': 0.24590128660202026, 'total_time_cost': 2.0476479530334473, 'offload_time_cost': 0.0}\n"}
+,{"stream_name":"stderr","time":172.01580461,"data":"2026-11-26 08:27:01.731 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:127 - [generate_music] Decoding latents with VAE...\n"}
+,{"stream_name":"stderr","time":172.018384858,"data":"2026-11-26 08:27:01.733 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:136 - [generate_music] Before VAE decode: allocated=6.07GB, max=6.24GB\n"}
+,{"stream_name":"stderr","time":172.018934267,"data":"2026-11-26 08:27:01.734 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:154 - [generate_music] Effective free VRAM before VAE decode: 8.36 GB\n"}
+,{"stream_name":"stderr","time":172.018977589,"data":"2026-11-26 08:27:01.734 | INFO     | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:172 - [generate_music] Using tiled VAE decode to reduce VRAM usage...\n"}
+,{"stream_name":"stderr","time":172.019662651,"data":"2026-11-26 08:27:01.735 | DEBUG    | acestep.core.generation.handler.memory_utils:_get_auto_decode_chunk_size:108 - [_get_auto_decode_chunk_size] Effective free VRAM: 8.36 GB\n"}
+,{"stream_name":"stderr","time":172.020391069,"data":"2026-11-26 08:27:01.736 | DEBUG    | acestep.core.generation.handler.memory_utils:_should_offload_wav_to_cpu:131 - [_should_offload_wav_to_cpu] Effective free VRAM: 8.36 GB\n"}
+,{"stream_name":"stderr","time":172.020463419,"data":"2026-11-26 08:27:01.736 | INFO     | acestep.core.generation.handler.vae_decode:tiled_decode:56 - [tiled_decode] chunk_size=128, offload_wav_to_cpu=True, latents_shape=torch.Size([1, 64, 2000])\n"}
+,{"stream_name":"stderr","time":172.020588716,"data":"2026-11-26 08:27:01.736 | WARNING  | acestep.core.generation.handler.vae_decode_chunks:_tiled_decode_inner:39 - [tiled_decode] Reduced overlap from 64 to 32 for chunk_size=128\n"}
+,{"stream_name":"stderr","time":175.206236883,"data":"2026-11-26 08:27:04.921 | DEBUG    | acestep.core.generation.handler.generate_music_decode:_decode_generate_music_pred_latents:193 - [generate_music] After VAE decode: allocated=6.07GB, max=6.39GB\n"}
+,{"stream_name":"stderr","time":175.49203491,"data":"2026-11-26 08:27:05.207 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:38 - [generate_music] VAE decode completed. Preparing audio tensors...\n"}
+,{"stream_name":"stderr","time":175.492110956,"data":"2026-11-26 08:27:05.207 | INFO     | acestep.core.generation.handler.generate_music_payload:_build_generate_music_success_payload:50 - [generate_music] Done! Generated 1 audio tensors.\n"}
+,{"stream_name":"stderr","time":175.737482624,"data":"2026-11-26 08:27:05.453 | INFO     | acestep.inference:generate_music:1002 - [Normalization] Audio 0 BEFORE: Peak=1.0000, Target=-1.0dB\n"}
+,{"stream_name":"stderr","time":175.791035016,"data":"2026-11-26 08:27:05.506 | INFO     | acestep.inference:generate_music:1007 - [Normalization] Audio 0 AFTER: Peak=0.8913\n"}
+,{"stream_name":"stderr","time":175.826216309,"data":"2026-11-26 08:27:05.541 | DEBUG    | acestep.audio_utils:save_audio:319 - [AudioSaver] Saved audio to /tmp/acestep_seed33/e2210188-7706-2970-7720-b5bb7d64ca4b.wav (wav, 48000Hz)\n"}
+,{"stream_name":"stdout","time":175.837606077,"data":"[08:27:05] seed33: ok in 6s\n"}
+,{"stream_name":"stdout","time":175.837987759,"data":"[08:27:05] done\n"}
+,{"stream_name":"stderr","time":181.831805847,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":181.831839661,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":182.07675009,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":182.076780276,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":182.975554393,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":183.947667238,"data":"[NbConvertApp] Writing 299187 bytes to __results__.html\n"}
+]

@@ -1,6 +1,18 @@
 {
   "placeholder": {
-    "key": "cad21c742f69aa0f",
+    "key": "3f6911da40f28dac",
     "path": "outputs/music/placeholder_drone.wav"
+  },
+  "seed11": {
+    "key": "7a6a1393de19f6ae",
+    "path": "outputs/music/candidate_seed11.wav"
+  },
+  "seed22": {
+    "key": "3144de5858b84729",
+    "path": "outputs/music/candidate_seed22.wav"
+  },
+  "seed33": {
+    "key": "3b8ce53b50fb8cba",
+    "path": "outputs/music/candidate_seed33.wav"
   }
 }
