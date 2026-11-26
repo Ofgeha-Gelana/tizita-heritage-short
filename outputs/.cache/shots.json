@@ -66,14 +66,14 @@
     "quality": "draft"
   },
   "s02": {
-    "gpu_s": 774.8,
-    "key": "37ec978eb225b35d",
+    "gpu_s": 794.1,
+    "key": "02ab32840575b06a",
     "path": "outputs/clips/s02.mp4",
     "quality": "draft"
   },
   "s03": {
-    "gpu_s": 789.7,
-    "key": "62f69933bb2b3412",
+    "gpu_s": 753.8,
+    "key": "e2f2362ecf28522c",
     "path": "outputs/clips/s03.mp4",
     "quality": "draft"
   },
@@ -96,20 +96,20 @@
     "quality": "draft"
   },
   "s07": {
-    "gpu_s": 789.0,
-    "key": "17e8acf8047c4e46",
+    "gpu_s": 806.0,
+    "key": "69b0389b83970279",
     "path": "outputs/clips/s07.mp4",
     "quality": "draft"
   },
   "s08": {
-    "gpu_s": 769.8,
-    "key": "31280d1c4f409266",
+    "gpu_s": 751.8,
+    "key": "91bca84741481b25",
     "path": "outputs/clips/s08.mp4",
     "quality": "draft"
   },
   "s09": {
-    "gpu_s": 789.7,
-    "key": "dcac06b6f6eee870",
+    "gpu_s": 806.4,
+    "key": "1d35707bbb910cd5",
     "path": "outputs/clips/s09.mp4",
     "quality": "draft"
   },
