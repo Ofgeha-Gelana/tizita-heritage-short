@@ -69,6 +69,7 @@ FFmpeg comes from the `imageio-ffmpeg` wheel (a static ffmpeg 9.0 with libx264 a
 | `make assemble` | Edit, duck, subtitles, loudness, end card, both aspect ratios, every language |
 | `make shot SHOT=s03` | Regenerates one shot and re-assembles. This is what the walkthrough shows |
 | `make costs` | Per-stage latency, GPU minutes and list-price table from `runs.jsonl` |
+| `make report` | Renders `REPORT.md` to `report.pdf` with headless Chrome (no pandoc or LaTeX needed) |
 | `make test` | Unit tests |
 
 ### Changing one shot

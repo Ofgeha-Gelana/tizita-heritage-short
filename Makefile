@@ -8,7 +8,7 @@ export OFFLINE
 
 .PHONY: help setup smoke validate test wordcount translate radio-cut refs keyframes explore promote \
         shots shots-submit shots-collect music music-submit music-collect assemble film \
-        final shot costs clean-cache
+        final shot costs report clean-cache
 
 help:
 	@grep -E '^## ' Makefile | sed 's/## //'
@@ -95,6 +95,9 @@ shot: validate
 ## costs          per-stage latency / GPU minutes / list price from runs.jsonl
 costs:
 	$(PY) pipeline.costs
+
+report:  ## REPORT.md -> report.pdf (headless Chrome)
+	$(PY) pipeline.report_pdf
 
 ## clean-cache    forget cache manifests (outputs are kept)
 clean-cache:
