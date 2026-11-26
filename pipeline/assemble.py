@@ -248,7 +248,8 @@ def measure_loudness(path: Path, extra_filters: str = "") -> dict:
 def mix_audio(sb: dict, tl: list[dict], total: float, lang: str, music: Path, radio: bool) -> Path:
     nar_inputs = [e for e in tl if e["nar"]]
     gain = sb["music"].get("music_gain_db", -6)
-    key = stable_hash("mix-v1", lang, music, gain, total,
+    # v2: final true-peak target -1.5 dBTP (v1 aimed at -1 and measured -0.91 after AAC)
+    key = stable_hash("mix-v2", lang, music, gain, total,
                       [(e["id"], round(e["nar_start"], 3), e["nar"]) for e in nar_inputs])
     out = TMP / f"mix_{lang}_{'radio' if radio else 'film'}_{key}.wav"
     if out.exists():
@@ -274,7 +275,7 @@ def mix_audio(sb: dict, tl: list[dict], total: float, lang: str, music: Path, ra
     ffmpeg(*args, "-filter_complex", graph, "-map", "[mix]", "-t", f"{total:.3f}", "-ar", "48000", str(pre))
     # Two-pass loudness normalisation to the platform target.
     m1 = measure_loudness(pre)
-    ln = (f"loudnorm=I=-14:TP=-1:LRA=11:measured_I={m1['input_i']}:measured_TP={m1['input_tp']}:"
+    ln = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={m1['input_i']}:measured_TP={m1['input_tp']}:"
           f"measured_LRA={m1['input_lra']}:measured_thresh={m1['input_thresh']}:offset={m1['target_offset']}:linear=true")
     ffmpeg("-i", str(pre), "-af", ln, "-ar", "48000", str(out))
     pre.unlink(missing_ok=True)
