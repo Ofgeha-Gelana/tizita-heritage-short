@@ -17,7 +17,7 @@ import argparse
 import json
 
 from . import providers as P
-from .common import (estimate_cost, load_storyboard, log_call, main_guard, save_storyboard, say,
+from .common import (TransientError, estimate_cost, load_storyboard, log_call, main_guard, save_storyboard, say,
                      timer, with_retries)
 
 STAGE = "script"
@@ -36,6 +36,16 @@ def ask_json(model: str, prompt: str, item: str, seed: int = 7) -> dict:
     return with_retries(call, stage=STAGE, item=item)
 
 
+def ask_json_fallback(sb: dict, prompt: str, item: str) -> dict:
+    """models.text, then models.text_lite if the main model stays overloaded (503s on
+    gemini-3.8-flash on both days; FAILURES.md F3). runs.jsonl records which one answered."""
+    try:
+        return ask_json(sb["models"]["text"], prompt, item)
+    except TransientError as e:
+        say(STAGE, f"{item}: {sb['models']['text']} unavailable ({str(e)[:80]}); using {sb['models']['text_lite']}")
+        return ask_json(sb["models"]["text_lite"], prompt, item + "/fallback")
+
+
 def translate(target: str, write: bool) -> None:
     sb = load_storyboard()
     src = sb["languages"]["primary"]
@@ -47,7 +57,7 @@ Keep cultural words as they are said in {LANG_NAMES[target]} (for example the na
 Use "english_meaning" only to check meaning. Return JSON: {{"lines": [{{"id": ..., "text": ...}}]}} with the same ids.
 
 {json.dumps(lines, ensure_ascii=False, indent=1)}"""
-    out = ask_json(sb["models"]["text"], prompt, f"translate/{src}->{target}")
+    out = ask_json_fallback(sb, prompt, f"translate/{src}->{target}")
     got = {r["id"]: r["text"].strip() for r in out.get("lines", [])}
     ids = [s["id"] for s in sb["shots"]]
     if set(got) != set(ids):
