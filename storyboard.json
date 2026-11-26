@@ -277,8 +277,8 @@
       22,
       33
     ],
-    "chosen": null,
-    "choice_reason": "",
+    "chosen": 22,
+    "choice_reason": "Chosen by the director after listening to all three ACE-Step candidates (seeds 11, 22, 33) on 2026-11-26.",
     "music_gain_db": -6,
     "cues": [
       {
